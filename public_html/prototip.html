@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
+-->
+<html>
+    <head>
+        <title>Prototip Joc del Penjat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Variables Globals.
+        var Paraula = ""; 
+        var Lletres = "";
+        var Vides = 7;
+
+        // Comprovam si la lletra es troba a la Paraula.
+        function Comprovar() {
+            // Variables Locals.
+            var lletra = document.getElementById("lletra").value;
+            
+            // Assignam el valor <input id="lletra" a lletra, 
+            // i deixam <input id="lletra" en blanc.
+            document.getElementById("lletra").value = "";
+            // window.alert(lletra);
+            
+            // L'abecedari català + castellà es composa 
+            // de les vint-i-vuit lletres següents: 
+            // a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
+            // n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
+            if (lletra <= "m") {
+                window.alert("Has encertat!");
+                
+                // Afegim lletra a Paraula i actualitzam la pantalla.
+                Paraula = Paraula + lletra + " ";
+                document.getElementById("Paraula").innerHTML = Paraula;
+            } else {
+                window.alert("Has fallat!");
+                
+                // Afegim lletra a Lletres i actualitzam la pantalla.
+                Lletres = Lletres + lletra + " ";
+                document.getElementById("Lletres").innerHTML = Lletres;
+
+                // Decrementam el comptador Vides.    
+                Vides = Vides - 1;
+                // window.alert(Vides);
+            }
+            
+            // Actualitzam Vides a la pantalla.
+            document.getElementById("Vides").innerHTML = 
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
+            
+            // Comprovam si has perdut! o has guanyat!.
+            if (Vides <= 0) {
+                window.alert("i has perdut!");
+                AturaTot();
+            } else {
+                if (Paraula.length >= 14) {
+                    window.alert("i has guanyat!");
+                    AturaTot();
+                }
+            }
+        }
+ 
+        // Deshabilitam tant <input id="lletra" com <button id="Comprovar".
+        function AturaTot() {
+            document.getElementById("lletra").disabled = true;
+            document.getElementById("Comprovar").disabled = true;
+        }
+    </script>
+    </head>
+    <body>
+        <h1>Prototip Joc del Penjat</h1>
+            <input id="lletra" type="text" 
+                   placeholder="Escriu una lletra minúscula" maxlength="1"> 
+            <button id="Comprovar" onclick="Comprovar()">Comprovar</button>
+        <h2>Paraula</h2>
+            <div id="Paraula">_ _ _ _ _ _ _</div>
+        <h2>Vides</h2>
+            <div id="Vides"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
+        <h2>Lletres</h2>
+            <div id="Lletres">_ _ _ _ _ _ _</div>
+        <br><br><br>
+        <p><a href="https://prosselloe.wordpress.com/?p=5862">
+            El joc del penjat on Scratch</a></p>
+    </body>
+</html>

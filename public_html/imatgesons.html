@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
+-->
+<html>
+    <head>
+        <title>Versió amb Imatges i Sons Joc del Penjat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html {
+                background:#222;
+                margin:auto;
+                width:640px;
+                height:480px;
+            }
+
+            body {
+                background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+                border: 1px solid black;
+                padding: 10px 20px;
+                box-shadow: 5px 0px 30px #000;
+                border-radius: 8px;
+            }
+                
+            h1, a {
+                background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+                border: 1px solid black;
+                padding: 1px 1px;
+                box-shadow: 5px 0px 30x #000;
+                border-radius: 8px;               
+            }
+            
+            h2 {
+                color: white;
+            }
+            
+            #Guia {position:absolute; top:314px; left:640px;}
+            #Caminar {position:absolute; top:192px; left:826px;}
+            #Rotar {position:absolute; top:192px; left:676px;}
+        </style>
+        <script>
+            // Variables Globals.
+            var Paraula = ""; 
+            var Lletres = "";
+            var Vides = 7;
+
+            // Comprovam si la lletra es troba a la Paraula.
+            function Comprovar() {
+                // Variables Locals.
+                var lletra = document.getElementById("lletra").value;
+
+                // Assignam el valor <input id="lletra" a lletra, 
+                // i deixam <input id="lletra" en blanc.
+                document.getElementById("lletra").value = "";
+                // window.alert(lletra);
+
+                // L'abecedari català + castellà es composa 
+                // de les vint-i-vuit lletres següents: 
+                // a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
+                // n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
+                if (lletra <= "m") {
+                    document.getElementById("miau").play();
+                    window.alert("Has encertat!");
+
+                    // Afegim lletra a Paraula i actualitzam la pantalla.
+                    Paraula = Paraula + lletra + " ";
+                    document.getElementById("Paraula").innerHTML = Paraula;
+                } else {
+                    document.getElementById("boom_cloud").play();
+                    window.alert("Has fallat!");
+
+                    // Afegim lletra a Lletres i actualitzam la pantalla.
+                    Lletres = Lletres + lletra + " ";
+                    document.getElementById("Lletres").innerHTML = Lletres;
+
+                    // Decrementam el comptador Vides.    
+                    Vides = Vides - 1;
+                    // window.alert(Vides);
+
+                    // Mostram la imatge corresponent.
+                    MostraImg();
+                }
+
+                // Actualitzam Vides a la pantalla.
+                document.getElementById("Vides").innerHTML = 
+                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
+
+                // Comprovam si has perdut! o has guanyat!.
+                if (Vides <= 0) {
+                    document.body.style.backgroundImage = "url('img/Jungle.png')";
+                    document.getElementById("cat-fight").play();
+                    const myTimeout = setTimeout(BellTollPlay, 6000);
+                    window.alert("i has perdut!");
+                    AturaTot();
+                } else {
+                    if (Paraula.length >= 14) {
+                        AmagaImg();
+                        document.getElementById("ahorcado").hidden = false;
+                        document.body.style.backgroundImage = "url('img/Party.png')";
+                        document.getElementById("cheer").play();
+                        window.alert("i has guanyat!");
+                        AturaTot();
+                    } else {
+                        // document.getElementById("clock_ticking").loop = true;
+                        document.getElementById("clock_ticking").play();
+                    }
+                }
+            }
+
+            function BellTollPlay() {
+                document.getElementById("bell_toll").play();
+            }            
+            
+            // Deshabilitam tant <input id="lletra" com <button id="Comprovar".
+            function AturaTot() {
+                document.getElementById("lletra").disabled = true;
+                document.getElementById("Comprovar").disabled = true;
+            }
+
+            // Amagam totes les imatges.
+            function AmagaImg() {
+                document.getElementById("ahorcado_6").hidden = true;
+                document.getElementById("ahorcado_5").hidden = true;
+                document.getElementById("ahorcado_4").hidden = true;
+                document.getElementById("ahorcado_3").hidden = true;
+                document.getElementById("ahorcado_2").hidden = true;
+                document.getElementById("ahorcado_1").hidden = true;
+                document.getElementById("ahorcado_0").hidden = true;
+                document.getElementById("ahorcado").hidden = true;
+            }
+
+            // Mostram la imatge corresponent.
+            function MostraImg() {
+                switch (Vides) {
+                    case 6:
+                      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+                      document.getElementById("ahorcado_6").hidden = false;
+                      break;
+                    case 5:
+                        //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
+                        document.getElementById("ahorcado_5").hidden = false;
+                        document.getElementById("ahorcado_6").hidden = true;
+                        break;
+                    case 4:
+                        //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor3
+                        document.getElementById("ahorcado_4").hidden = false;
+                        document.getElementById("ahorcado_5").hidden = true;
+                        break;
+                    case 3:
+                        //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor4
+                        document.getElementById("ahorcado_3").hidden = false;
+                        document.getElementById("ahorcado_4").hidden = true;
+                        break;
+                    case 2:
+                        //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor5
+                        document.getElementById("ahorcado_2").hidden = false;
+                        document.getElementById("ahorcado_3").hidden = true;
+                        break;
+                    case 1:
+                        //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor6
+                        document.getElementById("ahorcado_1").hidden = false;
+                        document.getElementById("ahorcado_2").hidden = true;
+                        break;
+                    case 0:
+                        //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor7
+                        document.getElementById("ahorcado_0").hidden = false;
+                        document.getElementById("ahorcado_1").hidden = true;
+                        break;
+                    default:
+                        //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+                        break;
+                }
+            }
+        </script>
+    </head>
+    <body onload="AmagaImg(); document.getElementById('mystery').play();" 
+          style="background-image: url('img/Desert.png'); 
+          background-size: 640px 480px; background-repeat: no-repeat;">
+        <script>
+            window.onkeypress = function(evObject) {
+                if (evObject.keyCode == 13) { Comprovar() };
+            }
+        </script>
+        <h1>Versió amb Imatges i Sons Joc del Penjat</h1>
+        <table>
+            <tr>
+              <td>
+                    <input id="lletra" type="text" 
+                           placeholder="Escriu una lletra minúscula" maxlength="1"> 
+                    <button id="Comprovar" onclick="Comprovar()">Comprovar</button>
+                <h2>Paraula: 
+                    <a href="https://www.arabalears.cat/portada/vols-sopes-record-nostres-padrins_129_3048940.html">
+                        <font size=3>Demanes sopes?</font></a></h2>
+                    <div id="Paraula" style="color: white;">
+                        <strong>_ _ _ _ _ _ _</strong></div>
+                <h2>Vides: 
+                    <a href="https://pccd.dites.cat/p/Tenir_set_vides%2C_com_els_gats">
+                        <font size=3>Tens 7 vides com...</font></a></h2>
+                    <div id="Vides" style="color: blue;">
+                        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
+                <h2>Lletres: 
+                    <a href="https://pccd.dites.cat/p/De_lletres">
+                        <font size=3>Ets de lletres o...</font></a></h2>
+                    <div id="Lletres" style="color: red;">
+                        <strong>_ _ _ _ _ _ _</strong></div>
+                <br>
+                <strong>URLpistes: 
+                    <a href="https://pccd.dites.cat/p/A_la_quinta_forca">Dita 1</a> - 
+                    <a href="https://pccd.dites.cat/p/A_ca_un_penjat%2C_no_hi_anomenis_cordes">Dita 2</a> - 
+                    <a href="https://pccd.dites.cat/p/Setze_jutges_d%27un_jutjat_mengen_fetge_d%27un_penjat">Dita 3</a>
+                </strong>
+                <br>
+                <p><strong>Crèdits: 
+                    <a href="https://prosselloe.wordpress.com/?p=5862">El joc del penjat on Scratch</a>
+                </strong></p>
+            </td>
+            <td>
+                <img src="img/ahorcado_6.png" id="ahorcado_6" style="width:300px;height:295px;">
+                <img src="img/ahorcado_5.png" id="ahorcado_5" style="width:300px;height:295px;">
+                <img src="img/ahorcado_4.png" id="ahorcado_4" style="width:300px;height:295px;">
+                <img src="img/ahorcado_3.png" id="ahorcado_3" style="width:300px;height:295px;">
+                <img src="img/ahorcado_2.png" id="ahorcado_2" style="width:300px;height:295px;">
+                <img src="img/ahorcado_1.png" id="ahorcado_1" style="width:300px;height:295px;">
+                <img src="img/ahorcado_0.png" id="ahorcado_0" style="width:300px;height:295px;">
+                <a href="http://localhost:8383/Penjat/img/ahorcado.jpg">
+                <img src="img/ahorcado.jpg" id="ahorcado" style="width:300px;height:347px;"></a>
+            </td>
+          </tr>
+        </table>  
+        <audio id="mystery">      <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
+        <audio id="clock_ticking"><source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+        <audio id="miau">         <source src="aud/miau.mp3" type="audio/mpeg"></audio>
+        <audio id="cheer">        <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
+        <audio id="boom_cloud">   <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
+        <audio id="bell_toll">    <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
+        <audio id="cat-fight">    <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
+        <div id="Guia">
+            <img src="img/disfraz3.png" id="disfraz3" style="width:100px;height:104px;">
+            <img src="img/disfraz2.png" id="disfraz2" style="width:100px;height:104px;">
+            <img src="img/disfraz1.png" id="disfraz1" style="width:100px;height:104px;">
+        </div>
+        <div id="Caminar">
+            <img src="img/caminar.gif" id="caminar" style="width:100px;height:104px;">
+        </div>
+        <div id="Rotar">
+            <img src="img/rotar.gif" id="rotar" style="width:100px;height:104px;">
+        </div>
+    </body>
+</html>
