@@ -1,4 +1,4 @@
-# Penjat(Hangman)
+# Penjat (Hangman)
 Joc del Penjat - Juego del Ahorcado -  Hangman Game
         <h1>&nbsp;Versió amb Imatges i Sons Joc del Penjat</h1>
         <table>
