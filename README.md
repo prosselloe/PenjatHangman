@@ -21,7 +21,7 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                     <a href="https://pccd.dites.cat/p/De_lletres">
                         <font size=3>Ets de lletres?</font></a></h2>
                     <div id="Lletres" style="color: red;">
-                        <strong>_ _ _ _ _ _ _</strong></div>
+                        <strong><del>_ _ _ _ _ _ _</del></strong></div>
             </td>
             <td>
                 <img src="public_html/img/ahorcado_6.png" id="ahorcado_6" style="width:280px;height:270px;">
