@@ -1,6 +1,6 @@
 # PenjatHangman
 Joc del Penjat - Juego del Ahorcado -  Hangman Game
-        <h1>Versió amb Imatges i Sons Joc del Penjat</h1>
+        <h1>&nbsp;Versió amb Imatges i Sons Joc del Penjat</h1>
         <table>
             <tr>
               <td>
@@ -14,36 +14,51 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                         <strong>_ _ _ _ _ _ _</strong></div>
                 <h2>Vides: 
                     <a href="https://pccd.dites.cat/p/Tenir_set_vides%2C_com_els_gats">
-                        <font size=3>Tens 7 vides com...</font></a></h2>
+                        <font size=3>Tens 7 vides com un moix!</font></a></h2>
                     <div id="Vides" style="color: blue;">
                         <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
                 <h2>Lletres: 
                     <a href="https://pccd.dites.cat/p/De_lletres">
-                        <font size=3>Ets de lletres o...</font></a></h2>
+                        <font size=3>Ets de lletres?</font></a></h2>
                     <div id="Lletres" style="color: red;">
                         <strong>_ _ _ _ _ _ _</strong></div>
+            </td>
+            <td>
+                <img src="public_html/img/ahorcado_6.png" id="ahorcado_6" style="width:280px;height:270px;">
+                <img src="public_html/img/ahorcado_5.png" id="ahorcado_5" style="width:280px;height:270px;">
+                <img src="public_html/img/ahorcado_4.png" id="ahorcado_4" style="width:280px;height:270px;">
+                <img src="public_html/img/ahorcado_3.png" id="ahorcado_3" style="width:280px;height:270px;">
+                <img src="public_html/img/ahorcado_2.png" id="ahorcado_2" style="width:280px;height:270px;">
+                <img src="public_html/img/ahorcado_1.png" id="ahorcado_1" style="width:280px;height:270px;">
+                <img src="public_html/img/ahorcado_0.png" id="ahorcado_0" style="width:280px;height:270px;">
+                <a href="public_html/img/ahorcado.jpg">
+                <img src="public_html/img/ahorcado.jpg" id="ahorcado" style="width:234px;height:270px;"></a>
+            </td>          
+          </tr>
+          <tr>
+            <td>
                 <br>
                 <strong>URLpistes: 
                     <a href="https://pccd.dites.cat/p/A_la_quinta_forca">Dita 1</a> - 
                     <a href="https://pccd.dites.cat/p/A_ca_un_penjat%2C_no_hi_anomenis_cordes">Dita 2</a> - 
                     <a href="https://pccd.dites.cat/p/Setze_jutges_d%27un_jutjat_mengen_fetge_d%27un_penjat">Dita 3</a>
                 </strong>
-                <br>
-                <p><strong>Crèdits: 
+                <p> <strong>Crèdits: 
                     <a href="https://prosselloe.wordpress.com/?p=5862">El joc del penjat on Scratch</a>
                 </strong></p>
-            </td>
+            </td>          
             <td>
-                <img src="public_html/img/ahorcado_6.png" id="ahorcado_6" style="width:300px;height:295px;">
-                <img src="public_html/img/ahorcado_5.png" id="ahorcado_5" style="width:300px;height:295px;">
-                <img src="public_html/img/ahorcado_4.png" id="ahorcado_4" style="width:300px;height:295px;">
-                <img src="public_html/img/ahorcado_3.png" id="ahorcado_3" style="width:300px;height:295px;">
-                <img src="public_html/img/ahorcado_2.png" id="ahorcado_2" style="width:300px;height:295px;">
-                <img src="public_html/img/ahorcado_1.png" id="ahorcado_1" style="width:300px;height:295px;">
-                <img src="public_html/img/ahorcado_0.png" id="ahorcado_0" style="width:300px;height:295px;">
-                <a href="https://github.com/prosselloe/PenjatHangman/blob/main/public_html/img/ahorcado.jpg">
-                <img src="public_html/img/ahorcado.jpg" id="ahorcado" style="width:300px;height:347px;"></a>
-            </td>
+                <br>
+                <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YouTube: 
+                    <a href="https://youtu.be/v53rEMHghJU?list=PLv1JHCp6B60w_KnMTu7jDdlDZ6Z0-WJ-j">
+                        El joc del penjat on Scratch</a>
+                </strong>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wikis: 
+                    <a href="https://ca.wikipedia.org/wiki/Penjat">Penjat</a> - 
+                    <a href="https://es.wikipedia.org/wiki/Ahorcado_(juego)">Ahorcado</a> - 
+                    <a href="https://en.wikipedia.org/wiki/Hangman_(game)">Hangman</a>
+                </strong></p>
+            </td>          
           </tr>
         </table>  
         <audio id="mystery">      <source src="public_html/aud/mystery.mp3" type="audio/mpeg"></audio>
@@ -54,13 +69,13 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
         <audio id="bell_toll">    <source src="public_html/aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
         <audio id="cat-fight">    <source src="public_html/aud/cat-fight.mp3" type="audio/mpeg"></audio>
         <div id="Guia">
-            <img src="public_html/img/disfraz3.png" id="disfraz3" style="width:100px;height:104px;">
-            <img src="public_html/img/disfraz2.png" id="disfraz2" style="width:100px;height:104px;">
-            <img src="public_html/img/disfraz1.png" id="disfraz1" style="width:100px;height:104px;">
+            <img src="public_html/img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
+            <img src="public_html/img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
+            <img src="public_html/img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
         </div>
         <div id="Caminar">
-            <img src="public_html/img/caminar.gif" id="caminar" style="width:100px;height:104px;">
+            <img src="public_html/img/caminar.gif" id="caminar" style="width:86px;height:90px;">
         </div>
         <div id="Rotar">
-            <img src="public_html/img/rotar.gif" id="rotar" style="width:100px;height:104px;">
+            <img src="public_html/img/rotar.gif" id="rotar" style="width:86px;height:90px;">
         </div>
