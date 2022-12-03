@@ -41,7 +41,7 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                 <img src="public_html/img/ahorcado_2.png" id="ahorcado_2" style="width:300px;height:295px;">
                 <img src="public_html/img/ahorcado_1.png" id="ahorcado_1" style="width:300px;height:295px;">
                 <img src="public_html/img/ahorcado_0.png" id="ahorcado_0" style="width:300px;height:295px;">
-                <a href="http://localhost:8383/Penjat/img/ahorcado.jpg">
+                <a href="https://github.com/prosselloe/PenjatHangman/blob/main/public_html/img/ahorcado.jpg">
                 <img src="public_html/img/ahorcado.jpg" id="ahorcado" style="width:300px;height:347px;"></a>
             </td>
           </tr>
