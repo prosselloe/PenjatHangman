@@ -35,9 +35,9 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 color: white;
             }
             
-            #Guia {position:absolute; top:284px; left:640px;}
+            #Guia {position:absolute; top:282px; left:640px;}
             #Caminar {position:absolute; top:162px; left:820px;}
-            #Rotar {position:absolute; top:162px; left:676px;}
+            #Rotar {position:absolute; top:162px; left:820px;}
         </style>
         <script>
             // Variables Globals.
@@ -59,19 +59,25 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 // de les vint-i-vuit lletres següents: 
                 // a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
                 // n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
-                if (lletra <= "m") {
+                if (((lletra >= "a") && (lletra <= "m")) || (lletra == "ç")) {
                     document.getElementById("miau").play();
+                    document.getElementById("disfraz3").hidden = true;
+                    document.getElementById("disfraz2").hidden = false;
+                    document.getElementById("disfraz1").hidden = true;
                     window.alert("Has encertat!");
 
                     // Afegim lletra a Paraula i actualitzam la pantalla.
                     Paraula = Paraula + lletra + " ";
                     document.getElementById("Paraula").innerHTML = Paraula;
-                } else {
+                } else if (((lletra >= "n") && (lletra <= "z")) || (lletra == "ñ")) {
                     document.getElementById("boom_cloud").play();
+                    document.getElementById("disfraz3").hidden = true;
+                    document.getElementById("disfraz2").hidden = true;
+                    document.getElementById("disfraz1").hidden = false;
                     window.alert("Has fallat!");
 
                     // Afegim lletra a Lletres i actualitzam la pantalla.
-                    Lletres = Lletres + lletra + " ";
+                    Lletres = Lletres + "<del>" + lletra + "<del> ";
                     document.getElementById("Lletres").innerHTML = Lletres;
 
                     // Decrementam el comptador Vides.    
@@ -80,6 +86,8 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
 
                     // Mostram la imatge corresponent.
                     MostraImg();
+                } else {
+                    window.alert("Caràcter incorrecte!");
                 }
 
                 // Actualitzam Vides a la pantalla.
@@ -89,6 +97,8 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 // Comprovam si has perdut! o has guanyat!.
                 if (Vides <= 0) {
                     document.body.style.backgroundImage = "url('img/Jungle.png')";
+                    document.getElementById("disfraz1").hidden = true;
+                    document.getElementById("rotar").hidden = false;
                     document.getElementById("cat-fight").play();
                     const myTimeout = setTimeout(BellTollPlay, 6000);
                     window.alert("i has perdut!");
@@ -98,6 +108,8 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                         AmagaImg();
                         document.getElementById("ahorcado").hidden = false;
                         document.body.style.backgroundImage = "url('img/Party.png')";
+                        document.getElementById("disfraz2").hidden = true;
+                        document.getElementById("caminar").hidden = false;
                         document.getElementById("cheer").play();
                         window.alert("i has guanyat!");
                         AturaTot();
@@ -128,6 +140,12 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 document.getElementById("ahorcado_1").hidden = true;
                 document.getElementById("ahorcado_0").hidden = true;
                 document.getElementById("ahorcado").hidden = true;
+                
+                // document.getElementById("disfraz3").hidden = true;
+                document.getElementById("disfraz2").hidden = true;
+                document.getElementById("disfraz1").hidden = true;
+                document.getElementById("caminar").hidden = true;
+                document.getElementById("rotar").hidden = true;
             }
 
             // Mostram la imatge corresponent.
@@ -203,7 +221,7 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                     <a href="https://pccd.dites.cat/p/De_lletres">
                         <font size=3>Ets de lletres?</font></a></h2>
                     <div id="Lletres" style="color: red;">
-                        <strong>_ _ _ _ _ _ _</strong></div>
+                        <strong><del>_ _ _ _ _ _ _</del></strong></div>
             </td>
             <td>
                 <img src="img/ahorcado_6.png" id="ahorcado_6" style="width:280px;height:270px;">
@@ -213,7 +231,7 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 <img src="img/ahorcado_2.png" id="ahorcado_2" style="width:280px;height:270px;">
                 <img src="img/ahorcado_1.png" id="ahorcado_1" style="width:280px;height:270px;">
                 <img src="img/ahorcado_0.png" id="ahorcado_0" style="width:280px;height:270px;">
-                <a href="http://localhost:8383/Penjat/img/ahorcado.jpg">
+                <a href="img/ahorcado.jpg">
                 <img src="img/ahorcado.jpg" id="ahorcado" style="width:234px;height:270px;"></a>
             </td>          
           </tr>
