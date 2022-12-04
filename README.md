@@ -24,15 +24,15 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                         <strong><del>_ _ _ _ _ _ _</del></strong></div>
             </td>
             <td>
-                <img src="public_html/img/ahorcado_6.png" id="ahorcado_6" style="width:280px;height:270px;">
-                <img src="public_html/img/ahorcado_5.png" id="ahorcado_5" style="width:280px;height:270px;">
-                <img src="public_html/img/ahorcado_4.png" id="ahorcado_4" style="width:280px;height:270px;">
-                <img src="public_html/img/ahorcado_3.png" id="ahorcado_3" style="width:280px;height:270px;">
-                <img src="public_html/img/ahorcado_2.png" id="ahorcado_2" style="width:280px;height:270px;">
-                <img src="public_html/img/ahorcado_1.png" id="ahorcado_1" style="width:280px;height:270px;">
-                <img src="public_html/img/ahorcado_0.png" id="ahorcado_0" style="width:280px;height:270px;">
-                <a href="public_html/img/ahorcado.jpg">
-                <img src="public_html/img/ahorcado.jpg" id="ahorcado" style="width:234px;height:270px;"></a>
+                <img src="img/ahorcado_6.png" id="ahorcado_6" style="width:280px;height:270px;">
+                <img src="img/ahorcado_5.png" id="ahorcado_5" style="width:280px;height:270px;">
+                <img src="img/ahorcado_4.png" id="ahorcado_4" style="width:280px;height:270px;">
+                <img src="img/ahorcado_3.png" id="ahorcado_3" style="width:280px;height:270px;">
+                <img src="img/ahorcado_2.png" id="ahorcado_2" style="width:280px;height:270px;">
+                <img src="img/ahorcado_1.png" id="ahorcado_1" style="width:280px;height:270px;">
+                <img src="img/ahorcado_0.png" id="ahorcado_0" style="width:280px;height:270px;">
+                <a href="img/ahorcado.jpg">
+                <img src="img/ahorcado.jpg" id="ahorcado" style="width:234px;height:270px;"></a>
             </td>          
           </tr>
           <tr>
@@ -61,21 +61,22 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             </td>          
           </tr>
         </table>  
-        <audio id="mystery">      <source src="public_html/aud/mystery.mp3" type="audio/mpeg"></audio>
-        <audio id="clock_ticking"><source src="public_html/aud/clock_ticking.mp3" type="audio/mpeg"></audio>
-        <audio id="miau">         <source src="public_html/aud/miau.mp3" type="audio/mpeg"></audio>
-        <audio id="cheer">        <source src="public_html/aud/cheer.mp3" type="audio/mpeg"></audio>
-        <audio id="boom_cloud">   <source src="public_html/aud/boom_cloud.mp3" type="audio/mpeg"></audio>
-        <audio id="bell_toll">    <source src="public_html/aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
-        <audio id="cat-fight">    <source src="public_html/aud/cat-fight.mp3" type="audio/mpeg"></audio>
+        <audio id="mystery">      <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
+        <audio id="clock_ticking"><source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+        <audio id="miau">         <source src="aud/miau.mp3" type="audio/mpeg"></audio>
+        <audio id="cheer">        <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
+        <audio id="boom_cloud">   <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
+        <audio id="bell_toll">    <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
+        <audio id="cat-fight">    <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
         <div id="Guia">
-            <img src="public_html/img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
-            <img src="public_html/img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
-            <img src="public_html/img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
+            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
+            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
+            <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
         </div>
         <div id="Caminar">
-            <img src="public_html/img/caminar.gif" id="caminar" style="width:86px;height:90px;">
+            <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;">
         </div>
         <div id="Rotar">
-            <img src="public_html/img/rotar.gif" id="rotar" style="width:86px;height:90px;">
+            <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;">
         </div>
+# Crèdits
