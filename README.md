@@ -90,8 +90,6 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
         <h2>Lletres</h2>
             <div id="Lletres">_ _ _ _ _ _ _</div>
         <br><br><br>
+        <h1>Crèdits</h1>
         <p><a href="https://prosselloe.wordpress.com/?p=5862">
             El joc del penjat on Scratch</a></p>
-
-# Crèdits
-        <h1><a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat-on-scratch/">El joc del penjat on&nbsp;Scratch</a></h1>
