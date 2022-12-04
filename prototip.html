@@ -27,13 +27,13 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
             // de les vint-i-vuit lletres següents: 
             // a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
             // n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
-            if (lletra <= "m") {
+            if (((lletra >= "a") && (lletra <= "m")) || (lletra == "ç")) {
                 window.alert("Has encertat!");
                 
                 // Afegim lletra a Paraula i actualitzam la pantalla.
                 Paraula = Paraula + lletra + " ";
                 document.getElementById("Paraula").innerHTML = Paraula;
-            } else {
+            } else if (((lletra >= "n") && (lletra <= "z")) || (lletra == "ñ")) {
                 window.alert("Has fallat!");
                 
                 // Afegim lletra a Lletres i actualitzam la pantalla.
@@ -43,6 +43,8 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
                 // Decrementam el comptador Vides.    
                 Vides = Vides - 1;
                 // window.alert(Vides);
+            } else {
+                window.alert("Caràcter incorrecte!");
             }
             
             // Actualitzam Vides a la pantalla.
@@ -79,8 +81,9 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
             <div id="Vides"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
         <h2>Lletres</h2>
             <div id="Lletres">_ _ _ _ _ _ _</div>
-        <br><br><br>
-        <p><a href="https://prosselloe.wordpress.com/?p=5862">
-            El joc del penjat on Scratch</a></p>
+        <br>
+        <p><strong>Crèdits: 
+            <a href="https://prosselloe.wordpress.com/?p=5862">El joc del penjat on Scratch</a>
+        </strong></p>
     </body>
 </html>
