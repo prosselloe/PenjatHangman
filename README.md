@@ -79,4 +79,20 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
         <div id="Rotar">
             <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;">
         </div>
+        
+                <h1>Prototip Joc del Penjat</h1>
+            <input id="lletra" type="text" 
+                   placeholder="Escriu una lletra minúscula" maxlength="1"> 
+            <button id="Comprovar" onclick="Comprovar()">Comprovar</button>
+        <h2>Paraula</h2>
+            <div id="Paraula">_ _ _ _ _ _ _</div>
+        <h2>Vides</h2>
+            <div id="Vides"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
+        <h2>Lletres</h2>
+            <div id="Lletres">_ _ _ _ _ _ _</div>
+        <br><br><br>
+        <p><a href="https://prosselloe.wordpress.com/?p=5862">
+            El joc del penjat on Scratch</a></p>
+
 # Crèdits
+        <h1><a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat-on-scratch/">El joc del penjat on&nbsp;Scratch</a></h1>
