@@ -1,6 +1,6 @@
 # Penjat (Hangman)
 Joc del Penjat - Juego del Ahorcado -  Hangman Game
-        <h1>&nbsp;Versió amb Imatges i Sons Joc del Penjat</h1>
+        <h1>Versió α Joc del Penjat</h1>
         <table>
             <tr>
               <td>
@@ -8,13 +8,13 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                            placeholder="Escriu una lletra minúscula" maxlength="1"> 
                     <button id="Comprovar" onclick="Comprovar()">Comprovar</button>
                 <h2>Paraula: 
-                    <a href="https://www.arabalears.cat/portada/vols-sopes-record-nostres-padrins_129_3048940.html">
+                    <a href="https://prosselloe.wordpress.com/?p=5970">
                         <font size=3>Demanes sopes?</font></a></h2>
                     <div id="Paraula" style="color: white;">
                         <strong>_ _ _ _ _ _ _</strong></div>
                 <h2>Vides: 
                     <a href="https://pccd.dites.cat/p/Tenir_set_vides%2C_com_els_gats">
-                        <font size=3>Tens 7 vides com un moix!</font></a></h2>
+                        <font size=3>Un moix en té set?</font></a></h2>
                     <div id="Vides" style="color: blue;">
                         <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
                 <h2>Lletres: 
@@ -39,23 +39,24 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             <td>
                 <br>
                 <strong>URLpistes: 
-                    <a href="https://pccd.dites.cat/p/A_la_quinta_forca">Dita 1</a> - 
-                    <a href="https://pccd.dites.cat/p/A_ca_un_penjat%2C_no_hi_anomenis_cordes">Dita 2</a> - 
+                    <a href="https://pccd.dites.cat/p/A_la_quinta_forca">Dita 1</a>
+                    <a href="https://pccd.dites.cat/p/A_ca_un_penjat%2C_no_hi_anomenis_cordes">Dita 2</a>
                     <a href="https://pccd.dites.cat/p/Setze_jutges_d%27un_jutjat_mengen_fetge_d%27un_penjat">Dita 3</a>
                 </strong>
-                <p> <strong>Crèdits: 
-                    <a href="https://prosselloe.wordpress.com/?p=5862">El joc del penjat on Scratch</a>
+                <p><strong>Crèdits: 
+                    <a href="https://prosselloe.wordpress.com/?p=5862">
+                        Joc Penjat on Scratch</a>
                 </strong></p>
             </td>          
             <td>
                 <br>
-                <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YouTube: 
+                <strong>YouTube: 
                     <a href="https://youtu.be/v53rEMHghJU?list=PLv1JHCp6B60w_KnMTu7jDdlDZ6Z0-WJ-j">
-                        El joc del penjat on Scratch</a>
+                        Joc Penjat on Scratch</a>
                 </strong>
-                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wikis: 
-                    <a href="https://ca.wikipedia.org/wiki/Penjat">Penjat</a> - 
-                    <a href="https://es.wikipedia.org/wiki/Ahorcado_(juego)">Ahorcado</a> - 
+                <p><strong>Wikis: 
+                    <a href="https://ca.wikipedia.org/wiki/Penjat">Penjat</a>
+                    <a href="https://es.wikipedia.org/wiki/Ahorcado_(juego)">Ahorcado</a>
                     <a href="https://en.wikipedia.org/wiki/Hangman_(game)">Hangman</a>
                 </strong></p>
             </td>          
@@ -72,11 +73,7 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
             <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
             <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
-        </div>
-        <div id="Caminar">
             <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;">
-        </div>
-        <div id="Rotar">
             <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;">
         </div>
         <h1>Prototip Joc del Penjat</h1>
