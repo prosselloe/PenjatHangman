@@ -50,7 +50,6 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
             function Comprovar() {
                 // Variables Locals.
                 var lletra = document.getElementById("lletra").value;
-
                 // Assignam el valor <input id="lletra" a lletra, 
                 // i deixam <input id="lletra" en blanc.
                 document.getElementById("lletra").value = "";
@@ -124,6 +123,7 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 // Actualitzam Vides a la pantalla.
                 document.getElementById("Vides").innerHTML = 
                         "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
+                document.getElementById("lletra").focus();
 
                 // Comprovam si has perdut! o has guanyat!.
                 if (Vides <= 0) {
