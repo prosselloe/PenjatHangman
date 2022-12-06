@@ -36,9 +36,10 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 color: white;
             }
             
-            #Guia {position:relative; top:-200px; left:260px;}
-            #Caminar {position:relative; top:-310px; left:430px;}
-            #Rotar {position:relative; top:-310px; left:430px;}
+            #Audios { position:relative; top:-480px; left:0px; }
+            #Guia { position:relative; top:-200px; left:260px; }
+            #Caminar { position:relative; top:-310px; left:430px; }
+            #Rotar { position:relative; top:-310px; left:430px; }
         </style>
         <script>
             // Variables Globals.
@@ -119,11 +120,11 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 } else {
                     window.alert("Caràcter incorrecte!");
                 }
+                document.getElementById("lletra").focus();
 
                 // Actualitzam Vides a la pantalla.
                 document.getElementById("Vides").innerHTML = 
                         "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
-                document.getElementById("lletra").focus();
 
                 // Comprovam si has perdut! o has guanyat!.
                 if (Vides <= 0) {
@@ -236,6 +237,7 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
             if (confirm('Anam a la quinta forca?') == false) {
                 document.body.style.backgroundImage = "url('img/fondo1.png')";
             }
+            // document.getElementById("lletra").focus();
             window.onkeypress = function(evObject) {
                 if (evObject.keyCode == 13) { Comprovar() };
             }
@@ -301,15 +303,17 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 </strong></p>
             </td>          
           </tr>
-        </table>  
-        <audio id="mystery">       <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
-        <audio id="clock_ticking"> <source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
-        <audio id="bell_toll">     <source src="aud/bell_toll.mp3" type="audio/mpeg"></audio>
-        <audio id="miau">          <source src="aud/miau.mp3" type="audio/mpeg"></audio>
-        <audio id="cheer">         <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
-        <audio id="boom_cloud">    <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
-        <audio id="bell_toll_x3">  <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
-        <audio id="cat-fight">     <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
+        </table>
+        <div id="Audios">
+            <audio id="mystery">       <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
+            <audio id="clock_ticking"> <source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+            <audio id="bell_toll">     <source src="aud/bell_toll.mp3" type="audio/mpeg"></audio>
+            <audio id="miau">          <source src="aud/miau.mp3" type="audio/mpeg"></audio>
+            <audio id="cheer">         <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
+            <audio id="boom_cloud">    <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
+            <audio id="bell_toll_x3">  <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
+            <audio id="cat-fight">     <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
+        </div>
         <div id="Guia">
             <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
             <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
