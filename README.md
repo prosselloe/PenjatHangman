@@ -1,5 +1,7 @@
 # Penjat (Hangman)
 Joc del Penjat - Juego del Ahorcado -  Hangman Game
+        <h1>Versió β Joc del Penjat</h1>
+        <div><img src="img/en-construccio.jpg" alt="En construcció" width=640px; height=480px;/></div>     
         <h1>Versió α Joc del Penjat</h1>
         <table>
             <tr>
