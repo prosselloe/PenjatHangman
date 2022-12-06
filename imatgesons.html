@@ -127,22 +127,24 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
 
                 // Comprovam si has perdut! o has guanyat!.
                 if (Vides <= 0) {
+                    window.alert("i has perdut!");
                     document.body.style.backgroundImage = "url('img/Jungle.png')";
                     document.getElementById("disfraz1").hidden = true;
                     document.getElementById("rotar").hidden = false;
                     document.getElementById("cat-fight").play();
-                    const myTimeout6 = setTimeout(BellTollPlayX3, 6000);
-                    window.alert("i has perdut!");
+                    const myTimeout6 = setTimeout(BellTollX3Play, 6000);
+                    window.alert("En pau descansi – RIP!");
                     AturaTot();
                 } else {
                     if (Paraula.length >= 14) {
                         AmagaImg();
                         document.getElementById("ahorcado").hidden = false;
+                        window.alert("i has guanyat!");
                         document.body.style.backgroundImage = "url('img/Party.png')";
                         document.getElementById("disfraz2").hidden = true;
                         document.getElementById("caminar").hidden = false;
                         document.getElementById("cheer").play();
-                        window.alert("i has guanyat!");
+                        window.alert("M'han quedat " + Vides + " vides!");
                         AturaTot();
                     } else {
                         // document.getElementById("clock_ticking").loop = true;
