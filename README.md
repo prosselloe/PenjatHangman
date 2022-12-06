@@ -1,6 +1,6 @@
 # Penjat (Hangman)
 Joc del Penjat - Juego del Ahorcado -  Hangman Game
-        <h2>Índex</h2>
+        <h2><a href="https://penjat-github.netlify.app">Índex</a></h2>
         <ul>
             <li><a href="https://penjat-github.netlify.app/prototip.html">Versió Pre-alfa o Prototip HTML/JavaScript</a></li>
             <li><a href="https://penjat-github.netlify.app/imatgesons.html">Versió α: Versió amb Imatges i Sons</a></li>
