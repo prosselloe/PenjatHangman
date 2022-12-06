@@ -23,6 +23,36 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
             document.getElementById("lletra").value = "";
             // window.alert(lletra);
             
+            // Convertim les majúsculues a minúscules
+            lletra = lletra.toLowerCase();
+
+            // Eliminam els accents o dièresis de les vocals
+            switch (lletra) {
+                case "á":
+                case "à":
+                    lletra = "a";
+                    break;
+                case "é":
+                case "è":
+                    lletra = "e";
+                    break;
+                case "í":
+                case "ï":
+                    lletra = "i";
+                    break;
+                case "ó":
+                case "ò":
+                    lletra = "o";
+                    break;
+                case "ú":
+                case "ü":
+                    lletra = "u";
+                    break;
+                default:
+                    //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+                    break;
+            }
+                
             // L'abecedari català + castellà es composa 
             // de les vint-i-vuit lletres següents: 
             // a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)

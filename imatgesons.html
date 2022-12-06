@@ -56,6 +56,36 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 document.getElementById("lletra").value = "";
                 // window.alert(lletra);
 
+                // Convertim les majúsculues a minúscules
+                lletra = lletra.toLowerCase();
+
+                // Eliminam els accents o dièresis de les vocals
+                switch (lletra) {
+                    case "á":
+                    case "à":
+                        lletra = "a";
+                        break;
+                    case "é":
+                    case "è":
+                        lletra = "e";
+                        break;
+                    case "í":
+                    case "ï":
+                        lletra = "i";
+                        break;
+                    case "ó":
+                    case "ò":
+                        lletra = "o";
+                        break;
+                    case "ú":
+                    case "ü":
+                        lletra = "u";
+                        break;
+                    default:
+                        //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+                        break;
+                }
+
                 // L'abecedari català + castellà es composa 
                 // de les vint-i-vuit lletres següents: 
                 // a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
@@ -101,7 +131,7 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                     document.getElementById("disfraz1").hidden = true;
                     document.getElementById("rotar").hidden = false;
                     document.getElementById("cat-fight").play();
-                    const myTimeout = setTimeout(BellTollPlay, 6000);
+                    const myTimeout6 = setTimeout(BellTollPlayX3, 6000);
                     window.alert("i has perdut!");
                     AturaTot();
                 } else {
@@ -117,12 +147,17 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                     } else {
                         // document.getElementById("clock_ticking").loop = true;
                         document.getElementById("clock_ticking").play();
+                        const myTimeout3 = setTimeout(BellTollPlay, 3000);
                     }
                 }
             }
 
             function BellTollPlay() {
                 document.getElementById("bell_toll").play();
+            }    
+            
+            function BellTollX3Play() {
+                document.getElementById("bell_toll_x3").play();
             }            
             
             // Deshabilitam tant <input id="lletra" com <button id="Comprovar".
@@ -193,10 +228,13 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
             }
         </script>
     </head>
-    <body onload="AmagaImg(); document.getElementById('mystery').play();" 
+    <body onload="AmagaImg(); document.getElementById('mystery').play();"
           style="background-image: url('img/Desert.png'); 
           background-size: 640px 480px; background-repeat: no-repeat;">
         <script>
+            if (confirm('Anam a la quinta forca?') == false) {
+                document.body.style.backgroundImage = "url('img/fondo1.png')";
+            }
             window.onkeypress = function(evObject) {
                 if (evObject.keyCode == 13) { Comprovar() };
             }
@@ -263,13 +301,14 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
             </td>          
           </tr>
         </table>  
-        <audio id="mystery">      <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
-        <audio id="clock_ticking"><source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
-        <audio id="miau">         <source src="aud/miau.mp3" type="audio/mpeg"></audio>
-        <audio id="cheer">        <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
-        <audio id="boom_cloud">   <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
-        <audio id="bell_toll">    <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
-        <audio id="cat-fight">    <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
+        <audio id="mystery">       <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
+        <audio id="clock_ticking"> <source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+        <audio id="bell_toll">     <source src="aud/bell_toll.mp3" type="audio/mpeg"></audio>
+        <audio id="miau">          <source src="aud/miau.mp3" type="audio/mpeg"></audio>
+        <audio id="cheer">         <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
+        <audio id="boom_cloud">    <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
+        <audio id="bell_toll_x3">  <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
+        <audio id="cat-fight">     <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
         <div id="Guia">
             <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
             <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
