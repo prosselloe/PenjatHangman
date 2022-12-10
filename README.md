@@ -79,9 +79,9 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
         <audio id="bell_toll">    <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
         <audio id="cat-fight">    <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
         <div id="Guia">
-            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
-            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
             <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
+            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
+            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
             <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;">
             <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
