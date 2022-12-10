@@ -84,8 +84,6 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
             <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;">
             <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;">
-        </div>
-                <div id="Idioma">
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=ca&_x_tr_hl=ca">
                 <img src="img/ca.png" alt="ca"/></a>
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es">
