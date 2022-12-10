@@ -71,13 +71,6 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             </td>          
           </tr>
         </table>  
-        <audio id="mystery">      <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
-        <audio id="clock_ticking"><source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
-        <audio id="miau">         <source src="aud/miau.mp3" type="audio/mpeg"></audio>
-        <audio id="cheer">        <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
-        <audio id="boom_cloud">   <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
-        <audio id="bell_toll">    <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
-        <audio id="cat-fight">    <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
         <div id="Guia">
             <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
             <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
@@ -100,6 +93,53 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button id="teclat" onclick="document.getElementById('Teclat').hidden = !document.getElementById('Teclat').hidden;">
                 <img src="img/keyboard.png" alt="ca"/></button>
+        </div>
+        <div id="Teclat">
+            <table>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="q" onclick="document.getElementById('lletra').value = 'q';">q</button>
+                    <button id="w" onclick="document.getElementById('lletra').value = 'w';">w</button>
+                    <button id="e" onclick="document.getElementById('lletra').value = 'e';">e</button>
+                    <button id="r" onclick="document.getElementById('lletra').value = 'r';">r</button>
+                    <button id="t" onclick="document.getElementById('lletra').value = 't';">t</button>
+                    <button id="y" onclick="document.getElementById('lletra').value = 'y';">y</button>
+                    <button id="u" onclick="document.getElementById('lletra').value = 'u';">u</button>
+                    <button id="i" onclick="document.getElementById('lletra').value = 'i';">i</button>
+                    <button id="o" onclick="document.getElementById('lletra').value = 'o';">o</button>
+                    <button id="p" onclick="document.getElementById('lletra').value = 'p';">p</button>
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;
+                    <button id="a" onclick="document.getElementById('lletra').value = 'a';">a</button>
+                    <button id="s" onclick="document.getElementById('lletra').value = 's';">s</button>
+                    <button id="d" onclick="document.getElementById('lletra').value = 'd';">d</button>
+                    <button id="f" onclick="document.getElementById('lletra').value = 'f';">f</button>
+                    <button id="g" onclick="document.getElementById('lletra').value = 'g';">g</button>
+                    <button id="h" onclick="document.getElementById('lletra').value = 'h';">h</button>
+                    <button id="j" onclick="document.getElementById('lletra').value = 'j';">j</button>
+                    <button id="k" onclick="document.getElementById('lletra').value = 'k';">k</button>
+                    <button id="l" onclick="document.getElementById('lletra').value = 'l';">l</button>
+                    <button id="ñ" onclick="document.getElementById('lletra').value = 'ñ';">ñ</button>
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="z" onclick="document.getElementById('lletra').value = 'z';">z</button>
+                    <button id="x" onclick="document.getElementById('lletra').value = 'x';">x</button>
+                    <button id="c" onclick="document.getElementById('lletra').value = 'c';">c</button>
+                    <button id="v" onclick="document.getElementById('lletra').value = 'v';">v</button>
+                    <button id="b" onclick="document.getElementById('lletra').value = 'b';">b</button>
+                    <button id="n" onclick="document.getElementById('lletra').value = 'n';">n</button>
+                    <button id="m" onclick="document.getElementById('lletra').value = 'm';">m</button>
+                    <button id="ç" onclick="document.getElementById('lletra').value = 'ç';">ç</button>
+                  </td>          
+                </tr>
+            </table>
         </div>
         <h1>Prototip Joc del Penjat</h1>
             <input id="lletra" type="text" 
