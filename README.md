@@ -85,6 +85,23 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;">
             <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;">
         </div>
+                <div id="Idioma">
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=ca&_x_tr_hl=ca">
+                <img src="img/ca.png" alt="ca"/></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es">
+                <img src="img/es.png" alt="es"/></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en">
+                <img src="img/gb.png" alt="en"/></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=de">
+                <img src="img/de.png" alt="de"/></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr">
+                <img src="img/fr.png" alt="fr"/></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=it&_x_tr_hl=it">
+                <img src="img/it.png" alt="it"/></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="teclat" onclick="document.getElementById('Teclat').hidden = !document.getElementById('Teclat').hidden;">
+                <img src="img/keyboard.png" alt="ca"/></button>
+        </div>
         <h1>Prototip Joc del Penjat</h1>
             <input id="lletra" type="text" 
                    placeholder="Escriu una lletra minúscula" maxlength="1"> 
