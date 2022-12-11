@@ -95,7 +95,7 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                 <img src="img/keyboard.png" alt="ca"/></button>
         </div>
         <div id="Teclat">
-            <table>
+            <table><strong>
                 <tr>
                   <td>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -109,6 +109,9 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                     <button id="i" onclick="document.getElementById('lletra').value = 'i';">i</button>
                     <button id="o" onclick="document.getElementById('lletra').value = 'o';">o</button>
                     <button id="p" onclick="document.getElementById('lletra').value = 'p';">p</button>
+                    <!--
+                    <button id="agut" onclick="alert('Sense vocals accentuades!');" style="color:red">´</button>
+                    -->
                   </td>          
                 </tr>
                 <tr>
@@ -123,12 +126,16 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                     <button id="j" onclick="document.getElementById('lletra').value = 'j';">j</button>
                     <button id="k" onclick="document.getElementById('lletra').value = 'k';">k</button>
                     <button id="l" onclick="document.getElementById('lletra').value = 'l';">l</button>
-                    <button id="ñ" onclick="document.getElementById('lletra').value = 'ñ';">ñ</button>
+                    <button id="ñ" onclick="document.getElementById('lletra').value = 'ñ';" style="color:blue">ñ</button>
+                    <!--
+                    <button id="dieresi" onclick="alert('Sense vocals amb dièrsi!');" style="color:red">¨</button>
+                    -->
+                    <button id="intro" onclick="Comprovar();">┘</button>
                   </td>          
                 </tr>
                 <tr>
                   <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="shift" onclick="alert('Sense majúscules!');" style="color:red">↑</button>
                     <button id="z" onclick="document.getElementById('lletra').value = 'z';">z</button>
                     <button id="x" onclick="document.getElementById('lletra').value = 'x';">x</button>
                     <button id="c" onclick="document.getElementById('lletra').value = 'c';">c</button>
@@ -136,10 +143,15 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
                     <button id="b" onclick="document.getElementById('lletra').value = 'b';">b</button>
                     <button id="n" onclick="document.getElementById('lletra').value = 'n';">n</button>
                     <button id="m" onclick="document.getElementById('lletra').value = 'm';">m</button>
-                    <button id="ç" onclick="document.getElementById('lletra').value = 'ç';">ç</button>
+                    <button id="ç" onclick="document.getElementById('lletra').value = 'ç';" style="color:blue">ç</button>
+                    <button id="volat" onclick="document.getElementById('lletra').value = '·';" style="color:blue">·</button>
+                    <button id="guio" onclick="document.getElementById('lletra').value = '-';" style="color:blue">-</button>
+                    <!--
+                    <button id="greu" onclick="alert('Sense vocals accentuades!');" style="color:red">`</button>
+                    -->
                   </td>          
                 </tr>
-            </table>
+            </strong></table>
         </div>
         <h1>Prototip Joc del Penjat</h1>
             <input id="lletra" type="text" 
