@@ -51,7 +51,7 @@
         // de les vint-i-vuit lletres següents: 
         // a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
         // n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
-        if (((lletra >= "a") && (lletra <= "m")) || (lletra == "ç")) {
+        if (((lletra >= "a") && (lletra <= "m")) || (lletra == "ç") || (lletra == "·")) {
             document.getElementById("miau").play();
             document.getElementById("disfraz3").hidden = true;
             document.getElementById("disfraz2").hidden = false;
@@ -61,7 +61,7 @@
             // Afegim lletra a Paraula i actualitzam la pantalla.
             Paraula = Paraula + lletra + " ";
             document.getElementById("Paraula").innerHTML = Paraula;
-        } else if (((lletra >= "n") && (lletra <= "z")) || (lletra == "ñ")) {
+        } else if (((lletra >= "n") && (lletra <= "z")) || (lletra == "ñ") || (lletra == "-")) {
             document.getElementById("boom_cloud").play();
             document.getElementById("disfraz3").hidden = true;
             document.getElementById("disfraz2").hidden = true;
