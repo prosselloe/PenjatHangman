@@ -71,7 +71,7 @@ Joc del Penjat - Juego del Ahorcado -  Hangman Game
             </td>          
           </tr>
         </table>  
-        <div id="Guia">
+        <div id="Imatges">
             <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;">
             <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;">
             <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;">
