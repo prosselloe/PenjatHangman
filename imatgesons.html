@@ -18,9 +18,19 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 document.body.style.backgroundImage = "url('img/fondo1.png')";
             }
             // document.getElementById("lletra").focus();
+            
+            // Captura de la tecla ENTER del teclat.
             window.onkeypress = function(evObject) {
                 if (evObject.keyCode == 13) { Comprovar(); };
             }
+            
+            // Comptador de temps al joc.
+            var seconds = 0;
+            function timer() {
+                seconds = seconds + 1;
+                document.getElementById("Segons").innerHTML = seconds;
+            }
+            setInterval(timer, 1000);
         </script>
         <h1>Versió α Joc del Penjat</h1>
         <table>
@@ -37,8 +47,9 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 <h2>Vides: 
                     <a href="https://pccd.dites.cat/p/Tenir_set_vides%2C_com_els_gats">
                         <font size=3>Un moix en té set?</font></a></h2>
-                    <div id="Vides" style="color: blue;">
-                        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
+                    <div id="Vides" style="color: yellow;">
+                        <strong>&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
                 <h2>Lletres: 
                     <a href="https://pccd.dites.cat/p/De_lletres">
                         <font size=3>Ets de lletres?</font></a></h2>
@@ -122,12 +133,12 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
             <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;" title="i has perdut!">
         </div>
         <div id="Idioma">
-            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=ca&_x_tr_hl=ca">
-                <img src="img/ca.png" alt="tra_ca" title="Traduir"/></a>
+            <a href="https://penjat-github.netlify.app/imatgesons.html">
+                <img src="img/ca.png" alt="tra_ca" title="en Català"/></a>
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es">
-                <img src="img/es.png" alt="tra_es" title="Traducir"/></a>
+                <img src="img/es.png" alt="tra_es" title="en Español"/></a>
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en">
-                <img src="img/gb.png" alt="tra_en" title="Translate"/></a>
+                <img src="img/gb.png" alt="tra_en" title="in English"/></a>
             <!--
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=de">
                 <img src="img/de.png" alt="tra_de" title="Übersetzen"/></a>
@@ -137,9 +148,9 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 <img src="img/it.png" alt="tra_it" title="Tradurre"/></a>
             -->
             &nbsp;&nbsp;&nbsp;
-            <a href="https://www.wordreference.com/definicio/">
+            <a href="https://dlc.iec.cat/">
                 <img src="img/ca.png" alt="dic_ca" title="Diccionari"/></a>
-            <a href="https://www.wordreference.com/definicion/">
+            <a href="https://dle.rae.es/">
                 <img src="img/es.png" alt="dic_es" title="Diccionario"/></a>
             <a href="https://www.wordreference.com/definition/">
                 <img src="img/gb.png" alt="dic_en" title="Dictionary"/></a>
@@ -215,5 +226,6 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
                 </tr>
             </strong></table>
         </div>
+        <div id="Segons" style="color: blue;">0/div>
     </body>
-</html>
+</html> 
