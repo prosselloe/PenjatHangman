@@ -21,8 +21,16 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html
             
             // Captura de la tecla ENTER del teclat.
             window.onkeypress = function(evObject) {
-                if (evObject.keyCode == 13) { Comprovar(); };
+                if (evObject.keyCode == 13) { Comprovar(); }
             }
+
+            // Dificultam la visualització del codi font.
+            document.oncontextmenu = function(){ return false; }
+            function KeyPress(e) {
+                var evtobj = window.event? event : e
+                if (evtobj.keyCode == 85 && evtobj.ctrlKey) { return false; }
+            }
+            document.onkeydown = KeyPress;
             
             // Comptador de temps al joc.
             var seconds = 0;

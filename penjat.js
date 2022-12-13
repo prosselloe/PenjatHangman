@@ -48,11 +48,11 @@
         }
 
         /*
-           L'abecedari català + castellà es composa 
-           de les vint-i-vuit lletres següents: 
-           a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
-           n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
-        */
+         * L'abecedari català + castellà es composa 
+         * de les vint-i-vuit lletres següents: 
+         * a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
+         * n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
+         */
         if (((lletra >= "a") && (lletra <= "m")) || (lletra == "ç") || 
              (lletra == "·")) {
             document.getElementById("miau").play();
