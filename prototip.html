@@ -102,6 +102,15 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
     </script>
     </head>
     <body>
+        <script>
+            // Dificultam la visualització del codi font.
+            document.oncontextmenu = function(){ return false; }
+            function KeyPress(e) {
+                var evtobj = window.event? event : e
+                if (evtobj.keyCode == 85 && evtobj.ctrlKey) { return false; }
+            }
+            document.onkeydown = KeyPress;
+        </script>
         <h1>Prototip Joc del Penjat</h1>
             <input id="lletra" type="text" 
                    placeholder="Escriu una lletra minúscula" maxlength="1"> 
