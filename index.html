@@ -11,10 +11,13 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
-            function Finestra(URL)
-            {
+            function Finestra(URL) {
+                var amplada = 660;
+                var alçada = 565;
+                var x = parseInt((window.screen.width / 2) - (amplada / 2));
+                var y = parseInt((window.screen.height / 2) - (alçada / 2));
                 var DIM = "location=0, menubar=0, resizable=0, scrollbars=0, status=0, titlebar=0, toolbar=0, \n\
-                           top=0, left=0, width=660, height=565, copyhistory=0, directories=0";
+                           top=" + y +  ", left=" + x + ", width=660, height=565, copyhistory=0, directories=0";
                 WIN = window.open(URL, "", DIM);
             }
         </script> 
