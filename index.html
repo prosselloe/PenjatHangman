@@ -10,14 +10,28 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
         <title>Joc del Penjat</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function Finestra(URL)
+            {
+                var DIM = "location=0, menubar=0, resizable=0, scrollbars=0, status=0, titlebar=0, toolbar=0, \n\
+                           top=0, left=0, width=660, height=565, copyhistory=0, directories=0";
+                WIN = window.open(URL, "", DIM);
+            }
+        </script> 
     </head>
     <body>
         <h2>Joc del Penjat</h2>
         <ul>
+            <!--
             <li><a href="prototip.html">Versió Pre-alfa o Prototip HTML/JavaScript</a></li>
             <li><a href="imatgesons.html">Versió α: Versió amb Imatges i Sons</a></li>
             <li><a href="estructures.html">Versió β: Versió amb Estructures de Dades</a></li>
             <li><a href="basedades.html">Versió γ: Versió amb Base de Dades</a></li>
+            --> 
+            <li><a href="javascript:Finestra('prototip.html')">Versió Pre-alfa o Prototip HTML/JavaScript</a></li>
+            <li><a href="javascript:Finestra('imatgesons.html')">Versió α: Versió amb Imatges i Sons</a></li>
+            <li><a href="javascript:Finestra('estructures.html')">Versió β: Versió amb Estructures de Dades</a></li>
+            <li><a href="javascript:Finestra('basedades.html')">Versió γ: Versió amb Base de Dades</a></li>
         </ul>  
     </body>
 </html>

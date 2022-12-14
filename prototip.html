@@ -104,10 +104,10 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
     <body>
         <script>
             // Dificultam la visualització del codi font.
-            document.oncontextmenu = function(){ return false; }
+            document.oncontextmenu = function() { return false; }
             function KeyPress(e) {
-                var evtobj = window.event? event : e
-                if (evtobj.keyCode == 85 && evtobj.ctrlKey) { return false; }
+                var evObject = window.event? event : e;
+                if (evObject.keyCode != 13 && evObject.ctrlKey) { return false; }
             }
             document.onkeydown = KeyPress;
         </script>
@@ -123,7 +123,7 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
             <div id="Lletres">_ _ _ _ _ _ _</div>
         <br>
         <p><strong>Crèdits: 
-            <a href="https://prosselloe.wordpress.com/?p=5862">El joc del penjat on Scratch</a>
+            <a href="https://prosselloe.wordpress.com/?p=5862" target="_blank">El joc del penjat on Scratch</a>
         </strong></p>
     </body>
 </html>
