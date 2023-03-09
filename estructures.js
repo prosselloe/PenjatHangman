@@ -11,9 +11,15 @@
     // Llista de paraules per al joc
     var paraules = ["cordes", "fetge", "forca", "jutges", 
         "jutjat", "mengen", "penjat", "quinta", "setze"];
-
+    var pistes = ["A la quinta forca", 
+        "A ca un penjat, no hi anomenis cordes", 
+        "Setze jutges d'un jutjat mengen fetge d'un penjat"];
+    var paraulespistes = [1, 2, 0, 2, 2, 2, 1, 0, 2];
+    
     // Escull una paraula aleatòriament
-    var paraula = paraules[Math.floor(Math.random() * paraules.length)];
+    var aleatori = Math.floor(Math.random() * paraules.length);
+    var paraula = paraules[aleatori];
+    var pista = pistes[paraulespistes[aleatori]];
 
     // Marcam cada lletra amb un "_"
     for (var i = 0; i < paraula.length; i++) {
@@ -28,7 +34,7 @@
         // i deixam <input id="lletra" en blanc.
         document.getElementById("lletra").value = "";
         // window.alert(lletra);
-
+        
         // Convertim les majúsculues a minúscules
         lletra = lletra.toLowerCase();
 
@@ -119,6 +125,11 @@
             if (Paraula.indexOf("_") == -1) {
                 AmagaImg();
                 document.getElementById("ahorcado").hidden = false;
+                
+                // Calculam i mostram la puntuació
+                var punts = paraula.length * Vides * 10 - document.getElementById("Segons").innerHTML;
+                document.getElementById("Punts").innerHTML = "Puntuació: " + punts;
+                
                 window.alert("i has guanyat!");
                 document.body.style.backgroundImage = "url('img/Party.png')";
                 document.getElementById("disfraz2").hidden = true;
@@ -146,6 +157,7 @@
     function AturaTot() {
         document.getElementById("lletra").disabled = true;
         document.getElementById("Comprovar").disabled = true;
+        document.getElementById("Pista").disabled = true;
         document.getElementById("Segons").hidden = true;    }
 
     // Amagam totes les imatges.
