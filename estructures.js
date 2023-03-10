@@ -8,7 +8,7 @@
     var Lletres = "";
     var Vides = 7;
 
-    // Llista de paraules per al joc
+    // Llista de paraules per al joc i les pistes associades
     var paraules = ["cordes", "fetge", "forca", "jutges", 
         "jutjat", "mengen", "penjat", "quinta", "setze"];
     var pistes = ["A la quinta forca", 
@@ -16,11 +16,28 @@
         "Setze jutges d'un jutjat mengen fetge d'un penjat"];
     var paraulespistes = [1, 2, 0, 2, 2, 2, 1, 0, 2];
     
+    // Simulam una taula de base de dades amb un array d'objectes
+    var taula = [
+        {"paraula": "cordes", "pista": "A ca un penjat, no hi anomenis cordes"},
+        {"paraula": "fetge",  "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"paraula": "forca",  "pista": "A la quinta forca"},
+        {"paraula": "jutges", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"paraula": "jutjat", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"paraula": "mengen", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"paraula": "penjat", "pista": "A ca un penjat, no hi anomenis cordes"},
+        {"paraula": "quinta", "pista": "A la quinta forca"},
+        {"paraula": "setze",  "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}    
+    ];
+    
     // Escull una paraula aleatòriament
     var aleatori = Math.floor(Math.random() * paraules.length);
     var paraula = paraules[aleatori];
     var pista = pistes[paraulespistes[aleatori]];
-
+    
+    // Alternativament, fent servir l'array d'objectes
+    var paraula = taula[aleatori].paraula;
+    var pista = taula[aleatori].pista;
+    
     // Marcam cada lletra amb un "_"
     for (var i = 0; i < paraula.length; i++) {
         Paraula[i] = "_";
@@ -128,6 +145,7 @@
                 
                 // Calculam i mostram la puntuació
                 var punts = paraula.length * Vides * 10 - document.getElementById("Segons").innerHTML;
+                if (punts < 0) { punts = 0; };
                 document.getElementById("Punts").innerHTML = "Puntuació: " + punts;
                 
                 window.alert("i has guanyat!");
