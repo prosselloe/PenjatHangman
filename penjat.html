@@ -1,27 +1,3 @@
-        <div id="Audios">
-            <audio id="mystery">       <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
-            <audio id="clock_ticking"> <source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
-            <audio id="bell_toll">     <source src="aud/bell_toll.mp3" type="audio/mpeg"></audio>
-            <audio id="miau">          <source src="aud/miau.mp3" type="audio/mpeg"></audio>
-            <audio id="cheer">         <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
-            <audio id="boom_cloud">    <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
-            <audio id="bell_toll_x3">  <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
-            <audio id="cat-fight">     <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
-        </div>
-        <div id="Guia">
-            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;" 
-                 title="Hola, soc en Pep Gonella i seré
-          el teu Moix Guia, perquè 
-          els cans no tenen set vides!">
-            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;" title="Has encertat!">
-            <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;" title="Has fallat!">
-        </div>
-        <div id="Caminar">
-            <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;" title="i has guanyat!">
-        </div>
-        <div id="Rotar">
-            <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;" title="i has perdut!">
-        </div>
         <div id="Idioma" translate="no">
             <a href="https://penjat-github.netlify.app/imatgesons.html">
                 <img src="img/ca.png" alt="tra_ca" title="en Català"></a>
@@ -48,6 +24,28 @@
             <button id="teclat" onclick="document.getElementById('Teclat').hidden = 
                                         !document.getElementById('Teclat').hidden;">
                 <img src="img/keyboard.png" alt="teclat" title="Mostra o Amaga"></button>
+        </div>
+        <div id="Sons"><button id="sons" 
+            onclick="document.getElementById('off').hidden = document.getElementById('on').hidden;
+                     document.getElementById('on').hidden = !document.getElementById('off').hidden;">
+            <img src="img/on.png" id="on"><img src="img/off.png" id="off" hidden></button>
+        </div> 
+        <div id="Pista"><button id="pista" onclick="alert(pista)">Pista</button></div> 
+        <div id="Segons" style="color: blue;">0</div> 
+        <div id="Punts" style="color: green;"></div> 
+        <div id="Guia">
+            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;" 
+                 title="Hola, soc en Pep Gonella i seré
+          el teu Moix Guia, perquè 
+          els cans no tenen set vides!">
+            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;" title="Has encertat!">
+            <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;" title="Has fallat!">
+        </div>
+        <div id="Caminar">
+            <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;" title="i has guanyat!">
+        </div>
+        <div id="Rotar">
+            <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;" title="i has perdut!">
         </div>
         <div id="Teclat" translate="no">
             <table><strong>
@@ -116,11 +114,13 @@
                 </tr>
             </strong></table>
         </div>
-        <div id="Sons"><button id="sons" 
-            onclick="document.getElementById('off').hidden = document.getElementById('on').hidden;
-                     document.getElementById('on').hidden = !document.getElementById('off').hidden;">
-            <img src="img/on.png" id="on"><img src="img/off.png" id="off" hidden></button>
-        </div> 
-        <div id="Pista"><button id="pista" onclick="alert(pista)">Pista</button></div> 
-        <div id="Segons" style="color: blue;">0</div> 
-        <div id="Punts" style="color: green;"></div> 
+        <div id="Audios">
+            <audio id="mystery">       <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
+            <audio id="clock_ticking"> <source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+            <audio id="bell_toll">     <source src="aud/bell_toll.mp3" type="audio/mpeg"></audio>
+            <audio id="miau">          <source src="aud/miau.mp3" type="audio/mpeg"></audio>
+            <audio id="cheer">         <source src="aud/cheer.mp3" type="audio/mpeg"></audio>
+            <audio id="boom_cloud">    <source src="aud/boom_cloud.mp3" type="audio/mpeg"></audio>
+            <audio id="bell_toll_x3">  <source src="aud/bell_toll_x3.mp3" type="audio/mpeg"></audio>
+            <audio id="cat-fight">     <source src="aud/cat-fight.mp3" type="audio/mpeg"></audio>
+        </div>
