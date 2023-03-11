@@ -226,7 +226,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         document.getElementById('Teclat').hidden = true;
         
         document.getElementById("Paraula").innerHTML = Paraula;
-   }
+    }
 
     // Mostram la imatge corresponent.
     function MostraImg() {
