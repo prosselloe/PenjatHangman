@@ -5,7 +5,7 @@
  */
     // Variables Globals.
     var Paraula = [];
-    var Lletres = "";
+    var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
     var Vides = 7;
 
     // Llista de paraules per al joc i les pistes associades
@@ -82,6 +82,13 @@
                 break;
         }
 
+        /* 
+         * Comprovam que la lletra no sigui repetida, Inici
+        */    
+        if ((Paraula.indexOf(lletra) != -1) || (Lletres.indexOf(lletra) != -1)) {
+            window.alert("Lletra repetida!");
+        } else {
+            
         /*
          * Cercam la posició de la lletra a la paraula, si no hi es, obtenim -1
          */
@@ -110,11 +117,14 @@
             window.alert("Has fallat!");
 
             // Afegim lletra a Lletres i actualitzam la pantalla.
-            Lletres = Lletres + "<del>" + lletra + "<del>,";
+            // Lletres = Lletres + "<del>" + lletra + "<del>,";
+            // Lletres.push(lletra);
+            Lletres[7 - Vides] = lletra;
             document.getElementById("Lletres").innerHTML = Lletres;
-
+            
             // Decrementam el comptador Vides.    
-            Vides = Vides - 1;
+            // Vides = Vides - 1;
+            Vides--;
             // window.alert(Vides);
 
             // Mostram la imatge corresponent.
@@ -122,6 +132,12 @@
         } else {
             window.alert("Caràcter incorrecte!");
         }
+        
+        /*
+         * Comprovam que la lletra no sigui repetida. Final
+        */
+        }
+        
         document.getElementById("lletra").focus();
 
         // Actualitzam Vides a la pantalla.
@@ -175,13 +191,13 @@
     function AturaTot() {
         document.getElementById("lletra").disabled = true;
         document.getElementById("Comprovar").disabled = true;
+        document.getElementById('teclat').disabled = true;
         document.getElementById("Pista").disabled = true;
-        document.getElementById("Segons").hidden = true;    }
+        document.getElementById("Segons").hidden = true;    
+    }
 
     // Amagam totes les imatges.
     function AmagaImg() {
-        document.getElementById("Paraula").innerHTML = Paraula;
-
         document.getElementById("ahorcado_6").hidden = true;
         document.getElementById("ahorcado_5").hidden = true;
         document.getElementById("ahorcado_4").hidden = true;
@@ -199,7 +215,9 @@
 
         document.getElementById("Audios").hidden = true;
         document.getElementById('Teclat').hidden = true;
-    }
+        
+        document.getElementById("Paraula").innerHTML = Paraula;
+   }
 
     // Mostram la imatge corresponent.
     function MostraImg() {
