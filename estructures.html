@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html
+Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i estructures.js
 -->
 <html>
     <head>
@@ -10,7 +10,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html
         <link rel="stylesheet" href="penjat.css">
         <script src="estructures.js"></script>
     </head>
-    <body onload="AmagaImg(); document.getElementById('mystery').play();"
+    <body onload="document.getElementById('mystery').play(); AmagaImg();"
           style="background-image: url('img/Desert.png'); 
           background-size: 640px 480px; background-repeat: no-repeat;">
         <script>
@@ -29,8 +29,6 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html
             
             if (confirm('Anam a la quinta forca?') == false) {
                 document.body.style.backgroundImage = "url('img/fondo1.png')";
-            } else {
-                document.body.style.backgroundImage = "url('img/Desert.png')";
             }
             // document.getElementById("lletra").focus();
 
@@ -48,7 +46,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html
               <td>
                     <input id="lletra" type="text" 
                            placeholder="Escriu una lletra minúscula" maxlength="1"> 
-                    <button id="Comprovar" onclick="Comprovar();">Comprovar</button>
+                    <button id="comprovar" onclick="Comprovar();">Comprovar</button>
                 <h2>Paraula: 
                     <a href="https://prosselloe.wordpress.com/?p=5970" target="_blank">
                         <font size=3 translate="no">Demanes sopes?</font></a></h2>

@@ -1,8 +1,6 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i estructures.js
+*/
     // Variables Globals.
     var Paraula = [];
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
@@ -94,7 +92,9 @@
          */
         var pos = paraula.indexOf(lletra);
         if (pos != -1) {
-            document.getElementById("miau").play();
+            if (document.getElementById('off').hidden) {            
+                document.getElementById("miau").play();
+            }
             document.getElementById("disfraz3").hidden = true;
             document.getElementById("disfraz2").hidden = false;
             document.getElementById("disfraz1").hidden = true;
@@ -110,7 +110,9 @@
         } else if (((lletra >= "a") && (lletra <= "z")) || 
                     (lletra == "ñ") || (lletra == "-") || 
                     (lletra == "ç") || (lletra == "·")) {
-            document.getElementById("boom_cloud").play();
+            if (document.getElementById('off').hidden) {
+                document.getElementById("boom_cloud").play();
+            }
             document.getElementById("disfraz3").hidden = true;
             document.getElementById("disfraz2").hidden = true;
             document.getElementById("disfraz1").hidden = false;
@@ -151,8 +153,10 @@
             document.body.style.backgroundImage = "url('img/Jungle.png')";
             document.getElementById("disfraz1").hidden = true;
             document.getElementById("rotar").hidden = false;
-            document.getElementById("cat-fight").play();
-            const myTimeout6 = setTimeout(BellTollX3Play, 6000);
+            if (document.getElementById('off').hidden) {
+                document.getElementById("cat-fight").play();
+                const myTimeout6 = setTimeout(BellTollX3Play, 6000);
+            }            
             AturaTot();
         } else {
             if (Paraula.indexOf("_") == -1) {
@@ -168,12 +172,16 @@
                 document.body.style.backgroundImage = "url('img/Party.png')";
                 document.getElementById("disfraz2").hidden = true;
                 document.getElementById("caminar").hidden = false;
-                document.getElementById("cheer").play();
+                if (document.getElementById('off').hidden) {
+                    document.getElementById("cheer").play();
+                }
                 AturaTot();
             } else {
-                // document.getElementById("clock_ticking").loop = true;
-                document.getElementById("clock_ticking").play();
-                const myTimeout3 = setTimeout(BellTollPlay, 3000);
+                if (document.getElementById('off').hidden) {
+                    // document.getElementById("clock_ticking").loop = true;
+                    document.getElementById("clock_ticking").play();
+                    const myTimeout3 = setTimeout(BellTollPlay, 3000);
+                }
             }
         }
     }
@@ -190,9 +198,10 @@
     // Deshabilitam tant <input id="lletra" com <button id="Comprovar".
     function AturaTot() {
         document.getElementById("lletra").disabled = true;
-        document.getElementById("Comprovar").disabled = true;
+        document.getElementById("comprovar").disabled = true;
         document.getElementById('teclat').disabled = true;
-        document.getElementById("Pista").disabled = true;
+        document.getElementById('sons').disabled = true;
+        document.getElementById("pista").disabled = true;
         document.getElementById("Segons").hidden = true;    
     }
 
