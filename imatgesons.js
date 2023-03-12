@@ -152,8 +152,8 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         document.getElementById("rotar").hidden = true;
 
         document.getElementById("Audios").style.display = "none";
-        document.getElementById("Sons").disabled = true;
-        document.getElementById("Pista").disabled = true;
+        document.getElementById("sons").disabled = true;
+        document.getElementById("pista").disabled = true;
         document.getElementById('Teclat').hidden = true;
         
         document.body.style.display = "block";
