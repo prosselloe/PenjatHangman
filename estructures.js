@@ -195,7 +195,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         document.getElementById("bell_toll_x3").play();
     }            
 
-    // Deshabilitam tant <input id="lletra" com <button id="Comprovar".
+    // Deshabilitam tant <input id="lletra" com <button id="comprovar".
     function AturaTot() {
         document.getElementById("lletra").disabled = true;
         document.getElementById("comprovar").disabled = true;
@@ -222,10 +222,11 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         document.getElementById("caminar").hidden = true;
         document.getElementById("rotar").hidden = true;
 
-        document.getElementById("Audios").hidden = true;
+        document.getElementById("Audios").style.display = "none";
         document.getElementById('Teclat').hidden = true;
         
         document.getElementById("Paraula").innerHTML = Paraula;
+        document.body.style.display = "block";
     }
 
     // Mostram la imatge corresponent.

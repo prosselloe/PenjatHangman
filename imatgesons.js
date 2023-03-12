@@ -126,11 +126,13 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         document.getElementById("bell_toll_x3").play();
     }            
 
-    // Deshabilitam tant <input id="lletra" com <button id="Comprovar".
+    // Deshabilitam tant <input id="lletra" com <button id="comprovar".
     function AturaTot() {
         document.getElementById("lletra").disabled = true;
-        document.getElementById("Comprovar").disabled = true;
-        document.getElementById("Segons").hidden = true;    }
+        document.getElementById("comprovar").disabled = true;
+        document.getElementById('teclat').disabled = true;
+        document.getElementById("Segons").hidden = true;    
+    }
 
     // Amagam totes les imatges.
     function AmagaImg() {
@@ -149,8 +151,12 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         document.getElementById("caminar").hidden = true;
         document.getElementById("rotar").hidden = true;
 
-        document.getElementById("Audios").hidden = true;
+        document.getElementById("Audios").style.display = "none";
+        document.getElementById("Sons").disabled = true;
+        document.getElementById("Pista").disabled = true;
         document.getElementById('Teclat').hidden = true;
+        
+        document.body.style.display = "block";
     }
 
     // Mostram la imatge corresponent.
