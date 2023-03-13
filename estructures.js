@@ -1,7 +1,116 @@
 /* 
 Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i estructures.js
 */
-    // Variables Globals.
+
+// Diferents idiomes per la GUI
+const Idiomes = [
+    {
+        "Id": "ca",
+        "Titol": "Versió amb Estructures de Dades Joc del Penjat",
+        "Versio": "Versió β Joc del Penjat",
+        "Input": "Escriu una lletra minúscula",
+        "Pregunta": "Anam a la quinta forca?",
+        "Comprovar": "Comprovar",
+        "Paraula": "Paraula",
+        "Sopes": "Demanes sopes?",
+        "Pista": "Pista",
+        "Vides": "Vides",
+        "Moix": "Un moix en té set?",
+        "Lletres": "Lletres",
+        "Ets": "Ets de lletres?",
+        "URLpistes": "URLpistes",
+        "Dita": "Dita",
+        "Dita1": "A la quinta forca, ",
+        "Dita2": "A ca un penjat, no hi anomenis cordes, ",
+        "Dita3": "Setze jutges d'un jutjat mengen fetge d'un penjat, …",
+        "Credits": "Crèdits",
+        "YouTube": "Joc Penjat on Scratch",
+        "Wikis": "Penjat",
+        "Idioma": "en Català",
+        "Diccionari": "Diccionari",
+        "Teclat": "Mostra o Amaga",
+        "Incorrecte": "Caràcter incorrecte!",
+        "Repetida": "Lletra repetida!",
+        "Encertat": "Has encertat!",
+        "Guanyat": "i has guanyat!",
+        "Fallat": "Has fallat!",
+        "Perdut": "i has perdut!",
+        "Descansi": "En pau descansi – RIP!",
+        "Puntuacio": "Puntuació"
+    },
+    {
+        "Id": "es",
+        "Titol": "Versión con Estructuras de Datos Juego del Ahorcado",
+        "Versio": "Versión β Juego del Ahorcado",
+        "Input": "Escribe una letra minúscula",
+        "Pregunta": "Vamos al quinto pino?",
+        "Comprovar": "Comprobar",
+        "Paraula": "Palabra",
+        "Sopes": "Te rindes?",
+        "Pista": "Pista",
+        "Vides": "Vidas",
+        "Moix": "Un gato tiene siete?",
+        "Lletres": "Letras",
+        "Ets": "Eres de letras?",
+        "URLpistes": "URLpistas",
+        "Dita": "Dicho",
+        "Dita1": "Al quinto pino. ",
+        "Dita2": "En casa un ahorcado, no hables de cuerdas,",
+        "Dita3": "Dieciséis jueces de un juzgado comen hígado de un ahorcado, …",
+        "Credits": "Crèditos",
+        "YouTube": "Juego Ahorcado on Scratch",
+        "Wikis": "Ahorcado",
+        "Idioma": "en Español",
+        "Diccionari": "Diccionario",
+        "Teclat": "Muestra o Esconde",
+        "Incorrecte": "Carácter incorrecto!",
+        "Repetida": "Letra repetida!",
+        "Encertat": "Has acertado!",
+        "Guanyat": "y has ganado!",
+        "Fallat": "Has fallado!",
+        "Perdut": "y has perdido!",
+        "Descansi": "En paz descanse - RIP!",
+        "Puntuacio": "Puntuación"
+    },
+    {
+        "Id": "en",
+        "Titol": "Hangman Game Images and Sounds Version",
+        "Versio": "Hangman Game β Versión",
+        "Input": "Write a lowercase letter",
+        "Pregunta": "Are we going to the boondocks?",
+        "Comprovar": "Check it",
+        "Paraula": "Word",
+        "Sopes": "You give up?",
+        "Pista": "Clue",
+        "Vides": "Lives",
+        "Moix": "A cat has seven?",
+        "Lletres": "Letters",
+        "Ets": "Are you in liberal arts?",
+        "URLpistes": "URLclues",
+        "Dita": "Saying",
+        "Dita1": "To the boondocks,",
+        "Dita2": "In a hanged man's home, don't talk about ropes,",
+        "Dita3": "Sixteen judges of a court eat the liver of a hangman, …",
+        "Credits": "Credits",
+        "YouTube": "Hangman Game on Scratch",
+        "Wikis": "Hangman",
+        "Idioma": "in English",
+        "Diccionari": "Dictionary",
+        "Teclat": "Show or Hide",
+        "Incorrecte": "Wrong character!",
+        "Repetida": "Repeated letter!",
+        "Encertat": "You're right!",
+        "Guanyat": "and you have won!",
+        "Fallat": "You have failed!",
+        "Perdut": "and you have lost!",
+        "Descansi": "Rest in peace - RIP!",
+        "Puntuacio": "Score"
+    }
+]
+let Idioma = Idiomes.find(Idioma => Idioma.Id === "en");
+// window.alert(Idioma.Titol);
+
+// Variables Globals.
     var Paraula = [];
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
     var Vides = 7;
@@ -84,7 +193,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
          * Comprovam que la lletra no sigui repetida, Inici
         */    
         if ((Paraula.indexOf(lletra) != -1) || (Lletres.indexOf(lletra) != -1)) {
-            window.alert("Lletra repetida!");
+            window.alert(Idioma.Repetida);
         } else {
             
         /*
@@ -98,7 +207,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
             document.getElementById("disfraz3").hidden = true;
             document.getElementById("disfraz2").hidden = false;
             document.getElementById("disfraz1").hidden = true;
-            window.alert("Has encertat!");
+            window.alert(Idioma.Encertat);
 
             // Afegim lletra a Paraula i actualitzam la pantalla.
             for (var i = pos; i < paraula.length; i++) {
@@ -116,7 +225,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
             document.getElementById("disfraz3").hidden = true;
             document.getElementById("disfraz2").hidden = true;
             document.getElementById("disfraz1").hidden = false;
-            window.alert("Has fallat!");
+            window.alert(Idioma.Fallat);
 
             // Afegim lletra a Lletres i actualitzam la pantalla.
             // Lletres = Lletres + "<del>" + lletra + "<del>,";
@@ -132,7 +241,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
             // Mostram la imatge corresponent.
             MostraImg();
         } else {
-            window.alert("Caràcter incorrecte!");
+            window.alert(Idioma.Incorrecte);
         }
         
         /*
@@ -149,7 +258,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
 
         // Comprovam si has perdut! o has guanyat!.
         if (Vides <= 0) {
-            window.alert("i has perdut!");
+            window.alert(Idioma.Perdut);
             document.body.style.backgroundImage = "url('img/Jungle.png')";
             document.getElementById("disfraz1").hidden = true;
             document.getElementById("rotar").hidden = false;
@@ -168,7 +277,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
                 if (punts < 0) { punts = 0; };
                 document.getElementById("Punts").innerHTML = "Puntuació: " + punts;
                 
-                window.alert("i has guanyat!");
+                window.alert(Idioma.Guanyat);
                 document.body.style.backgroundImage = "url('img/Party.png')";
                 document.getElementById("disfraz2").hidden = true;
                 document.getElementById("caminar").hidden = false;
@@ -191,7 +300,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
     }    
 
     function BellTollX3Play() {
-        window.alert("En pau descansi – RIP!");
+        window.alert(Idioma.Descansi);
         document.getElementById("bell_toll_x3").play();
     }            
 
@@ -227,8 +336,20 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         
         document.getElementById("Paraula").innerHTML = Paraula;
         document.body.style.display = "block";
+        
+        // Canviam els diferents literals de la GUI segons l'idioma
+        CanviarId();
     }
 
+    // Canviam els diferents literals de la GUI segons l'idioma
+    function CanviarId() {
+        document.title = Idioma.Titol;
+        document.getElementById("Versio").innerHTML = Idioma.Versio;
+        document.getElementById("lletra").placeholder = Idioma.Input;
+        document.getElementById("comprovar").innerHTML = Idioma.Comprovar;
+        document.getElementById("pista").innerHTML = Idioma.Pista;        
+    }
+        
     // Mostram la imatge corresponent.
     function MostraImg() {
         switch (Vides) {
