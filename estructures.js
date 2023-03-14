@@ -5,25 +5,25 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
 // Diferents idiomes per la GUI
 const Idiomes = [
     {
-        "Id": "ca",
+        "IdIdioma": "ca",
         "Titol": "Versió amb Estructures de Dades Joc del Penjat",
         "Versio": "Versió β Joc del Penjat",
         "Input": "Escriu una lletra minúscula",
         "Pregunta": "Anam a la quinta forca?",
         "Comprovar": "Comprovar",
-        "Paraula": "Paraula",
+        "Paraula": "Paraula:",
         "Sopes": "Demanes sopes?",
         "Pista": "Pista",
-        "Vides": "Vides",
+        "Vides": "Vides:",
         "Moix": "Un moix en té set?",
-        "Lletres": "Lletres",
+        "Lletres": "Lletres:",
         "Ets": "Ets de lletres?",
-        "URLpistes": "URLpistes",
+        "URLpistes": "URLpistes:",
         "Dita": "Dita",
         "Dita1": "A la quinta forca, ",
         "Dita2": "A ca un penjat, no hi anomenis cordes, ",
         "Dita3": "Setze jutges d'un jutjat mengen fetge d'un penjat, …",
-        "Credits": "Crèdits",
+        "Credits": "Crèdits:",
         "YouTube": "Joc Penjat on Scratch",
         "Wikis": "Penjat",
         "Idioma": "en Català",
@@ -39,25 +39,25 @@ const Idiomes = [
         "Puntuacio": "Puntuació"
     },
     {
-        "Id": "es",
+        "IdIdioma": "es",
         "Titol": "Versión con Estructuras de Datos Juego del Ahorcado",
         "Versio": "Versión β Juego del Ahorcado",
         "Input": "Escribe una letra minúscula",
         "Pregunta": "Vamos al quinto pino?",
         "Comprovar": "Comprobar",
-        "Paraula": "Palabra",
+        "Paraula": "Palabra:",
         "Sopes": "Te rindes?",
         "Pista": "Pista",
-        "Vides": "Vidas",
+        "Vides": "Vidas:",
         "Moix": "Un gato tiene siete?",
-        "Lletres": "Letras",
+        "Lletres": "Letras:",
         "Ets": "Eres de letras?",
-        "URLpistes": "URLpistas",
+        "URLpistes": "URLpistas:",
         "Dita": "Dicho",
         "Dita1": "Al quinto pino. ",
         "Dita2": "En casa un ahorcado, no hables de cuerdas,",
         "Dita3": "Dieciséis jueces de un juzgado comen hígado de un ahorcado, …",
-        "Credits": "Crèditos",
+        "Credits": "Crèditos:",
         "YouTube": "Juego Ahorcado on Scratch",
         "Wikis": "Ahorcado",
         "Idioma": "en Español",
@@ -73,25 +73,25 @@ const Idiomes = [
         "Puntuacio": "Puntuación"
     },
     {
-        "Id": "en",
+        "IdIdioma": "en",
         "Titol": "Hangman Game Images and Sounds Version",
         "Versio": "Hangman Game β Versión",
         "Input": "Write a lowercase letter",
         "Pregunta": "Are we going to the boondocks?",
         "Comprovar": "Check it",
-        "Paraula": "Word",
+        "Paraula": "Word:",
         "Sopes": "You give up?",
         "Pista": "Clue",
-        "Vides": "Lives",
+        "Vides": "Lives:",
         "Moix": "A cat has seven?",
-        "Lletres": "Letters",
+        "Lletres": "Letters:",
         "Ets": "Are you in liberal arts?",
-        "URLpistes": "URLclues",
+        "URLpistes": "URLclues:",
         "Dita": "Saying",
         "Dita1": "To the boondocks,",
         "Dita2": "In a hanged man's home, don't talk about ropes,",
         "Dita3": "Sixteen judges of a court eat the liver of a hangman, …",
-        "Credits": "Credits",
+        "Credits": "Credits:",
         "YouTube": "Hangman Game on Scratch",
         "Wikis": "Hangman",
         "Idioma": "in English",
@@ -107,7 +107,7 @@ const Idiomes = [
         "Puntuacio": "Score"
     }
 ]
-let Idioma = Idiomes.find(Idioma => Idioma.Id === "en");
+let Idioma = Idiomes.find(Idioma => Idioma.IdIdioma === "en");
 // window.alert(Idioma.Titol);
 
 // Variables Globals.
@@ -215,7 +215,7 @@ let Idioma = Idiomes.find(Idioma => Idioma.Id === "en");
                 Paraula[i] = lletra;
               }
             }
-            document.getElementById("Paraula").innerHTML = Paraula;
+            document.getElementById("paraula").innerHTML = Paraula;
         } else if (((lletra >= "a") && (lletra <= "z")) || 
                     (lletra == "ñ") || (lletra == "-") || 
                     (lletra == "ç") || (lletra == "·")) {
@@ -231,7 +231,7 @@ let Idioma = Idiomes.find(Idioma => Idioma.Id === "en");
             // Lletres = Lletres + "<del>" + lletra + "<del>,";
             // Lletres.push(lletra);
             Lletres[7 - Vides] = lletra;
-            document.getElementById("Lletres").innerHTML = Lletres;
+            document.getElementById("lletres").innerHTML = Lletres;
             
             // Decrementam el comptador Vides.    
             // Vides = Vides - 1;
@@ -252,7 +252,7 @@ let Idioma = Idiomes.find(Idioma => Idioma.Id === "en");
         document.getElementById("lletra").focus();
 
         // Actualitzam Vides a la pantalla.
-        document.getElementById("Vides").innerHTML = 
+        document.getElementById("vides").innerHTML = 
                 "&nbsp;&nbsp;&nbsp;\n\
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
 
@@ -334,20 +334,36 @@ let Idioma = Idiomes.find(Idioma => Idioma.Id === "en");
         document.getElementById("Audios").style.display = "none";
         document.getElementById('Teclat').hidden = true;
         
-        document.getElementById("Paraula").innerHTML = Paraula;
+        document.getElementById("paraula").innerHTML = Paraula;
         document.body.style.display = "block";
         
         // Canviam els diferents literals de la GUI segons l'idioma
-        CanviarId();
+        CanviarIdioma();
     }
 
     // Canviam els diferents literals de la GUI segons l'idioma
-    function CanviarId() {
+    function CanviarIdioma() {
         document.title = Idioma.Titol;
         document.getElementById("Versio").innerHTML = Idioma.Versio;
         document.getElementById("lletra").placeholder = Idioma.Input;
         document.getElementById("comprovar").innerHTML = Idioma.Comprovar;
+        document.getElementById("Paraula").innerHTML = Idioma.Paraula;
+        document.getElementById("Sopes").innerHTML = Idioma.Sopes;
         document.getElementById("pista").innerHTML = Idioma.Pista;        
+        document.getElementById("Vides").innerHTML = Idioma.Vides;
+        document.getElementById("Moix").innerHTML = Idioma.Moix;
+        document.getElementById("Lletres").innerHTML = Idioma.Lletres;
+        document.getElementById("Ets").innerHTML = Idioma.Ets;
+        document.getElementById("URLpistes").innerHTML = Idioma.URLpistes;
+        document.getElementById("Dita1").title = Idioma.Dita1;
+        document.getElementById("Dita_1").innerHTML = Idioma.Dita + " 1";
+        document.getElementById("Dita2").title = Idioma.Dita2;
+        document.getElementById("Dita_2").innerHTML = Idioma.Dita + " 2";
+        document.getElementById("Dita3").title = Idioma.Dita3;
+        document.getElementById("Dita_3").innerHTML = Idioma.Dita + " 3";
+        document.getElementById("Credits").innerHTML = Idioma.Credits;
+        document.getElementById("Scratch").innerHTML = Idioma.YouTube;
+        document.getElementById("YouTube").innerHTML = Idioma.YouTube;
     }
         
     // Mostram la imatge corresponent.
