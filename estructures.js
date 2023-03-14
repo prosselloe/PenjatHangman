@@ -1,119 +1,118 @@
 /* 
 Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i estructures.js
 */
+    // Diferents idiomes per la GUI
+    const Idiomes = [
+        {
+            "IdIdioma": "ca",
+            "Titol": "Versió amb Estructures de Dades Joc del Penjat",
+            "Versio": "Versió β Joc del Penjat",
+            "Input": "Escriu una lletra minúscula",
+            "Pregunta": "Anam a la quinta forca?",
+            "Comprovar": "Comprovar",
+            "Paraula": "Paraula:",
+            "Sopes": "Demanes sopes?",
+            "Pista": "Pista",
+            "Vides": "Vides:",
+            "Moix": "Un moix en té set?",
+            "Lletres": "Lletres:",
+            "Ets": "Ets de lletres?",
+            "URLpistes": "URLpistes:",
+            "Dita": "Dita",
+            "Dita1": "A la quinta forca, ",
+            "Dita2": "A ca un penjat, no hi anomenis cordes, ",
+            "Dita3": "Setze jutges d'un jutjat mengen fetge d'un penjat, …",
+            "Credits": "Crèdits:",
+            "YouTube": "Joc Penjat on Scratch",
+            "Wikis": "Penjat",
+            "Idioma": "en Català",
+            "Diccionari": "Diccionari",
+            "Teclat": "Mostra o Amaga",
+            "Incorrecte": "Caràcter incorrecte!",
+            "Repetida": "Lletra repetida!",
+            "Encertat": "Has encertat!",
+            "Guanyat": "i has guanyat!",
+            "Fallat": "Has fallat!",
+            "Perdut": "i has perdut!",
+            "Descansi": "En pau descansi – RIP!",
+            "Puntuacio": "Puntuació:"
+        },
+        {
+            "IdIdioma": "es",
+            "Titol": "Versión con Estructuras de Datos Juego del Ahorcado",
+            "Versio": "Versión β Juego del Ahorcado",
+            "Input": "Escribe una letra minúscula",
+            "Pregunta": "Vamos al quinto pino?",
+            "Comprovar": "Comprobar",
+            "Paraula": "Palabra:",
+            "Sopes": "Te rindes?",
+            "Pista": "Pista",
+            "Vides": "Vidas:",
+            "Moix": "Un gato tiene siete?",
+            "Lletres": "Letras:",
+            "Ets": "Eres de letras?",
+            "URLpistes": "URLpistas:",
+            "Dita": "Dicho",
+            "Dita1": "Al quinto pino, ",
+            "Dita2": "En casa de un ahorcado, no hables de cuerdas,",
+            "Dita3": "Dieciséis jueces de un juzgado comen hígado de un ahorcado, …",
+            "Credits": "Crèditos:",
+            "YouTube": "Juego Ahorcado on Scratch",
+            "Wikis": "Ahorcado",
+            "Idioma": "en Español",
+            "Diccionari": "Diccionario",
+            "Teclat": "Muestra o Esconde",
+            "Incorrecte": "Carácter incorrecto!",
+            "Repetida": "Letra repetida!",
+            "Encertat": "Has acertado!",
+            "Guanyat": "y has ganado!",
+            "Fallat": "Has fallado!",
+            "Perdut": "y has perdido!",
+            "Descansi": "En paz descanse - RIP!",
+            "Puntuacio": "Puntuación:"
+        },
+        {
+            "IdIdioma": "en",
+            "Titol": "Hangman Game Images and Sounds Version",
+            "Versio": "Hangman Game β Versión",
+            "Input": "Write a lowercase letter",
+            "Pregunta": "Are we going to the boondocks?",
+            "Comprovar": "Check it",
+            "Paraula": "Word:",
+            "Sopes": "You give up?",
+            "Pista": "Clue",
+            "Vides": "Lives:",
+            "Moix": "A cat has seven?",
+            "Lletres": "Letters:",
+            "Ets": "Are you in liberal arts?",
+            "URLpistes": "URLclues:",
+            "Dita": "Saying",
+            "Dita1": "To the boondocks,",
+            "Dita2": "In a hanged man's home, don't talk about ropes,",
+            "Dita3": "Sixteen judges of a court eat the liver of a hangman, …",
+            "Credits": "Credits:",
+            "YouTube": "Hangman Game on Scratch",
+            "Wikis": "Hangman",
+            "Idioma": "in English",
+            "Diccionari": "Dictionary",
+            "Teclat": "Show or Hide",
+            "Incorrecte": "Wrong character!",
+            "Repetida": "Repeated letter!",
+            "Encertat": "You're right!",
+            "Guanyat": "and you have won!",
+            "Fallat": "You have failed!",
+            "Perdut": "and you have lost!",
+            "Descansi": "Rest in peace - RIP!",
+            "Puntuacio": "Score:"
+        }
+    ]
 
-// Diferents idiomes per la GUI
-const Idiomes = [
-    {
-        "IdIdioma": "ca",
-        "Titol": "Versió amb Estructures de Dades Joc del Penjat",
-        "Versio": "Versió β Joc del Penjat",
-        "Input": "Escriu una lletra minúscula",
-        "Pregunta": "Anam a la quinta forca?",
-        "Comprovar": "Comprovar",
-        "Paraula": "Paraula:",
-        "Sopes": "Demanes sopes?",
-        "Pista": "Pista",
-        "Vides": "Vides:",
-        "Moix": "Un moix en té set?",
-        "Lletres": "Lletres:",
-        "Ets": "Ets de lletres?",
-        "URLpistes": "URLpistes:",
-        "Dita": "Dita",
-        "Dita1": "A la quinta forca, ",
-        "Dita2": "A ca un penjat, no hi anomenis cordes, ",
-        "Dita3": "Setze jutges d'un jutjat mengen fetge d'un penjat, …",
-        "Credits": "Crèdits:",
-        "YouTube": "Joc Penjat on Scratch",
-        "Wikis": "Penjat",
-        "Idioma": "en Català",
-        "Diccionari": "Diccionari",
-        "Teclat": "Mostra o Amaga",
-        "Incorrecte": "Caràcter incorrecte!",
-        "Repetida": "Lletra repetida!",
-        "Encertat": "Has encertat!",
-        "Guanyat": "i has guanyat!",
-        "Fallat": "Has fallat!",
-        "Perdut": "i has perdut!",
-        "Descansi": "En pau descansi – RIP!",
-        "Puntuacio": "Puntuació"
-    },
-    {
-        "IdIdioma": "es",
-        "Titol": "Versión con Estructuras de Datos Juego del Ahorcado",
-        "Versio": "Versión β Juego del Ahorcado",
-        "Input": "Escribe una letra minúscula",
-        "Pregunta": "Vamos al quinto pino?",
-        "Comprovar": "Comprobar",
-        "Paraula": "Palabra:",
-        "Sopes": "Te rindes?",
-        "Pista": "Pista",
-        "Vides": "Vidas:",
-        "Moix": "Un gato tiene siete?",
-        "Lletres": "Letras:",
-        "Ets": "Eres de letras?",
-        "URLpistes": "URLpistas:",
-        "Dita": "Dicho",
-        "Dita1": "Al quinto pino. ",
-        "Dita2": "En casa un ahorcado, no hables de cuerdas,",
-        "Dita3": "Dieciséis jueces de un juzgado comen hígado de un ahorcado, …",
-        "Credits": "Crèditos:",
-        "YouTube": "Juego Ahorcado on Scratch",
-        "Wikis": "Ahorcado",
-        "Idioma": "en Español",
-        "Diccionari": "Diccionario",
-        "Teclat": "Muestra o Esconde",
-        "Incorrecte": "Carácter incorrecto!",
-        "Repetida": "Letra repetida!",
-        "Encertat": "Has acertado!",
-        "Guanyat": "y has ganado!",
-        "Fallat": "Has fallado!",
-        "Perdut": "y has perdido!",
-        "Descansi": "En paz descanse - RIP!",
-        "Puntuacio": "Puntuación"
-    },
-    {
-        "IdIdioma": "en",
-        "Titol": "Hangman Game Images and Sounds Version",
-        "Versio": "Hangman Game β Versión",
-        "Input": "Write a lowercase letter",
-        "Pregunta": "Are we going to the boondocks?",
-        "Comprovar": "Check it",
-        "Paraula": "Word:",
-        "Sopes": "You give up?",
-        "Pista": "Clue",
-        "Vides": "Lives:",
-        "Moix": "A cat has seven?",
-        "Lletres": "Letters:",
-        "Ets": "Are you in liberal arts?",
-        "URLpistes": "URLclues:",
-        "Dita": "Saying",
-        "Dita1": "To the boondocks,",
-        "Dita2": "In a hanged man's home, don't talk about ropes,",
-        "Dita3": "Sixteen judges of a court eat the liver of a hangman, …",
-        "Credits": "Credits:",
-        "YouTube": "Hangman Game on Scratch",
-        "Wikis": "Hangman",
-        "Idioma": "in English",
-        "Diccionari": "Dictionary",
-        "Teclat": "Show or Hide",
-        "Incorrecte": "Wrong character!",
-        "Repetida": "Repeated letter!",
-        "Encertat": "You're right!",
-        "Guanyat": "and you have won!",
-        "Fallat": "You have failed!",
-        "Perdut": "and you have lost!",
-        "Descansi": "Rest in peace - RIP!",
-        "Puntuacio": "Score"
-    }
-]
-let Idioma = Idiomes.find(Idioma => Idioma.IdIdioma === "en");
-// window.alert(Idioma.Titol);
-
-// Variables Globals.
+    // Variables Globals.
     var Paraula = [];
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
     var Vides = 7;
+    var Punts = 0;
+    var Idioma;
 
     // Llista de paraules per al joc i les pistes associades
     var paraules = ["cordes", "fetge", "forca", "jutges", 
@@ -273,9 +272,9 @@ let Idioma = Idiomes.find(Idioma => Idioma.IdIdioma === "en");
                 document.getElementById("ahorcado").hidden = false;
                 
                 // Calculam i mostram la puntuació
-                var punts = paraula.length * Vides * 10 - document.getElementById("Segons").innerHTML;
-                if (punts < 0) { punts = 0; };
-                document.getElementById("Punts").innerHTML = "Puntuació: " + punts;
+                Punts = paraula.length * Vides * 10 - document.getElementById("Segons").innerHTML;
+                if (Punts < 0) { Punts = 0; };
+                document.getElementById("Punts").innerHTML = Idioma.Puntuacio + " " + Punts;
                 
                 window.alert(Idioma.Guanyat);
                 document.body.style.backgroundImage = "url('img/Party.png')";
@@ -336,13 +335,11 @@ let Idioma = Idiomes.find(Idioma => Idioma.IdIdioma === "en");
         
         document.getElementById("paraula").innerHTML = Paraula;
         document.body.style.display = "block";
-        
-        // Canviam els diferents literals de la GUI segons l'idioma
-        CanviarIdioma();
     }
 
     // Canviam els diferents literals de la GUI segons l'idioma
-    function CanviarIdioma() {
+    function CanviarIdioma(IdIdioma) {
+        Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
         document.title = Idioma.Titol;
         document.getElementById("Versio").innerHTML = Idioma.Versio;
         document.getElementById("lletra").placeholder = Idioma.Input;
@@ -364,6 +361,10 @@ let Idioma = Idiomes.find(Idioma => Idioma.IdIdioma === "en");
         document.getElementById("Credits").innerHTML = Idioma.Credits;
         document.getElementById("Scratch").innerHTML = Idioma.YouTube;
         document.getElementById("YouTube").innerHTML = Idioma.YouTube;
+        document.getElementById("teclat").title = Idioma.Teclat;
+        if (Punts > 0) {
+            document.getElementById("Punts").innerHTML = Idioma.Puntuacio + " " + Punts;
+        }
     }
         
     // Mostram la imatge corresponent.
