@@ -106,13 +106,13 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
             "Puntuacio": "Score:"
         }
     ]
+    var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == "ca");
 
     // Variables Globals.
     var Paraula = [];
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
     var Vides = 7;
     var Punts = 0;
-    var Idioma;
 
     // Llista de paraules per al joc i les pistes associades
     var paraules = ["cordes", "fetge", "forca", "jutges", 
