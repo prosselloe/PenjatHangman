@@ -54,6 +54,7 @@ CREATE TABLE TblPaïsos (IdPais2T text, NomOficial text, IdPais3T text, IdPais3N 
   INSERT INTO TblPaïsos VALUES ("GB","Reino Unido de Gran Bretaña e Irlanda", "GBR", 826, "Debido a que para obtener los códigos ISO no se utilizan las palabras comunes de Reino y Unido, los códigos se han obtenido a partir del resto del nombre oficial.");
   INSERT INTO TblPaïsos VALUES ("IE","Irlanda", "IRL", 372, "");
   INSERT INTO TblPaïsos VALUES ("IN","India", "IND", 356, "");
+  INSERT INTO TblPaïsos VALUES ("US","Estados Unidos de América (los)", "USA", 840, "");
 
 DROP TABLE IF EXISTS TblIdiomesPaïsos;
 CREATE TABLE TblIdiomesPaïsos (IdIdioma text, IdPais2T text,
