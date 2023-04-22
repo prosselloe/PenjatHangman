@@ -1,12 +1,12 @@
 /* 
-Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i estructures.js
+Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades.js
 */
     // Diferents idiomes per la GUI
-    const Idiomes = [
+    var Idiomes = [
         {
             "IdIdioma": "ca",
-            "Titol": "Versió amb Estructures de Dades Joc del Penjat",
-            "Versio": "Versió β Joc del Penjat",
+            "Titol": "Versió amb Base de Dades Joc del Penjat",
+            "Versio": "Versió γ Joc del Penjat",
             "Input": "Escriu una lletra minúscula",
             "Pregunta": "Anam a la quinta forca?",
             "Comprovar": "Comprovar",
@@ -39,8 +39,8 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         },
         {
             "IdIdioma": "es",
-            "Titol": "Versión con Estructuras de Datos Juego del Ahorcado",
-            "Versio": "Versión β Juego del Ahorcado",
+            "Titol": "Versión con Base de Datos Juego del Ahorcado",
+            "Versio": "Versión γ Juego del Ahorcado",
             "Input": "Escribe una letra minúscula",
             "Pregunta": "Vamos al quinto pino?",
             "Comprovar": "Comprobar",
@@ -73,8 +73,8 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         },
         {
             "IdIdioma": "en",
-            "Titol": "Hangman Game Data Structures Version",
-            "Versio": "Hangman Game β Versión",
+            "Titol": "Hangman Game Database Version",
+            "Versio": "Hangman Game γ Versión",
             "Input": "Write a lowercase letter",
             "Pregunta": "Are we going to the boondocks?",
             "Comprovar": "Check it",
@@ -123,16 +123,16 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
     var paraulespistes = [1, 2, 0, 2, 2, 2, 1, 0, 2];
     
     // Simulam una taula de base de dades amb un array d'objectes
-    var taula = [
-        {"paraula": "cordes", "pista": "A ca un penjat, no hi anomenis cordes"},
-        {"paraula": "fetge",  "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "forca",  "pista": "A la quinta forca"},
-        {"paraula": "jutges", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "jutjat", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "mengen", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "penjat", "pista": "A ca un penjat, no hi anomenis cordes"},
-        {"paraula": "quinta", "pista": "A la quinta forca"},
-        {"paraula": "setze",  "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}    
+    var Taula = [
+        {"Paraula": "cordes", "Pista": "A ca un penjat, no hi anomenis cordes"},
+        {"Paraula": "fetge",  "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "forca",  "Pista": "A la quinta forca"},
+        {"Paraula": "jutges", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "jutjat", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "mengen", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "penjat", "Pista": "A ca un penjat, no hi anomenis cordes"},
+        {"Paraula": "quinta", "Pista": "A la quinta forca"},
+        {"Paraula": "setze",  "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}    
     ];
     
     // Escull una paraula aleatòriament
@@ -141,8 +141,10 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
     var pista = pistes[paraulespistes[aleatori]];
     
     // Alternativament, fent servir l'array d'objectes
-    var paraula = taula[aleatori].paraula;
-    var pista = taula[aleatori].pista;
+    // window.alert(Taula.length);
+    aleatori = Math.floor(Math.random() * Taula.length);
+    paraula = Taula[aleatori].Paraula;
+    pista = Taula[aleatori].Pista;
     
     // Marcam cada lletra amb un "_"
     for (var i = 0; i < paraula.length; i++) {
@@ -365,6 +367,12 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         if (Punts > 0) {
             document.getElementById("Punts").innerHTML = Idioma.Puntuacio + " " + Punts;
         }
+
+        // Escull una nova paraula aleatòriament
+        // window.alert(Taula.length);
+        aleatori = Math.floor(Math.random() * Taula.length);
+        paraula = Taula[aleatori].Paraula;
+        pista = Taula[aleatori].Pista;
     }
         
     // Mostram la imatge corresponent.
@@ -410,6 +418,48 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         }
     }
     
+    // Funció per carregar la base de dades penjat.db
+    function AlaWeb_SQLite() {
+        // window.alert("AlaWeb_SQLite");
+        config = {
+            locateFile: file => `https://sql.js.org/dist/${file}`
+            // locateFile: filename => `https://unpkg.com/sql.js@1.6.2/dist/${filename}`
+        };
+        // The `initSqlJs` function is globally provided by all of the main dist files if loaded in the browser.
+        // We must specify this locateFile function if we are loading a wasm file from anywhere other than the 
+        // current html page's folder.
+        alasql('ATTACH SQLITE DATABASE penjat("penjat.db"); USE penjat; \n\
+                SELECT * FROM TblTextosGUI;',
+        //    [], function(res) {Print_Data(Idiomes = res.pop());}
+            [], function(res) {Idiomes = res.pop();}
+        );
+        // window.alert(Idiomes[0].Versio);
+        alasql('ATTACH SQLITE DATABASE penjat("penjat.db"); USE penjat; \n\
+                SELECT Paraula, Pista \n\
+                FROM TblParaules INNER JOIN TblPistes \n\
+                  ON TblParaules.IdPista = TblPistes.IdPista \n\
+                WHERE (TblParaules.IdIdioma = "ca") AND (Len([Paraula]) = 6);',
+        //    [], function(res) {Print_Data(Taula = res.pop());}
+            [], function(res) {Taula = res.pop();}
+        );
+        // window.alert(Taula[0].Pista);
+    }
+
+    // Print data   
+    function Print_Data(res) {
+        for (var i in res) 
+        {
+           // console.log("row " + i);
+           // document.getElementById("res").innerHTML += "<br>";
+           for (var j in res[i]) 
+             {
+              // console.log(" " + res[i][j]);
+              // document.getElementById("res").innerHTML += res[i][j] + ", ";
+              window.alert("res[" + i + "][" +j + "] = " + res[i][j]);
+             }
+        }
+    }
+
     // HTML includes are done by JavaScript
     function includeHTML() {
         var z, i, elmnt, file, xhttp;
