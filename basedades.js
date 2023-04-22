@@ -373,6 +373,13 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         aleatori = Math.floor(Math.random() * Taula.length);
         paraula = Taula[aleatori].Paraula;
         pista = Taula[aleatori].Pista;
+    
+        Paraula = [];
+        // Marcam cada lletra amb un "_"
+        for (var i = 0; i < paraula.length; i++) {
+            Paraula[i] = "_";
+        }
+        document.getElementById("paraula").innerHTML = Paraula;
     }
         
     // Mostram la imatge corresponent.
@@ -438,7 +445,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 SELECT Paraula, Pista \n\
                 FROM TblParaules INNER JOIN TblPistes \n\
                   ON TblParaules.IdPista = TblPistes.IdPista \n\
-                WHERE (TblParaules.IdIdioma = "ca") AND (Len([Paraula]) = 6);',
+                WHERE TblParaules.IdIdioma = "ca";',
         //    [], function(res) {Print_Data(Taula = res.pop());}
             [], function(res) {Taula = res.pop();}
         );
