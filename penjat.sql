@@ -59,8 +59,7 @@ CREATE TABLE TblPaisos (IdPais2T text, NomOficial text, IdPais3T text, IdPais3N 
 DROP TABLE IF EXISTS TblIdiomesPaisos;
 CREATE TABLE TblIdiomesPaisos (IdIdioma text, IdPais2T text,
   PRIMARY KEY (IdIdioma, IdPais2T),
-  FOREIGN KEY (IdIdioma) REFERENCES TblIdiomes (IdIdioma)
-  FOREIGN KEY (IdPais2T) REFERENCES TblPaisos (IdPais2T));
+  FOREIGN KEY (IdIdioma) REFERENCES TblIdiomes (IdIdioma));
 
   INSERT INTO TblIdiomesPaisos VALUES ("an", "ES");
   INSERT INTO TblIdiomesPaisos VALUES ("ca", "AD");

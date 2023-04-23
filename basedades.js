@@ -1,8 +1,9 @@
 /* 
 Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades.js
 */
+
     // Diferents idiomes per la GUI
-    var Idiomes = [
+    const Idiomes_dft = [
         {
             "IdIdioma": "ca",
             "Titol": "Versió amb Base de Dades Joc del Penjat",
@@ -106,6 +107,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             "Puntuacio": "Score:"
         }
     ]
+    var Idiomes = Idiomes_dft;
     var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == "ca");
 
     // Variables Globals.
@@ -122,8 +124,8 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         "Setze jutges d'un jutjat mengen fetge d'un penjat"];
     var paraulespistes = [1, 2, 0, 2, 2, 2, 1, 0, 2];
     
-    // Simulam una taula de base de dades amb un array d'objectes
-    var Taula = [
+    // Simulam una Taula de ParaulesPistes, similar a la consulta a la base de dades, amb un array d'objectes
+    const Taula_dft = [
         {"Paraula": "cordes", "Pista": "A ca un penjat, no hi anomenis cordes"},
         {"Paraula": "fetge",  "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
         {"Paraula": "forca",  "Pista": "A la quinta forca"},
@@ -134,6 +136,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         {"Paraula": "quinta", "Pista": "A la quinta forca"},
         {"Paraula": "setze",  "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}    
     ];
+    var Taula = Taula_dft;
     
     // Escull una paraula aleatòriament
     var aleatori = Math.floor(Math.random() * paraules.length);
@@ -341,6 +344,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
 
     // Canviam els diferents literals de la GUI segons l'idioma
     function CanviarIdioma(IdIdioma) {
+        AlaWeb_SQLite('IdIdioma');
         Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
         document.title = Idioma.Titol;
         document.getElementById("Versio").innerHTML = Idioma.Versio;
@@ -373,7 +377,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         aleatori = Math.floor(Math.random() * Taula.length);
         paraula = Taula[aleatori].Paraula;
         pista = Taula[aleatori].Pista;
-    
+        window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word!");
         Paraula = [];
         // Marcam cada lletra amb un "_"
         for (var i = 0; i < paraula.length; i++) {
@@ -426,7 +430,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     }
     
     // Funció per carregar la base de dades penjat.db
-    function AlaWeb_SQLite() {
+    function AlaWeb_SQLite(IdIdioma) {
         // window.alert("AlaWeb_SQLite");
         config = {
             locateFile: file => `https://sql.js.org/dist/${file}`
@@ -437,18 +441,23 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         // current html page's folder.
         alasql('ATTACH SQLITE DATABASE penjat("penjat.db"); USE penjat; \n\
                 SELECT * FROM TblTextosGUI;',
-        //    [], function(res) {Print_Data(Idiomes = res.pop());}
+        //     [], function(res) {Print_Data(Idiomes = res.pop());}
             [], function(res) {Idiomes = res.pop();}
         );
+        if (Idiomes.length == 0) {Idiomes = Idiomes_dft;};
         // window.alert(Idiomes[0].Versio);
         alasql('ATTACH SQLITE DATABASE penjat("penjat.db"); USE penjat; \n\
                 SELECT Paraula, Pista \n\
                 FROM TblParaules INNER JOIN TblPistes \n\
                   ON TblParaules.IdPista = TblPistes.IdPista \n\
-                WHERE TblParaules.IdIdioma = "ca";',
+                WHERE TblParaules.IdIdioma = "' + IdIdioma + '";',
         //    [], function(res) {Print_Data(Taula = res.pop());}
             [], function(res) {Taula = res.pop();}
         );
+        if (Taula.length == 0) {
+            Taula = Taula_dft;
+            window.alert("Idioma sense paraules / Idioma sin palabras / Language without words!");
+        };
         // window.alert(Taula[0].Pista);
     }
 
