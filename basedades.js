@@ -344,7 +344,8 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
 
     // Canviam els diferents literals de la GUI segons l'idioma
     function CanviarIdioma(IdIdioma) {
-        AlaWeb_SQLite('IdIdioma');
+        AlaWeb_SQLite(IdIdioma);
+
         Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
         document.title = Idioma.Titol;
         document.getElementById("Versio").innerHTML = Idioma.Versio;
@@ -378,6 +379,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         paraula = Taula[aleatori].Paraula;
         pista = Taula[aleatori].Pista;
         window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word!");
+        window.alert("[" + paraula + "]=[" + pista + "]");
         Paraula = [];
         // Marcam cada lletra amb un "_"
         for (var i = 0; i < paraula.length; i++) {
@@ -431,7 +433,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     
     // Funció per carregar la base de dades penjat.db
     function AlaWeb_SQLite(IdIdioma) {
-        // window.alert("AlaWeb_SQLite");
+        window.alert("AlaWeb_SQLite IdIdioma = '" + IdIdioma + "'");
         config = {
             locateFile: file => `https://sql.js.org/dist/${file}`
             // locateFile: filename => `https://unpkg.com/sql.js@1.6.2/dist/${filename}`
