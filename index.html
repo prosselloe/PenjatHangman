@@ -10,6 +10,11 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
         <title>Joc del Penjat</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #Guia { position:relative; top:-100px; left:340px; }
+            #Caminar { position:relative; top:-300px; left:230px; }
+            #Rotar { position:relative; top:-500px; left:430px; }
+        </style>
         <script>
             function Finestra(URL) {
                 var amplada = 660;
@@ -22,19 +27,39 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
             }
         </script> 
     </head>
-    <body>
-        <h2>Joc del Penjat</h2>
+    <body style="background-image: url('img/Desert.png'); 
+          background-size: 640px 480px; background-repeat: no-repeat;">
+        <h2 style="color: white;">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Joc del Penjat / Juego del Ahorcado / Hangman Game</h2>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <ul>
             <!--
             <li><a href="prototip.html">Versió Pre-alfa o Prototip HTML/JavaScript</a></li>
             <li><a href="imatgesons.html">Versió α: Versió amb Imatges i Sons</a></li>
             <li><a href="estructures.html">Versió β: Versió amb Estructures de Dades</a></li>
             <li><a href="basedades.html">Versió γ: Versió amb Base de Dades</a></li>
+            <li><a href="enconstrucio.html">Versió δ: Versió en Construcció</a></li>
             --> 
             <li><a href="javascript:Finestra('prototip.html')">Versió Pre-alfa o Prototip HTML/JavaScript</a></li>
             <li><a href="javascript:Finestra('imatgesons.html')">Versió α: Versió amb Imatges i Sons</a></li>
             <li><a href="javascript:Finestra('estructures.html')">Versió β: Versió amb Estructures de Dades</a></li>
             <li><a href="javascript:Finestra('basedades.html')">Versió γ: Versió amb Base de Dades</a></li>
+            <li><a href="javascript:Finestra('enconstrucio.html')">Versió δ: Versió en Construcció</a></li>
         </ul>  
+        <div id="Guia">
+            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;" 
+                 title="Hola, soc en Pep Gonella i seré
+          el teu Moix Guia, perquè 
+          els cans no tenen set vides!">
+            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;" title="Has encertat!">
+            <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;" title="Has fallat!">
+        </div>
+        <div id="Caminar">
+            <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;" title="i has guanyat!">
+        </div>
+        <div id="Rotar">
+            <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;" title="i has perdut!">
+        </div>
     </body>
 </html>
