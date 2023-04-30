@@ -9,17 +9,20 @@ and open the template in the editor.
 */
     html {
         background:#222;
-        margin:auto;
+        margin:0;
         width:640px;
         height:480px;
     }
 
     body {
-        background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
-        border: 1px solid black;
-        padding: 10px 20px;
-        box-shadow: 5px 0px 30px #000;
-        border-radius: 8px;
+        background:linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+        border:1px solid black;
+        padding:10px 20px;
+        box-shadow:5px 0px 30px #000;
+        border-radius:8px;
+        margin:0;
+        width:640px;
+        height:480px;
     }
 
     h1, a {
@@ -29,6 +32,7 @@ and open the template in the editor.
         box-shadow: 5px 0px 30x #000;
         border-radius: 8px;
         text-align: center;
+        max-width: 600px;
     }
 
     h2 {
