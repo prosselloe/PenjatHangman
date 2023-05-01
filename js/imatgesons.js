@@ -81,6 +81,9 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
             // Mostram la imatge corresponent.
             MostraImg();
         } else {
+            document.getElementById("disfraz3").hidden = false;
+            document.getElementById("disfraz2").hidden = true;
+            document.getElementById("disfraz1").hidden = true;
             window.alert("Caràcter incorrecte!");
         }
         document.getElementById("lletra").focus();
@@ -112,7 +115,7 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
             } else {
                 // document.getElementById("clock_ticking").loop = true;
                 document.getElementById("clock_ticking").play();
-                const myTimeout3 = setTimeout(BellTollPlay, 3000);
+                // const myTimeout3 = setTimeout(BellTollPlay, 3000);
             }
         }
     }

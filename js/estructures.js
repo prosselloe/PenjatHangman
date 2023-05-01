@@ -192,6 +192,9 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
          * Comprovam que la lletra no sigui repetida, Inici
         */    
         if ((Paraula.indexOf(lletra) != -1) || (Lletres.indexOf(lletra) != -1)) {
+            document.getElementById("disfraz3").hidden = false;
+            document.getElementById("disfraz2").hidden = true;
+            document.getElementById("disfraz1").hidden = true;
             window.alert(Idioma.Repetida);
         } else {
             
@@ -199,7 +202,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
          * Cercam la posició de la lletra a la paraula, si no hi es, obtenim -1
          */
         var pos = paraula.indexOf(lletra);
-        if (pos != -1) {
+        if ((pos != -1) && (lletra != "")) {
             if (document.getElementById('off').hidden) {            
                 document.getElementById("miau").play();
             }
@@ -240,6 +243,9 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
             // Mostram la imatge corresponent.
             MostraImg();
         } else {
+            document.getElementById("disfraz3").hidden = false;
+            document.getElementById("disfraz2").hidden = true;
+            document.getElementById("disfraz1").hidden = true;
             window.alert(Idioma.Incorrecte);
         }
         
@@ -288,7 +294,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
                 if (document.getElementById('off').hidden) {
                     // document.getElementById("clock_ticking").loop = true;
                     document.getElementById("clock_ticking").play();
-                    const myTimeout3 = setTimeout(BellTollPlay, 3000);
+                    // const myTimeout3 = setTimeout(BellTollPlay, 3000);
                 }
             }
         }

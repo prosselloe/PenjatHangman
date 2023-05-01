@@ -115,6 +115,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
     var Vides = 7;
     var Punts = 0;
+    var IdIdioma_ant = "ca";
 
     // Llista de paraules per al joc i les pistes associades
     var paraules = ["cordes", "fetge", "forca", "jutges", 
@@ -197,6 +198,9 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
          * Comprovam que la lletra no sigui repetida, Inici
         */    
         if ((Paraula.indexOf(lletra) != -1) || (Lletres.indexOf(lletra) != -1)) {
+            document.getElementById("disfraz3").hidden = false;
+            document.getElementById("disfraz2").hidden = true;
+            document.getElementById("disfraz1").hidden = true;
             window.alert(Idioma.Repetida);
         } else {
             
@@ -204,7 +208,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
          * Cercam la posició de la lletra a la paraula, si no hi es, obtenim -1
          */
         var pos = paraula.indexOf(lletra);
-        if (pos != -1) {
+        if ((pos != -1) && (lletra != "")) {
             if (document.getElementById('off').hidden) {            
                 document.getElementById("miau").play();
             }
@@ -245,6 +249,9 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             // Mostram la imatge corresponent.
             MostraImg();
         } else {
+            document.getElementById("disfraz3").hidden = false;
+            document.getElementById("disfraz2").hidden = true;
+            document.getElementById("disfraz1").hidden = true;
             window.alert(Idioma.Incorrecte);
         }
         
@@ -293,7 +300,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 if (document.getElementById('off').hidden) {
                     // document.getElementById("clock_ticking").loop = true;
                     document.getElementById("clock_ticking").play();
-                    const myTimeout3 = setTimeout(BellTollPlay, 3000);
+                    // const myTimeout3 = setTimeout(BellTollPlay, 3000);
                 }
             }
         }
@@ -378,7 +385,8 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         aleatori = Math.floor(Math.random() * Taula.length);
         paraula = Taula[aleatori].Paraula;
         pista = Taula[aleatori].Pista;
-        window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word!");
+        window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word! IdIdioma = '" + 
+                      IdIdioma_ant + "'");
         // window.alert("[" + paraula + "]=[" + pista + "]");
         Paraula = [];
         // Marcam cada lletra amb un "_"
@@ -386,6 +394,8 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             Paraula[i] = "_";
         }
         document.getElementById("paraula").innerHTML = Paraula;
+        
+        IdIdioma_ant = IdIdioma;
     }
         
     // Mostram la imatge corresponent.
@@ -443,8 +453,8 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         // current html page's folder.
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT * FROM TblTextosGUI;',
-        //     [], function(res) {Print_Data(Idiomes = res.pop());}
-            [], function(res) {Idiomes = res.pop();}
+        //     [], function(idiomes) {Print_Data(idiomes = idiomes.pop());}
+            [], function(idiomes) {Idiomes = idiomes.pop();}
         );
         if (Idiomes.length == 0) {Idiomes = Idiomes_dft;};
         // window.alert(Idiomes[0].Versio);
@@ -453,12 +463,14 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 FROM TblParaules INNER JOIN TblPistes \n\
                   ON TblParaules.IdPista = TblPistes.IdPista \n\
                 WHERE TblParaules.IdIdioma = "' + IdIdioma + '";',
-        //    [], function(res) {Print_Data(Taula = res.pop());}
-            [], function(res) {Taula = res.pop();}
+        //    [], function(taula) {Print_Data(Taula = taula.pop());}
+            [], function(taula) {Taula = taula.pop();}
         );
         if (Taula.length == 0) {
             Taula = Taula_dft;
             window.alert("Idioma sense paraules / Idioma sin palabras / Language without words!");
+        } else {
+            // window.alert("Paraules en idioma / Palabras en idioma / Language words = '" + IdIdioma + "'");
         };
         // window.alert(Taula[0].Pista);
     }
