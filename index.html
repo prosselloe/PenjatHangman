@@ -4,6 +4,7 @@ Versió Pre-alfa o Prototip HTML/JavaScript Joc del Penjat: prototip.html
 Versió α: Versió amb Imatges Joc del Penjat: imatgesons.html
 Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html
 Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
+Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
 -->
 <html>
     <head>
@@ -28,7 +29,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
                 height:480px;
             }
             
-            h2 {
+            h1 {
                 background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
                 border: 1px solid black;
                 padding: 1px 1px;
@@ -36,13 +37,30 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
                 border-radius: 8px;
                 text-align: center;
                 max-width: 600px;
+                font-size: 24px;
             }
+
+            h2 {
+                color: white;
+            }   
             
-            #Guia { position:relative; top:-100px; left:340px; }
-            #Caminar { position:relative; top:-300px; left:230px; }
-            #Rotar { position:relative; top:-500px; left:430px; }
+            #Idioma { position:relative; top:-386px; left:318px; }
+            #Guia { position:relative; top:-330px; left:235px; }
+            #Caminar { position:relative; top:-235px; left:530px; }
+            #Rotar { position:relative; top:-560px; left:430px; }
         </style>
         <script>
+            // Amagam totes les imatges.
+            function AmagaImg() {
+                document.getElementById("disfraz3").hidden = false;
+                document.getElementById("disfraz2").hidden = true;
+                document.getElementById("disfraz1").hidden = true;
+                document.getElementById("caminar").hidden = false;
+                document.getElementById("rotar").hidden = false;
+                document.body.style.display = "block";
+            }
+
+            // Carregam les diferents versions en una finestra independent
             function Finestra(URL) {
                 var amplada = 660;
                 var alçada = 500;
@@ -54,24 +72,121 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html
             }
         </script> 
     </head>
-    <body style="background-image: url('img/Desert.png'); 
+    <body onload="AmagaImg();"
+          style="background-image: url('img/Desert.png'); 
           background-size: 640px 480px; background-repeat: no-repeat;">
-        <h2>Joc del Penjat / Juego del Ahorcado / Hangman Game</h2>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <ul>
+        <h1>Joc del Penjat / Juego del Ahorcado / Hangman Game</h1>
+        <table>
+            <tr>
+              <td>
+                    <input id="lletra" type="text" 
+                           placeholder="Escriu una lletra minúscula" maxlength="1"> 
+                    <button id="Comprovar" onclick="Comprovar();">Comprovar</button>
+                <h2>Paraula: 
+                    <a href="https://prosselloe.wordpress.com/?p=5970" target="_blank">
+                        <font size=3 translate="no">Demanes sopes?</font></a></h2>
+                    <div id="Paraula" style="color: white;">
+                        <strong>_ _ _ _ _ _ _</strong></div>
+                <h2>Vides: 
+                    <a href="https://pccd.dites.cat/p/Tenir_set_vides%2C_com_els_gats" target="_blank">
+                        <font size=3 translate="no">Un moix en té set?</font></a></h2>
+                    <div id="Vides" style="color: yellow;">
+                        <strong>&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
+                <h2>Lletres: 
+                    <a href="https://pccd.dites.cat/p/De_lletres" target="_blank">
+                        <font size=3 translate="no">Ets de lletres?</font></a></h2>
+                    <div id="Lletres" style="color: red;">
+                        <strong>_ _ _ _ _ _ _</strong></div>
+            </td>
+            <td>
+                <br><br><br><br><br><br><br><br><br><br>
+                <ul>
+                    <!--
+                    <li><strong><a href="prototip.html">
+                        Versió Pre-alfa o Prototip HTML/JavaScript</a></strong></li>
+                    <li><strong><a href="imatgesons.html">
+                        Versió α: Versió amb Imatges i Sons</a></strong></li>
+                    <li><strong><a href="estructures.html">
+                        Versió β: Versió amb Estructures de Dades</a></strong></li>
+                    <li><strong><a href="basedades.html">
+                        Versió γ: Versió amb Base de Dades</a></strong></li>
+                    <li><strong><a href="enconstrucio.html">
+                        Versió δ: Versió en Construcció</a></strong></li>
+                    --> 
+                    <li><strong><a href="javascript:Finestra('prototip.html')">
+                        Versió Pre-alfa o Prototip HTML/JavaScript</a></strong></li>
+                    <li><strong><a href="javascript:Finestra('imatgesons.html')">
+                        Versió α: Versió amb Imatges i Sons</a></strong></li>
+                    <li><strong><a href="javascript:Finestra('estructures.html')">
+                        Versió β: Versió amb Estructures de Dades</a></strong></li>
+                    <li><strong><a href="javascript:Finestra('basedades.html')">
+                        Versió γ: Versió amb Base de Dades</a></strong></li>
+                    <li><strong><a href="javascript:Finestra('enconstrucio.html')">
+                        Versió δ: Versió en Construcció</a></strong></li>
+                </ul>  
+            </td>          
+          </tr>
+          <tr>
+            <td>
+                <br>
+                <strong translate="no">URLpistes: 
+                    <a href="https://pccd.dites.cat/p/A_la_quinta_forca" target="_blank"
+                       title="A la quinta forca, ">Dita 1</a>
+                    <a href="https://pccd.dites.cat/p/A_ca_un_penjat%2C_no_hi_anomenis_cordes" target="_blank"
+                       title="A ca un penjat, no hi anomenis cordes, ">Dita 2</a>
+                    <a href="https://pccd.dites.cat/p/Setze_jutges_d%27un_jutjat_mengen_fetge_d%27un_penjat" target="_blank"
+                       title="Setze jutges d'un jutjat mengen fetge d'un penjat, ...">Dita 3</a>
+                </strong>
+                <p><strong>Crèdits: 
+                    <a href="https://prosselloe.wordpress.com/?p=5862" target="_blank">
+                        Joc Penjat on Scratch</a>
+                </strong></p>
+            </td>          
+            <td>
+                <br>
+                <strong>YouTube: 
+                    <a href="https://youtu.be/v53rEMHghJU?list=PLv1JHCp6B60w_KnMTu7jDdlDZ6Z0-WJ-j" target="_blank">
+                        Joc Penjat on Scratch</a>
+                </strong>
+                <p><strong translate="no">Wikis: 
+                    <a href="https://ca.wikipedia.org/wiki/Penjat" target="_blank"
+                       title="Regles del joc">Penjat</a>
+                    <a href="https://es.wikipedia.org/wiki/Ahorcado_(juego)" target="_blank"
+                       title="Reglas del juego">Ahorcado</a>
+                    <a href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank"
+                       title="Game rules">Hangman</a>
+                </strong></p>
+            </td>          
+          </tr>
+        </table>
+        <div id="Idioma" translate="no">
+            <a href="https://penjat-github.netlify.app/index.html">
+                <img src="img/ca.png" alt="tra_ca" title="en Català"></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/index.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es">
+                <img src="img/es.png" alt="tra_es" title="en Español"></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/index.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en">
+                <img src="img/gb.png" alt="tra_en" title="in English"></a>
             <!--
-            <li><a href="prototip.html">Versió Pre-alfa o Prototip HTML/JavaScript</a></li>
-            <li><a href="imatgesons.html">Versió α: Versió amb Imatges i Sons</a></li>
-            <li><a href="estructures.html">Versió β: Versió amb Estructures de Dades</a></li>
-            <li><a href="basedades.html">Versió γ: Versió amb Base de Dades</a></li>
-            <li><a href="enconstrucio.html">Versió δ: Versió en Construcció</a></li>
-            --> 
-            <li><a href="javascript:Finestra('prototip.html')">Versió Pre-alfa o Prototip HTML/JavaScript</a></li>
-            <li><a href="javascript:Finestra('imatgesons.html')">Versió α: Versió amb Imatges i Sons</a></li>
-            <li><a href="javascript:Finestra('estructures.html')">Versió β: Versió amb Estructures de Dades</a></li>
-            <li><a href="javascript:Finestra('basedades.html')">Versió γ: Versió amb Base de Dades</a></li>
-            <li><a href="javascript:Finestra('enconstrucio.html')">Versió δ: Versió en Construcció</a></li>
-        </ul>  
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=de">
+                <img src="img/de.png" alt="tra_de" title="Übersetzen"></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr">
+                <img src="img/fr.png" alt="tra_fr" title="Traduire"></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=it&_x_tr_hl=it">
+                <img src="img/it.png" alt="tra_it" title="Tradurre"></a>
+            -->
+            &nbsp;&nbsp;&nbsp;
+            <a href="https://dlc.iec.cat/" target="_blank">
+                <img src="img/ca.png" alt="dic_ca" title="Diccionari"></a>
+            <a href="https://dle.rae.es/" target="_blank">
+                <img src="img/es.png" alt="dic_es" title="Diccionario"></a>
+            <a href="https://www.wordreference.com/definition/" target="_blank">
+                <img src="img/gb.png" alt="dic_en" title="Dictionary"></a>
+            &nbsp;&nbsp;&nbsp;
+            <button id="teclat" onclick="document.getElementById('Teclat').hidden = 
+                                        !document.getElementById('Teclat').hidden;" title="Mostra o Amaga">
+                <img src="img/keyboard.png" alt="teclat"></button>
+        </div>
         <div id="Guia">
             <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;" 
                  title="Hola, soc en Pep Gonella i seré
