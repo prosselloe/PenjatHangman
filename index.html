@@ -37,7 +37,7 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
                 border-radius: 8px;
                 text-align: center;
                 max-width: 600px;
-                font-size: 24px;
+                font-size: x-large;
             }
 
             h2 {
@@ -48,8 +48,119 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
             #Guia { position:relative; top:-330px; left:235px; }
             #Caminar { position:relative; top:-235px; left:530px; }
             #Rotar { position:relative; top:-560px; left:430px; }
+            #Teclat { position:relative; top:-525px; left:293px; }
+            #Segons { position:relative; top:-520px; left:130px; }
         </style>
         <script>
+            // Variables Globals.
+            var Paraula = ""; 
+            var Lletres = "";
+            var Vides = 7;
+    
+            // Comprovam si la lletra es troba a la Paraula.
+            function Comprovar() {
+                // Variables Locals.
+                var lletra = document.getElementById("lletra").value;
+                // Assignam el valor <input id="lletra" a lletra, 
+                // i deixam <input id="lletra" en blanc.
+                document.getElementById("lletra").value = "";
+                // window.alert(lletra);
+
+                // Convertim les majúsculues a minúscules
+                lletra = lletra.toLowerCase();
+
+                // Eliminam els accents o dièresis de les vocals
+                switch (lletra) {
+                    case "á":
+                    case "à":
+                        lletra = "a";
+                        break;
+                    case "é":
+                    case "è":
+                        lletra = "e";
+                        break;
+                    case "í":
+                    case "ï":
+                        lletra = "i";
+                        break;
+                    case "ó":
+                    case "ò":
+                        lletra = "o";
+                        break;
+                    case "ú":
+                    case "ü":
+                        lletra = "u";
+                        break;
+                    default:
+                        //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+                        break;
+                }
+
+                /*
+                 * L'abecedari català + castellà es composa 
+                 * de les vint-i-vuit lletres següents: 
+                 * a, b, c, ç, d, e, f, g, h, i, j, k, l, m, (Has encertat!)
+                 * n, ñ, o, p, q, r, s, t, u, v, w, x, y, z. (Has fallat!)
+                 */
+                if (((lletra >= "a") && (lletra <= "m")) || (lletra == "ç") || 
+                     (lletra == "·")) {
+                    document.getElementById("disfraz3").hidden = true;
+                    document.getElementById("disfraz2").hidden = false;
+                    document.getElementById("disfraz1").hidden = true;
+                    window.alert("Has encertat!");
+
+                    // Afegim lletra a Paraula i actualitzam la pantalla.
+                    Paraula = Paraula + lletra + " ";
+                    document.getElementById("Paraula").innerHTML = Paraula;
+                } else if (((lletra >= "n") && (lletra <= "z")) || (lletra == "ñ") || 
+                            (lletra == "-")) {
+                    document.getElementById("disfraz3").hidden = true;
+                    document.getElementById("disfraz2").hidden = true;
+                    document.getElementById("disfraz1").hidden = false;
+                    window.alert("Has fallat!");
+
+                    // Afegim lletra a Lletres i actualitzam la pantalla.
+                    Lletres = Lletres + "<del>" + lletra + "<del> ";
+                    document.getElementById("Lletres").innerHTML = Lletres;
+
+                    // Decrementam el comptador Vides.    
+                    Vides = Vides - 1;
+                    // window.alert(Vides);
+                } else {
+                    document.getElementById("disfraz3").hidden = false;
+                    document.getElementById("disfraz2").hidden = true;
+                    document.getElementById("disfraz1").hidden = true;
+                    window.alert("Caràcter incorrecte!");
+                }
+                document.getElementById("lletra").focus();
+
+                // Actualitzam Vides a la pantalla.
+                document.getElementById("Vides").innerHTML = 
+                        "&nbsp;&nbsp;&nbsp;\n\
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
+
+                // Comprovam si has perdut! o has guanyat!.
+                if (Vides <= 0) {
+                    window.alert("i has perdut!");
+                    document.body.style.backgroundImage = "url('img/Jungle.png')";
+                    AturaTot();
+                } else {
+                    if (Paraula.length >= 14) {
+                        window.alert("i has guanyat!");
+                        document.body.style.backgroundImage = "url('img/Party.png')";
+                        AturaTot();
+                    }
+                }
+            }
+            
+            // Deshabilitam tant <input id="lletra" com <button id="comprovar".
+            function AturaTot() {
+                document.getElementById("lletra").disabled = true;
+                document.getElementById("comprovar").disabled = true;
+                document.getElementById('teclat').disabled = true;
+                document.getElementById("Segons").hidden = true;    
+            }
+
             // Amagam totes les imatges.
             function AmagaImg() {
                 document.getElementById("disfraz3").hidden = false;
@@ -57,6 +168,7 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
                 document.getElementById("disfraz1").hidden = true;
                 document.getElementById("caminar").hidden = false;
                 document.getElementById("rotar").hidden = false;
+                document.getElementById('Teclat').hidden = true;
                 document.body.style.display = "block";
             }
 
@@ -75,6 +187,33 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
     <body onload="AmagaImg();"
           style="background-image: url('img/Desert.png'); 
           background-size: 640px 480px; background-repeat: no-repeat;">
+        <script>
+            // Dificultam la visualització del codi font.
+            document.oncontextmenu = function() { return false; }
+            function KeyPress(e) {
+                var evObject = window.event? event : e;
+                if (evObject.keyCode != 13 && evObject.ctrlKey) { return false; }
+            }
+            document.onkeydown = KeyPress;
+            
+            // Captura de la tecla ENTER del teclat.
+            window.onkeypress = function(evObject) {
+                if (evObject.keyCode == 13) { Comprovar(); }
+            }
+
+            if (confirm("Let's go: a la quinta forca / al quinto pino / to the boondocks?") == false) {
+                document.body.style.backgroundImage = "url('img/fondo1.png')";
+            }
+            // document.getElementById("lletra").focus();
+
+            // Comptador de temps al joc.
+            var seconds = 0;
+            function timer() {
+                seconds = seconds + 1;
+                document.getElementById("Segons").innerHTML = seconds;
+            }
+            setInterval(timer, 1000);
+        </script>
         <h1>Joc del Penjat / Juego del Ahorcado / Hangman Game</h1>
         <table>
             <tr>
@@ -200,6 +339,74 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
         </div>
         <div id="Rotar">
             <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;" title="i has perdut!">
+        </div>
+        <div id="Segons" style="color: blue;">0</div> 
+        <div id="Teclat" translate="no">
+            <table><strong>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="q" onclick="document.getElementById('lletra').value = 'q';">q</button>
+                    <button id="w" onclick="document.getElementById('lletra').value = 'w';">w</button>
+                    <button id="e" onclick="document.getElementById('lletra').value = 'e';">e</button>
+                    <button id="r" onclick="document.getElementById('lletra').value = 'r';">r</button>
+                    <button id="t" onclick="document.getElementById('lletra').value = 't';">t</button>
+                    <button id="y" onclick="document.getElementById('lletra').value = 'y';">y</button>
+                    <button id="u" onclick="document.getElementById('lletra').value = 'u';">u</button>
+                    <button id="i" onclick="document.getElementById('lletra').value = 'i';">i</button>
+                    <button id="o" onclick="document.getElementById('lletra').value = 'o';">o</button>
+                    <button id="p" onclick="document.getElementById('lletra').value = 'p';">p</button>
+                    <!--
+                    <button id="agut" onclick="alert('Sense vocals accentuades!');" 
+                            style="color:red" title="Accent Agut">´</button>
+                    -->
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;
+                    <button id="a" onclick="document.getElementById('lletra').value = 'a';">a</button>
+                    <button id="s" onclick="document.getElementById('lletra').value = 's';">s</button>
+                    <button id="d" onclick="document.getElementById('lletra').value = 'd';">d</button>
+                    <button id="f" onclick="document.getElementById('lletra').value = 'f';">f</button>
+                    <button id="g" onclick="document.getElementById('lletra').value = 'g';">g</button>
+                    <button id="h" onclick="document.getElementById('lletra').value = 'h';">h</button>
+                    <button id="j" onclick="document.getElementById('lletra').value = 'j';">j</button>
+                    <button id="k" onclick="document.getElementById('lletra').value = 'k';">k</button>
+                    <button id="l" onclick="document.getElementById('lletra').value = 'l';">l</button>
+                    <button id="ñ" onclick="document.getElementById('lletra').value = 'ñ';" 
+                            style="color:blue">ñ</button>
+                    <!--
+                    <button id="dieresi" onclick="alert('Sense vocals amb dièrsi!');" 
+                            style="color:red" title="Dièresi">¨</button>
+                    -->
+                    <button id="intro" onclick="Comprovar();" title="ENTER">┘</button>
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    <button id="shift" onclick="alert('Només lletres minúscules!');" 
+                            style="color:red" title="SHIFT">↑</button>
+                    <button id="z" onclick="document.getElementById('lletra').value = 'z';">z</button>
+                    <button id="x" onclick="document.getElementById('lletra').value = 'x';">x</button>
+                    <button id="c" onclick="document.getElementById('lletra').value = 'c';">c</button>
+                    <button id="v" onclick="document.getElementById('lletra').value = 'v';">v</button>
+                    <button id="b" onclick="document.getElementById('lletra').value = 'b';">b</button>
+                    <button id="n" onclick="document.getElementById('lletra').value = 'n';">n</button>
+                    <button id="m" onclick="document.getElementById('lletra').value = 'm';">m</button>
+                    <button id="ç" onclick="document.getElementById('lletra').value = 'ç';" 
+                            style="color:blue">ç</button>
+                    <button id="volat" onclick="document.getElementById('lletra').value = '·';" 
+                            style="color:blue" title="Punt Volat">·</button>
+                    <button id="guio" onclick="document.getElementById('lletra').value = '-';" 
+                            style="color:blue" title="Guionet">-</button>
+                    <!--
+                    <button id="greu" onclick="alert('Sense vocals accentuades!');" 
+                            style="color:red" title="Accent Greu">`</button>
+                    -->
+                  </td>          
+                </tr>
+            </strong></table>
         </div>
     </body>
 </html>
