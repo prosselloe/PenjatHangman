@@ -184,7 +184,7 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
             }
         </script> 
     </head>
-    <body onload="AmagaImg();"
+    <body onload="AmagaImg(); document.getElementById('mystery').play();"
           style="background-image: url('img/Desert.png'); 
           background-size: 640px 480px; background-repeat: no-repeat;">
         <script>
@@ -393,5 +393,8 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
                 </tr>
             </strong></table>
         </div>
+        <div id="Audios">
+            <audio id="mystery">       <source src="aud/mystery.mp3" type="audio/mpeg"></audio>
+        </div>        
     </body>
 </html>
