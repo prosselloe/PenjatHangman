@@ -113,7 +113,10 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     // Variables Globals.
     var Paraula = [];
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
-    var Vides = 7;
+    
+    const Vides_dft = 7;
+    var Vides = Vides_dft;
+    
     var Punts = 0;
     var IdIdioma_ant = "ca";
 
@@ -395,6 +398,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         }
         document.getElementById("paraula").innerHTML = Paraula;
         
+        Vides = Vides_dft;        
         IdIdioma_ant = IdIdioma;
     }
         
