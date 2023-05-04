@@ -241,7 +241,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             // Afegim lletra a Lletres i actualitzam la pantalla.
             // Lletres = Lletres + "<del>" + lletra + "<del>,";
             // Lletres.push(lletra);
-            Lletres[7 - Vides] = lletra;
+            Lletres[Vides_dft - Vides] = lletra;
             document.getElementById("lletres").innerHTML = Lletres;
             
             // Decrementam el comptador Vides.    
@@ -349,6 +349,9 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         document.getElementById('Teclat').hidden = true;
         
         document.getElementById("paraula").innerHTML = Paraula;
+        document.getElementById("vides").innerHTML = 
+                "&nbsp;&nbsp;&nbsp;\n\
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
         document.body.style.display = "block";
     }
 
@@ -397,9 +400,19 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             Paraula[i] = "_";
         }
         document.getElementById("paraula").innerHTML = Paraula;
-        
-        Vides = Vides_dft;        
+        for (var i = 0; i < Vides_dft - Vides; i++) {
+            Lletres[i] = "_";
+        }
+        document.getElementById("lletres").innerHTML = Lletres;
+        Vides = Vides_dft;    
+        document.getElementById("vides").innerHTML = 
+                "&nbsp;&nbsp;&nbsp;\n\
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
+        AmagaImg();
+        document.getElementById("disfraz3").hidden = false;
+                
         IdIdioma_ant = IdIdioma;
+        // window.alert("IdIdioma_ant = '" + IdIdioma_ant + "'");
     }
         
     // Mostram la imatge corresponent.
