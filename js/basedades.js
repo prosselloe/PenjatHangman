@@ -325,23 +325,19 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         document.getElementById('teclat').disabled = true;
         document.getElementById('sons').disabled = true;
         document.getElementById("pista").disabled = true;
+        
+        document.getElementById("ca").disabled = true;
+        document.getElementById("es").disabled = true;
+        document.getElementById("en").disabled = true;
+        
         document.getElementById("Segons").hidden = true;    
     }
 
     // Amagam totes les imatges.
     function AmagaImg() {
-        document.getElementById("ahorcado_6").hidden = true;
-        document.getElementById("ahorcado_5").hidden = true;
-        document.getElementById("ahorcado_4").hidden = true;
-        document.getElementById("ahorcado_3").hidden = true;
-        document.getElementById("ahorcado_2").hidden = true;
-        document.getElementById("ahorcado_1").hidden = true;
-        document.getElementById("ahorcado_0").hidden = true;
+        AmagaForca();
         document.getElementById("ahorcado").hidden = true;
 
-        // document.getElementById("disfraz3").hidden = true;
-        document.getElementById("disfraz2").hidden = true;
-        document.getElementById("disfraz1").hidden = true;
         document.getElementById("caminar").hidden = true;
         document.getElementById("rotar").hidden = true;
 
@@ -353,6 +349,21 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 "&nbsp;&nbsp;&nbsp;\n\
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
         document.body.style.display = "block";
+    }
+
+    // Amagam totes les imatges.
+    function AmagaForca() {
+        document.getElementById("ahorcado_6").hidden = true;
+        document.getElementById("ahorcado_5").hidden = true;
+        document.getElementById("ahorcado_4").hidden = true;
+        document.getElementById("ahorcado_3").hidden = true;
+        document.getElementById("ahorcado_2").hidden = true;
+        document.getElementById("ahorcado_1").hidden = true;
+        document.getElementById("ahorcado_0").hidden = true;
+        
+        // document.getElementById("disfraz3").hidden = true;
+        document.getElementById("disfraz2").hidden = true;
+        document.getElementById("disfraz1").hidden = true;
     }
 
     // Canviam els diferents literals de la GUI segons l'idioma
@@ -408,7 +419,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         document.getElementById("vides").innerHTML = 
                 "&nbsp;&nbsp;&nbsp;\n\
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
-        AmagaImg();
+        AmagaForca();
         document.getElementById("disfraz3").hidden = false;
                 
         IdIdioma_ant = IdIdioma;
