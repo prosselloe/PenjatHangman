@@ -52,6 +52,39 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
             #Segons { position:relative; top:-695px; left:570px; }
         </style>
         <script>
+            // Moviment per la pantalla del Guia
+            var corx = 235; var cory = -335; // Coordenades del Guia
+            var sigx = 1; var sigy = 1; // Direcció del Guia
+            var intervalID = setInterval(moureGuia, 50);
+
+            function moureGuia() {
+                if (corx < 0+20 || corx > 520-20) sigx = sigx * -1;
+                if (cory < -460 || cory > -100) sigy = sigy * -1;
+                if (corx < 0+20 || corx > 520-20 || 
+                    cory < -460 || cory > -100)
+                    if (sigx == 1 && sigy == 1) {
+                        document.getElementById("disfraz3").hidden = true;
+                        document.getElementById("disfraz2").hidden = true;
+                        document.getElementById("disfraz1").hidden = false;
+                    } else if (sigx == -1 && sigy == -1) {
+                        document.getElementById("disfraz3").hidden = true;
+                        document.getElementById("disfraz2").hidden = false;
+                        document.getElementById("disfraz1").hidden = true;
+                    } else {
+                        document.getElementById("disfraz3").hidden = false;
+                        document.getElementById("disfraz2").hidden = true;
+                        document.getElementById("disfraz1").hidden = true;
+                    }
+                corx += 5 * sigx;
+                cory += 5 * sigy;                /*
+                document.getElementById("lletra").placeholder = "cor(" + 
+                    corx + ", " + cory + "); sig(" + 
+                    sigx + ", " + sigy + ")";
+                */
+                document.getElementById("Guia").style.left = corx;
+                document.getElementById("Guia").style.top = cory;
+            } 
+            
             // Variables Globals.
             var Paraula = ""; 
             var Lletres = "";
@@ -96,6 +129,16 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
                         break;
                 }
 
+                /* 
+                 * Comprovam que la lletra no sigui repetida, Inici
+                */    
+                if ((Paraula.indexOf(lletra) != -1) || (Lletres.indexOf(lletra) != -1)) {
+                    document.getElementById("disfraz3").hidden = false;
+                    document.getElementById("disfraz2").hidden = true;
+                    document.getElementById("disfraz1").hidden = true;
+                    window.alert("Lletra repetida!");
+                } else {
+
                 /*
                  * L'abecedari català + castellà es composa 
                  * de les vint-i-vuit lletres següents: 
@@ -132,6 +175,12 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
                     document.getElementById("disfraz1").hidden = true;
                     window.alert("Caràcter incorrecte!");
                 }
+                
+                /*
+                 * Comprovam que la lletra no sigui repetida. Final
+                */
+                }
+                
                 document.getElementById("lletra").focus();
 
                 // Actualitzam Vides a la pantalla.
@@ -213,7 +262,7 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
         <table>
             <tr>
               <td>
-                    <input id="lletra" type="text"
+                    <input id="lletra" type="text" size="20"
                            placeholder="Escriu una lletra minúscula" maxlength="1"> 
                     <button id="Comprovar" onclick="Comprovar();">Comprovar</button>
                 <h2>Paraula: 
