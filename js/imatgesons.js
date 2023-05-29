@@ -161,14 +161,26 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         
         document.body.style.display = "block";
     }
-
+    
+    // Canviam els diferents literals de la GUI segons l'idioma
+    function CanviarIdioma(IdIdioma) {
+        document.getElementById("Idiomes").value = IdIdioma;
+        document.getElementById("en").href = 
+            "https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=" + 
+            IdIdioma + "&_x_tr_hl=" + IdIdioma;
+    
+        // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
+        if (IdIdioma == "en") { IdIdioma = "gb" }                                 
+        document.getElementById("gb").src = "img/" + IdIdioma + ".png";        
+    }
+  
     // Mostram la imatge corresponent.
     function MostraImg() {
         switch (Vides) {
             case 6:
-              //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
-              document.getElementById("ahorcado_6").hidden = false;
-              break;
+                //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+                document.getElementById("ahorcado_6").hidden = false;
+                break;
             case 5:
                 //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
                 document.getElementById("ahorcado_5").hidden = false;
