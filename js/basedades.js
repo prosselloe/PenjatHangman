@@ -368,6 +368,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
 
     // Canviam els diferents literals de la GUI segons l'idioma
     function CanviarIdioma(IdIdioma) {
+        document.getElementById("Idiomes").value = IdIdioma;
         AlaWeb_SQLite(IdIdioma);
 
         Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
@@ -484,8 +485,12 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         //     [], function(idiomes) {Print_Data(idiomes = idiomes.pop());}
             [], function(idiomes) {Idiomes = idiomes.pop();}
         );
-        if (Idiomes.length == 0) {Idiomes = Idiomes_dft;};
         // window.alert(Idiomes[0].Versio);
+        if (Idiomes.length == 0) { Idiomes = Idiomes_dft; };
+        if (Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma) == undefined) {
+            window.alert("GUI: Idioma no trobat / Idioma no encontrado / Language not found!");
+        };
+
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT Paraula, Pista \n\
                 FROM TblParaules INNER JOIN TblPistes \n\
