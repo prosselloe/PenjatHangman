@@ -341,11 +341,31 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         
         document.getElementById("paraula").innerHTML = Paraula;
         document.body.style.display = "block";
+
+        // Cream els options del Select pels Idiomes sense "ca" i "es"
+        var IdiomesSelect = document.getElementById('Idiomes');
+        IdiomesSelect.options.length = 0;
+        Idiomes.forEach(function(idioma){
+            if ((idioma.IdIdioma != "ca") && (idioma.IdIdioma != "es")) {
+                opcion = document.createElement('option');
+                opcion.value = idioma.IdIdioma;
+                opcion.text = idioma.IdIdioma;
+                IdiomesSelect.add(opcion);
+            }
+        });
     }
 
-    // Canviam els diferents literals de la GUI segons l'idioma
+    // Canviam els diferents literals de la GUI segons IdIdioma
     function CanviarIdioma(IdIdioma) {
-        Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
+        if ((IdIdioma != "ca") && (IdIdioma != "es")) {
+            document.getElementById("Idiomes").value = IdIdioma;
+        }
+        if (Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma) == undefined) {
+            window.alert("GUI: Idioma no trobat / Idioma no encontrado / Language not found!");
+        } else {
+            Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
+        }
+        
         document.title = Idioma.Titol;
         document.getElementById("Versio").innerHTML = Idioma.Versio;
         document.getElementById("lletra").placeholder = Idioma.Input;
@@ -371,15 +391,21 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         if (Punts > 0) {
             document.getElementById("Punts").innerHTML = Idioma.Puntuacio + " " + Punts;
         }
+
+        if ((IdIdioma != "ca") && (IdIdioma != "es")) {
+            // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
+            if (IdIdioma == "en") { IdIdioma = "gb" }                                 
+            document.getElementById("gb").src = "img/" + IdIdioma + ".png";        
+        }
     }
         
     // Mostram la imatge corresponent.
     function MostraImg() {
         switch (Vides) {
             case 6:
-              //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
-              document.getElementById("ahorcado_6").hidden = false;
-              break;
+                //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+                document.getElementById("ahorcado_6").hidden = false;
+                break;
             case 5:
                 //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
                 document.getElementById("ahorcado_5").hidden = false;

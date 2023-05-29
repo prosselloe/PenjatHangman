@@ -349,6 +349,18 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 "&nbsp;&nbsp;&nbsp;\n\
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
         document.body.style.display = "block";
+
+        // Cream els options del Select pels Idiomes sense "ca" i "es"
+        var IdiomesSelect = document.getElementById('Idiomes');
+        IdiomesSelect.options.length = 0;
+        Idiomes.forEach(function(idioma){
+            if ((idioma.IdIdioma != "ca") && (idioma.IdIdioma != "es")) {
+                opcion = document.createElement('option');
+                opcion.value = idioma.IdIdioma;
+                opcion.text = idioma.IdIdioma;
+                IdiomesSelect.add(opcion);
+            }
+        });
     }
 
     // Amagam totes les imatges.
@@ -368,10 +380,12 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
 
     // Canviam els diferents literals de la GUI segons l'idioma
     function CanviarIdioma(IdIdioma) {
-        document.getElementById("Idiomes").value = IdIdioma;
+        if ((IdIdioma != "ca") && (IdIdioma != "es")) {
+            document.getElementById("Idiomes").value = IdIdioma;
+        }
         AlaWeb_SQLite(IdIdioma);
-
         Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
+        
         document.title = Idioma.Titol;
         document.getElementById("Versio").innerHTML = Idioma.Versio;
         document.getElementById("lletra").placeholder = Idioma.Input;
@@ -425,15 +439,21 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 
         IdIdioma_ant = IdIdioma;
         // window.alert("IdIdioma_ant = '" + IdIdioma_ant + "'");
+        
+        if ((IdIdioma != "ca") && (IdIdioma != "es")) {
+            // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
+            if (IdIdioma == "en") { IdIdioma = "gb" }                                 
+            document.getElementById("gb").src = "img/" + IdIdioma + ".png";        
+        }
     }
         
     // Mostram la imatge corresponent.
     function MostraImg() {
         switch (Vides) {
             case 6:
-              //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
-              document.getElementById("ahorcado_6").hidden = false;
-              break;
+                //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+                document.getElementById("ahorcado_6").hidden = false;
+                break;
             case 5:
                 //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
                 document.getElementById("ahorcado_5").hidden = false;
@@ -480,6 +500,8 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         // The `initSqlJs` function is globally provided by all of the main dist files if loaded in the browser.
         // We must specify this locateFile function if we are loading a wasm file from anywhere other than the 
         // current html page's folder.
+
+        // Recuperam de la base de dades els TextosGUI per tots els Idiomes
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT * FROM TblTextosGUI;',
         //     [], function(idiomes) {Print_Data(idiomes = idiomes.pop());}
@@ -491,6 +513,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             window.alert("GUI: Idioma no trobat / Idioma no encontrado / Language not found!");
         };
 
+        // Recuperam de la base de dades les paraules del IdIdioma
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT Paraula, Pista \n\
                 FROM TblParaules INNER JOIN TblPistes \n\
@@ -499,13 +522,13 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         //    [], function(taula) {Print_Data(Taula = taula.pop());}
             [], function(taula) {Taula = taula.pop();}
         );
+        // window.alert(Taula[0].Pista);
         if (Taula.length == 0) {
             Taula = Taula_dft;
             window.alert("Idioma sense paraules / Idioma sin palabras / Language without words!");
         } else {
             // window.alert("Paraules en idioma / Palabras en idioma / Language words = '" + IdIdioma + "'");
         };
-        // window.alert(Taula[0].Pista);
     }
 
     // Print data   
