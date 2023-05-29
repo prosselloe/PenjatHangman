@@ -137,14 +137,24 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 <img src="img/es.png" alt="tra_es" title="en Español"></button>
             <button id="en" style="height: 20px; width: 28px" onclick="CanviarIdioma('en')">
                 <img src="img/gb.png" alt="tra_en" title="in English"></button>
-            &nbsp;&nbsp;&nbsp;
+            <!--
+            <label for="Idiomes">Select:</label>
+            -->
+            <select name="Idiomes" id="Idiomes" onchange="CanviarIdioma(this.value)" title="Select">
+                <option value="ca">ca</option>
+                <option value="es">es</option>
+                <option value="en">en</option>
+                <option value="eu">eu</option>
+                <option value="gl">gl</option>
+                <option value="an">an</option>
+            </select>
             <a href="https://dlc.iec.cat/" target="_blank">
                 <img src="img/ca.png" alt="dic_ca" title="Diccionari"></a>
             <a href="https://dle.rae.es/" target="_blank">
                 <img src="img/es.png" alt="dic_es" title="Diccionario"></a>
             <a href="https://www.wordreference.com/definition/" target="_blank">
                 <img src="img/gb.png" alt="dic_en" title="Dictionary"></a>
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;
             <button id="teclat" onclick="document.getElementById('Teclat').hidden = 
                                         !document.getElementById('Teclat').hidden;" title="Mostra o Amaga">
                 <img src="img/keyboard.png" alt="teclat"></button>
