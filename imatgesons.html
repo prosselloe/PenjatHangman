@@ -44,7 +44,7 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         <table>
             <tr>
               <td>
-                    <input id="lletra" type="text"
+                    <input id="lletra" type="text" size="20"
                            placeholder="Escriu una lletra minúscula" maxlength="1"> 
                     <button id="Comprovar" onclick="Comprovar();">Comprovar</button>
                 <h2>Paraula: 
@@ -121,8 +121,8 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
                 <img src="img/ca.png" alt="tra_ca" title="en Català"></a>
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es">
                 <img src="img/es.png" alt="tra_es" title="en Español"></a>
-            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en">
-                <img src="img/gb.png" alt="tra_en" title="in English"></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en" 
+                id="en"> <img src="img/gb.png" alt="tra_en" title="in English" id="gb"></a>
             <!--
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=de">
                 <img src="img/de.png" alt="tra_de" title="Übersetzen"></a>
@@ -130,15 +130,25 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
                 <img src="img/fr.png" alt="tra_fr" title="Traduire"></a>
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=it&_x_tr_hl=it">
                 <img src="img/it.png" alt="tra_it" title="Tradurre"></a>
+            <label for="Idiomes">Select:</label>
             -->
-            &nbsp;&nbsp;&nbsp;
+            <select name="Idiomes" id="Idiomes" onchange="CanviarIdioma(this.value)" title="Select">
+            <!--
+                <option value="ca">ca</option>
+                <option value="es">es</option>
+            -->
+                <option value="en">en</option>
+                <option value="de">de</option>
+                <option value="fr">fr</option>
+                <option value="it">it</option>
+            </select>
             <a href="https://dlc.iec.cat/" target="_blank">
                 <img src="img/ca.png" alt="dic_ca" title="Diccionari"></a>
             <a href="https://dle.rae.es/" target="_blank">
                 <img src="img/es.png" alt="dic_es" title="Diccionario"></a>
             <a href="https://www.wordreference.com/definition/" target="_blank">
                 <img src="img/gb.png" alt="dic_en" title="Dictionary"></a>
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;
             <button id="teclat" onclick="document.getElementById('Teclat').hidden = 
                                         !document.getElementById('Teclat').hidden;" title="Mostra o Amaga">
                 <img src="img/keyboard.png" alt="teclat"></button>
