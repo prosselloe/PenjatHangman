@@ -144,7 +144,7 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
 
   INSERT INTO TblTextosGUI VALUES ("de", "Version der Hangman-Spieldatenbank", "Hangman-Spiel γ-Version", 
     "Schreiben Sie einen Kleinbuchstaben", "Gehen wir in die Wildnis?", "prüfen Sie", "Wort:", "Du gibst auf?", "Hinweis", 
-    "Leben:", "Eine Katze hat sieben?", "Briefe:", "Sind Sie in den Geisteswissenschaften tätig?", "URLhinweise:", "Sprichwort", "In die Wildnis,", 
+    "Leben:", "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprichw.", "In die Wildnis,", 
     "Sprechen Sie im Haus eines Gehenkten nicht über Seile,", "Sechzehn Richter eines Gerichts essen die Leber eines Henkers, …", "Credits:", 
     "Hangman-Spiel auf Scratch", "Henker", "auf Deutsch", "Wörterbuch", "Anzeigen oder Ausblenden", "Falscher Charakter!", 
     "Wiederholter Brief!", "Sie haben Recht!", "und du hast gewonnen!", "Du bist durchgefallen!", "und du hast verloren!", 
@@ -153,14 +153,14 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
     "Ecrire une lettre minuscule", "Allons-nous aux banlieue?", "Vérifier", "Mot:", "Tu abandonnes?", "Indice", 
     "Vies:", "Un chat en a sept?", "Lettres:", "Êtes-vous dans les lettres?", "URLindices:", "Dit", "Aux banlieue,", 
     "Chez un pendu, ne parle pas de cordes,", "Seize juges d'un tribunal mangent le foie d'un pendu, …", "Crédits:", 
-    "Jeu du Pendu sur Scratch", "Pendu", "en Français ", "Dictionnaire", "Afficher ou Masquer", "Caractère non valide!", 
+    "Jeu Pendu sur Scratch", "Pendu", "en Français ", "Dictionnaire", "Afficher ou Masquer", "Caractère non valide!", 
     "Lettre répétée!", "Vous as raison!", "et vous avez gagné!", "Vous avez échoué!", "et vous avez perdu!", 
     "Repose en paix - RIP!", "Score:");
   INSERT INTO TblTextosGUI VALUES ("it", "Versione con Banca Dati del Gioco dell'Impiccato", "Versione γ Gioco dell'Impiccato", 
     "Scrivi una lettera minuscola", "Andiamo ai boondocks?", "Controllare", "Parola:", "Ti arrendi?", "Traccia", 
     "Vite:", "Un gatto ne ha sette?", "Testi:", "Ti piacciono le lettere?", "URLtraccia :", "Ditta", "Ai boondocks,", 
     "Ecco un boia, non chiamatelo corde,", "Sedici giudici di un tribunale mangiano il fegato di un impiccato, …", "Crediti:", 
-    "Gioco dell'Impiccato su Scratch", "Impiccat", "in Italiano", "Dizionario", "Mostra o Nascondi", "Carattere non valido!", 
+    "Gioco Impiccato su Scratch", "Impiccat", "in Italiano", "Dizionario", "Mostra o Nascondi", "Carattere non valido!", 
     "Lettera ripetuta!", "Hai ragione!", "e hai vinto!", "Hai fallito!", "e hai perso!", "Riposa in pace – RIP!", 
     "Punto:");
 
