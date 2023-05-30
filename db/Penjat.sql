@@ -152,12 +152,12 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
     "Score:" ); 
 
   INSERT INTO TblTextosGUI VALUES ("de", "Version der Hangman-Spieldatenbank", "Hangman-Spiel γ-Version", 
-    "Schreiben Sie einen Kleinbuchstaben", "Gehen wir in die Wildnis?", "prüfen Sie", "Wort:", "Du gibst auf?", "Hinweis", 
-    "Leben:", "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprichw", "In die Wildnis,", 
-    "Sprechen Sie im Haus eines Gehenkten nicht über Seile,", "Sechzehn Richter eines Gerichts essen die Leber eines Henkers, …", "Credits:", 
-    "Hangman-Spiel Scratch", "Henker", "auf Deutsch", "Wörterbuch", "Anzeigen oder Ausblenden", "Falscher Charakter!", 
-    "Wiederholter Brief!", "Sie haben Recht!", "und du hast gewonnen!", "Du bist durchgefallen!", "und du hast verloren!", 
-    "Ruhe in Frieden – RIP!", "Punktzahl:");
+    "Schreiben einen Kleinbuchstaben", "Gehen wir in die Wildnis?", "Prüfen", "Wort:", "Du gibst auf?", "Hinweis", "Leben:", 
+    "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprichwort", "In die Wildnis,", 
+    "Sprechen im Haus eines Gehenkten nicht über Seile,", "Sechzehn Richter eines Gerichts essen die Leber eines Hangman, …", "Credits:", 
+    "Hangman-Spiel Scratch", "Henker", "auf Deutsch", "Wörterbuch", "Anzeigen oder Ausblenden", "Falscher charakter!", "Wiederholter brief!", 
+    "Sie haben recht!", "und du hast gewonnen!", "Du bist durchgefallen!", "und du hast verloren!", "Ruhe in Frieden – RIP!", 
+    "Punktzahl:");
   INSERT INTO TblTextosGUI VALUES ("fr", "Version avec Base de Données Jeu du Pendu", "Version γ Jeu du Pendu", 
     "Ecrire une lettre minuscule", "Allons-nous aux banlieue?", "Vérifier", "Mot:", "Tu abandonnes?", "Indice", 
     "Vies:", "Un chat en a sept?", "Lettres:", "Êtes-vous dans les lettres?", "URLindices:", "Dit", "Aux banlieue,", 
