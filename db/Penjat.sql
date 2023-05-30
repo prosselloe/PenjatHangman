@@ -88,6 +88,11 @@ CREATE TABLE TblPaisos (IdPais2T text, NomOficial text, IdPais3T text, IdPais3N 
   INSERT INTO TblPaisos VALUES ("IN","India", "IND", 356, "");
   INSERT INTO TblPaisos VALUES ("US","Estados Unidos de América (los)", "USA", 840, "");
 
+  INSERT INTO TblPaisos VALUES ("DE","Alemania", "DEU", 276, "Códigos obtenidos del idioma nativo (alemán): Deutschland");
+  INSERT INTO TblPaisos VALUES ("FR","Francia", "FRA", 250, "Incluye la Isla Clipperton.");
+  INSERT INTO TblPaisos VALUES ("IT","Italia", "ITA", 380, "");
+
+
 DROP TABLE IF EXISTS TblIdiomesPaisos;
 CREATE TABLE TblIdiomesPaisos (IdIdioma text, IdPais2T text,
   PRIMARY KEY (IdIdioma, IdPais2T),
@@ -105,6 +110,10 @@ CREATE TABLE TblIdiomesPaisos (IdIdioma text, IdPais2T text,
   INSERT INTO TblIdiomesPaisos VALUES ("es", "ES");
   INSERT INTO TblIdiomesPaisos VALUES ("eu", "ES");
   INSERT INTO TblIdiomesPaisos VALUES ("gl", "ES");
+
+  INSERT INTO TblIdiomesPaisos VALUES ("de", "DE");
+  INSERT INTO TblIdiomesPaisos VALUES ("fr", "FR");
+  INSERT INTO TblIdiomesPaisos VALUES ("it", "IT");
 
 SELECT TblIdiomes.IdIdioma, TblIdiomes.Idioma, TblPaisos.IdPais2T, TblPaisos.NomOficial
   FROM TblPaisos 
@@ -144,9 +153,9 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
 
   INSERT INTO TblTextosGUI VALUES ("de", "Version der Hangman-Spieldatenbank", "Hangman-Spiel γ-Version", 
     "Schreiben Sie einen Kleinbuchstaben", "Gehen wir in die Wildnis?", "prüfen Sie", "Wort:", "Du gibst auf?", "Hinweis", 
-    "Leben:", "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprichw.", "In die Wildnis,", 
+    "Leben:", "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprichw", "In die Wildnis,", 
     "Sprechen Sie im Haus eines Gehenkten nicht über Seile,", "Sechzehn Richter eines Gerichts essen die Leber eines Henkers, …", "Credits:", 
-    "Hangman-Spiel auf Scratch", "Henker", "auf Deutsch", "Wörterbuch", "Anzeigen oder Ausblenden", "Falscher Charakter!", 
+    "Hangman-Spiel Scratch", "Henker", "auf Deutsch", "Wörterbuch", "Anzeigen oder Ausblenden", "Falscher Charakter!", 
     "Wiederholter Brief!", "Sie haben Recht!", "und du hast gewonnen!", "Du bist durchgefallen!", "und du hast verloren!", 
     "Ruhe in Frieden – RIP!", "Punktzahl:");
   INSERT INTO TblTextosGUI VALUES ("fr", "Version avec Base de Données Jeu du Pendu", "Version γ Jeu du Pendu", 
