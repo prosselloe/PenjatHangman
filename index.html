@@ -225,8 +225,11 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
             function CanviarIdioma(IdIdioma) {
                 document.getElementById("Idiomes").value = IdIdioma;
                 document.getElementById("en").href = 
-                    "https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=" + 
+                    "https://penjat--github-netlify-app.translate.goog/index.html?_x_tr_sl=auto&_x_tr_tl=" + 
                     IdIdioma + "&_x_tr_hl=" + IdIdioma;
+            
+                document.getElementById("ca").disabled = true;
+                document.getElementById("es").disabled = true;
 
                 // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
                 if (IdIdioma == "en") { IdIdioma = "gb" }                                 
@@ -350,20 +353,18 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
           </tr>
         </table>
         <div id="Idioma" translate="no">
-            <a href="https://penjat-github.netlify.app/index.html"> 
-                <img src="img/ca.png" alt="tra_ca" title="en Català"></a>
-            <a href="https://penjat--github-netlify-app.translate.goog/index.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es"> 
-                <img src="img/es.png" alt="tra_es" title="en Español"></a>
-            <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en" 
+            <a href="https://penjat-github.netlify.app/index.html" 
+               id="ca"> <img src="img/ca.png" alt="tra_ca" title="en Català"></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/index.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es" 
+               id="es"> <img src="img/es.png" alt="tra_es" title="en Español"></a>
+            <a href="https://penjat--github-netlify-app.translate.goog/index.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en" 
                id="en"> <img id="gb" src="img/gb.png" alt="tra_en" title="in English"></a>
             <!--
             <label for="Idiomes">Select:</label>
             -->
             <select name="Idiomes" id="Idiomes" onchange="CanviarIdioma(this.value)" title="Select">
-            <!--
                 <option value="ca">ca</option>
                 <option value="es">es</option>
-            -->
                 <option value="en">en</option>
                 <option value="de">de</option>
                 <option value="fr">fr</option>
