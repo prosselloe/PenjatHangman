@@ -169,6 +169,9 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
             "https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=" + 
             IdIdioma + "&_x_tr_hl=" + IdIdioma;
     
+        document.getElementById("ca").disabled = true;
+        document.getElementById("es").disabled = true;
+    
         // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
         if (IdIdioma == "en") { IdIdioma = "gb" }                                 
         document.getElementById("gb").src = "img/" + IdIdioma + ".png";        
