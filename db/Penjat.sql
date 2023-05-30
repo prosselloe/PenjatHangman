@@ -153,7 +153,7 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
 
   INSERT INTO TblTextosGUI VALUES ("de", "Version der Hangman-Spieldatenbank", "Hangman-Spiel γ-Version", 
     "Schreiben einen Kleinbuchstaben", "Gehen wir in die Wildnis?", "Prüfen", "Wort:", "Du gibst auf?", "Hinweis", "Leben:", 
-    "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprichwort", "In die Wildnis,", 
+    "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprw.", "In die Wildnis,", 
     "Sprechen im Haus eines Gehenkten nicht über Seile,", "Sechzehn Richter eines Gerichts essen die Leber eines Hangman, …", "Credits:", 
     "Hangman-Spiel Scratch", "Henker", "auf Deutsch", "Wörterbuch", "Anzeigen oder Ausblenden", "Falscher charakter!", "Wiederholter brief!", 
     "Sie haben recht!", "und du hast gewonnen!", "Du bist durchgefallen!", "und du hast verloren!", "Ruhe in Frieden – RIP!", 
