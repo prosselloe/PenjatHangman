@@ -394,7 +394,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
 
         if ((IdIdioma != "ca") && (IdIdioma != "es")) {
             // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
-            if (IdIdioma == "en") { IdIdioma = "gb" }                                 
+            if (IdIdioma == "en") { IdIdioma = "gb"; }                                 
             document.getElementById("gb").src = "img/" + IdIdioma + ".png";        
         }
     }

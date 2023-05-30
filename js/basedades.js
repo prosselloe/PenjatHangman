@@ -417,9 +417,14 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         aleatori = Math.floor(Math.random() * Taula.length);
         paraula = Taula[aleatori].Paraula;
         pista = Taula[aleatori].Pista;
-        window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word! IdIdioma = '" + 
-                      IdIdioma_ant + "'");
         // window.alert("[" + paraula + "]=[" + pista + "]");
+        
+        // window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word! \n\
+        //               IdIdioma = '" + IdIdioma_ant + "'");
+        window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word!");
+        if (IdIdioma_ant == "en") { IdIdioma_ant = "gb"; }                                 
+        document.getElementById("bandera").src = "img/" + IdIdioma_ant + ".png";      
+        
         Paraula = [];
         // Marcam cada lletra amb un "_"
         for (var i = 0; i < paraula.length; i++) {
@@ -442,7 +447,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         
         if ((IdIdioma != "ca") && (IdIdioma != "es")) {
             // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
-            if (IdIdioma == "en") { IdIdioma = "gb" }                                 
+            if (IdIdioma == "en") { IdIdioma = "gb"; }                                 
             document.getElementById("gb").src = "img/" + IdIdioma + ".png";        
         }
     }
@@ -524,8 +529,10 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         );
         // window.alert(Taula[0].Pista);
         if (Taula.length == 0) {
-            Taula = Taula_dft;
             window.alert("Idioma sense paraules / Idioma sin palabras / Language without words!");
+            Taula = Taula_dft;
+            IdIdioma = "ca";
+            IdIdioma_ant = "ca";
         } else {
             // window.alert("Paraules en idioma / Palabras en idioma / Language words = '" + IdIdioma + "'");
         };
