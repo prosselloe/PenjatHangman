@@ -227,12 +227,19 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
                 document.getElementById("en").href = 
                     "https://penjat--github-netlify-app.translate.goog/index.html?_x_tr_sl=auto&_x_tr_tl=" + 
                     IdIdioma + "&_x_tr_hl=" + IdIdioma;
-            
-                document.getElementById("ca").disabled = true;
-                document.getElementById("es").disabled = true;
+                if (IdIdioma == "ca") {
+                    document.getElementById("ca").disabled = true;
+                    document.getElementById("es").disabled = false;
+                } else if (IdIdioma == "es") {
+                    document.getElementById("ca").disabled = false;
+                    document.getElementById("es").disabled = true;
+                } else {
+                    document.getElementById("ca").disabled = false;
+                    document.getElementById("es").disabled = false;
+                }
 
-                // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
-                if (IdIdioma == "en") { IdIdioma = "gb" }                                 
+                // Per a l'idioma "en = English" la bandera és la de "gb = Great Britain"  
+                if (IdIdioma == "en") { IdIdioma = "gb"; }                                 
                 document.getElementById("gb").src = "img/" + IdIdioma + ".png";        
             }
 
@@ -353,9 +360,9 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
           </tr>
         </table>
         <div id="Idioma" translate="no">
-            <button style="height: 20px; width: 28px" onclick="CanviarIdioma('ca')">
+            <button id="ca" style="height: 20px; width: 28px" onclick="CanviarIdioma('ca')">
                 <img src="img/ca.png" alt="tra_ca" title="en Català"></button>
-            <button style="height: 20px; width: 28px" onclick="CanviarIdioma('es')">
+            <button id="es" style="height: 20px; width: 28px" onclick="CanviarIdioma('es')">
                 <img src="img/es.png" alt="tra_es" title="en Español"></button>
             <!--
             <a href="https://penjat-github.netlify.app/index.html" 
@@ -369,12 +376,12 @@ Versió δ: Versió en Construcció Joc del Penjat: enconstrucio.html
             <label for="Idiomes">Select:</label>
             -->
             <select name="Idiomes" id="Idiomes" onchange="CanviarIdioma(this.value)" title="Select">
-                <option value="ca">ca</option>
-                <option value="es">es</option>
                 <option value="en">en</option>
                 <option value="de">de</option>
                 <option value="fr">fr</option>
                 <option value="it">it</option>
+                <option value="es">es</option>
+                <option value="ca">ca</option>
             </select>
             <a href="https://dlc.iec.cat/" target="_blank">
                 <img src="img/ca.png" alt="dic_ca" title="Diccionari"></a>

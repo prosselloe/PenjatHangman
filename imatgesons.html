@@ -117,22 +117,28 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
           </tr>
         </table>
         <div id="Idioma" translate="no">
+            <button id="ca" style="height: 20px; width: 28px" onclick="CanviarIdioma('ca')">
+                <img src="img/ca.png" alt="tra_ca" title="en Català"></button>
+            <button id="es" style="height: 20px; width: 28px" onclick="CanviarIdioma('es')">
+                <img src="img/es.png" alt="tra_es" title="en Español"></button>
+            <!--
             <a href="https://penjat-github.netlify.app/imatgesons.html" 
-               translate="no" id="ca"> <img src="img/ca.png" alt="tra_ca" title="en Català"></a>
+               id="ca"> <img src="img/ca.png" alt="tra_ca" title="en Català"></a>
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es" 
-               translate="no" id="es"> <img src="img/es.png" alt="tra_es" title="en Español"></a>
+               id="es"> <img src="img/es.png" alt="tra_es" title="en Español"></a>
+            -->
             <a href="https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en" 
-               translate="no" id="en"> <img id="gb" src="img/gb.png" alt="tra_en" title="in English"></a>
+               id="en"> <img id="gb" src="img/gb.png" alt="tra_en" title="in English"></a>
             <!--
             <label for="Idiomes">Select:</label>
             -->
             <select name="Idiomes" id="Idiomes" onchange="CanviarIdioma(this.value)" title="Select">
-                <option value="ca">ca</option>
-                <option value="es">es</option>
                 <option value="en">en</option>
                 <option value="de">de</option>
                 <option value="fr">fr</option>
                 <option value="it">it</option>
+                <option value="es">es</option>
+                <option value="ca">ca</option>
             </select>
             <a href="https://dlc.iec.cat/" target="_blank">
                 <img src="img/ca.png" alt="dic_ca" title="Diccionari"></a>
