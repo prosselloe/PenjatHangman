@@ -168,9 +168,16 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         document.getElementById("en").href = 
             "https://penjat--github-netlify-app.translate.goog/imatgesons.html?_x_tr_sl=auto&_x_tr_tl=" + 
             IdIdioma + "&_x_tr_hl=" + IdIdioma;
-    
-        document.getElementById("ca").disabled = true;
-        document.getElementById("es").disabled = true;
+        if (IdIdioma == "ca") {
+            document.getElementById("ca").disabled = true;
+            document.getElementById("es").disabled = false;
+        } else if (IdIdioma == "es") {
+            document.getElementById("ca").disabled = false;
+            document.getElementById("es").disabled = true;
+        } else {
+            document.getElementById("ca").disabled = false;
+            document.getElementById("es").disabled = false;
+        }
     
         // Per a l'idioma "en = English" la bandera es la de "gb = Great Britain"  
         if (IdIdioma == "en") { IdIdioma = "gb" }                                 
