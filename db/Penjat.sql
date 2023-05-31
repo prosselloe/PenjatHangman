@@ -9,8 +9,8 @@ CREATE TABLE TblIdiomes (IdIdioma text, Idioma text,
   INSERT INTO TblIdiomes VALUES ("eu","euskera");
   INSERT INTO TblIdiomes VALUES ("gl","gallego");
 
-  INSERT INTO TblIdiomes VALUES ("de","alemán");
   INSERT INTO TblIdiomes VALUES ("fr","francés");
+  INSERT INTO TblIdiomes VALUES ("de","alemán");
   INSERT INTO TblIdiomes VALUES ("it","italiano");
 
 DROP TABLE IF EXISTS TblPistes;
@@ -88,8 +88,8 @@ CREATE TABLE TblPaisos (IdPais2T text, NomOficial text, IdPais3T text, IdPais3N 
   INSERT INTO TblPaisos VALUES ("IN","India", "IND", 356, "");
   INSERT INTO TblPaisos VALUES ("US","Estados Unidos de América (los)", "USA", 840, "");
 
-  INSERT INTO TblPaisos VALUES ("DE","Alemania", "DEU", 276, "Códigos obtenidos del idioma nativo (alemán): Deutschland");
   INSERT INTO TblPaisos VALUES ("FR","Francia", "FRA", 250, "Incluye la Isla Clipperton.");
+  INSERT INTO TblPaisos VALUES ("DE","Alemania", "DEU", 276, "Códigos obtenidos del idioma nativo (alemán): Deutschland");
   INSERT INTO TblPaisos VALUES ("IT","Italia", "ITA", 380, "");
 
 
@@ -111,8 +111,8 @@ CREATE TABLE TblIdiomesPaisos (IdIdioma text, IdPais2T text,
   INSERT INTO TblIdiomesPaisos VALUES ("eu", "ES");
   INSERT INTO TblIdiomesPaisos VALUES ("gl", "ES");
 
-  INSERT INTO TblIdiomesPaisos VALUES ("de", "DE");
   INSERT INTO TblIdiomesPaisos VALUES ("fr", "FR");
+  INSERT INTO TblIdiomesPaisos VALUES ("de", "DE");
   INSERT INTO TblIdiomesPaisos VALUES ("it", "IT");
 
 SELECT TblIdiomes.IdIdioma, TblIdiomes.Idioma, TblPaisos.IdPais2T, TblPaisos.NomOficial
@@ -151,6 +151,13 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
     "You're right!", "and you have won!", "You have failed!", "and you have lost!", "Rest in peace - RIP!", 
     "Score:" ); 
 
+  INSERT INTO TblTextosGUI VALUES ("fr", "Version avec Base de Données Jeu du Pendu", "Version γ Jeu du Pendu", 
+    "Ecrire une lettre minuscule", "Allons-nous aux banlieue?", "Vérifier", "Mot:", "Tu abandonnes?", "Indice", 
+    "Vies:", "Un chat en a sept?", "Lettres:", "Êtes-vous dans lettres?", "URLindices:", "Dit", "Aux banlieue,", 
+    "Chez un pendu, ne parle pas de cordes,", "Seize juges d'un tribunal mangent le foie d'un pendu, …", "Crédits:", 
+    "Jeu Pendu sur Scratch", "Pendu", "en Français ", "Dictionnaire", "Afficher ou Masquer", "Caractère non valide!", 
+    "Lettre répétée!", "Vous as raison!", "et vous avez gagné!", "Vous avez échoué!", "et vous avez perdu!", 
+    "Repose en paix - RIP!", "Score:");
   INSERT INTO TblTextosGUI VALUES ("de", "Version der Hangman-Spieldatenbank", "Hangman-Spiel γ-Version", 
     "Schreiben einen Kleinbuchstaben", "Gehen wir in die Wildnis?", "Prüfen", "Wort:", "Du gibst auf?", "Hinweis", "Leben:", 
     "Eine Katze hat sieben?", "Briefe:", "Bist du Literatur?", "URLhinweise:", "Sprw.", "In die Wildnis,", 
@@ -158,13 +165,6 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
     "Hangman-Spiel Scratch", "Henker", "auf Deutsch", "Wörterbuch", "Anzeigen oder Ausblenden", "Falscher charakter!", "Wiederholter brief!", 
     "Sie haben recht!", "und du hast gewonnen!", "Du bist durchgefallen!", "und du hast verloren!", "Ruhe in Frieden – RIP!", 
     "Punktzahl:");
-  INSERT INTO TblTextosGUI VALUES ("fr", "Version avec Base de Données Jeu du Pendu", "Version γ Jeu du Pendu", 
-    "Ecrire une lettre minuscule", "Allons-nous aux banlieue?", "Vérifier", "Mot:", "Tu abandonnes?", "Indice", 
-    "Vies:", "Un chat en a sept?", "Lettres:", "Êtes-vous dans les lettres?", "URLindices:", "Dit", "Aux banlieue,", 
-    "Chez un pendu, ne parle pas de cordes,", "Seize juges d'un tribunal mangent le foie d'un pendu, …", "Crédits:", 
-    "Jeu Pendu sur Scratch", "Pendu", "en Français ", "Dictionnaire", "Afficher ou Masquer", "Caractère non valide!", 
-    "Lettre répétée!", "Vous as raison!", "et vous avez gagné!", "Vous avez échoué!", "et vous avez perdu!", 
-    "Repose en paix - RIP!", "Score:");
   INSERT INTO TblTextosGUI VALUES ("it", "Versione con Banca Dati del Gioco dell'Impiccato", "Versione γ Gioco dell'Impiccato", 
     "Scrivi una lettera minuscola", "Andiamo ai boondocks?", "Controllare", "Parola:", "Ti arrendi?", "Traccia", 
     "Vite:", "Un gatto ne ha sette?", "Testi:", "Ti piacciono le lettere?", "URLtraccia :", "Ditta", "Ai boondocks,", 
