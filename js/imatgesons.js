@@ -1,5 +1,5 @@
 /* 
-Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatgesons,js
+Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatgesons.js
 */
     // Variables Globals.
     var Paraula = ""; 
