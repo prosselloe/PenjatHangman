@@ -510,7 +510,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT * FROM TblTextosGUI;',
         //     [], function(idiomes) {Print_Data(idiomes = idiomes.pop());}
-            [], function(idiomes) {Idiomes = idiomes.pop();}
+             [], function(idiomes) {Idiomes = idiomes.pop();}
         );
         // window.alert(Idiomes[0].Versio);
         if (Idiomes.length == 0) { Idiomes = Idiomes_dft; };
@@ -540,6 +540,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
 
     // Print data   
     function Print_Data(res) {
+        window.alert("Print_Data"); 
         for (var i in res) 
         {
            // console.log("row " + i);
