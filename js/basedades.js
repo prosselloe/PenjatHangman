@@ -499,7 +499,8 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     function AlaWeb_SQLite(IdIdioma) {
         // window.alert("AlaWeb_SQLite IdIdioma = '" + IdIdioma + "'");
         config = {
-            locateFile: file => `https://sql.js.org/dist/${file}`
+            locateFile: filename => `/dist/${filename}`
+            // locateFile: file => `https://sql.js.org/dist/${file}`
             // locateFile: filename => `https://unpkg.com/sql.js@1.6.2/dist/${filename}`
         };
         // The `initSqlJs` function is globally provided by all of the main dist files if loaded in the browser.
@@ -510,7 +511,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT * FROM TblTextosGUI;',
         //     [], function(idiomes) {Print_Data(idiomes = idiomes.pop());}
-             [], function(idiomes) {Idiomes = idiomes.pop();}
+            [], function(idiomes) {Idiomes = idiomes.pop();}
         );
         // window.alert(Idiomes[0].Versio);
         if (Idiomes.length == 0) { Idiomes = Idiomes_dft; };
@@ -540,7 +541,6 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
 
     // Print data   
     function Print_Data(res) {
-        window.alert("Print_Data"); 
         for (var i in res) 
         {
            // console.log("row " + i);
