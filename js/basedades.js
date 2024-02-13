@@ -510,14 +510,9 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         // Recuperam de la base de dades els TextosGUI per tots els Idiomes
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT * FROM TblTextosGUI;',
-        //     [], function(idiomes) {Print_Data(idiomes = idiomes.pop());}
-            [], function(idiomes) {Idiomes = idiomes.pop();}
+        //    [], function(idiomes) {Print_Data(Idiomes = idiomes.pop());}
+            [], function(idiomes) {SQL_TextosGUI(IdIdioma, idiomes.pop());}
         );
-        // window.alert(Idiomes[0].Versio);
-        if (Idiomes.length == 0) { Idiomes = Idiomes_dft; };
-        if (Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma) == undefined) {
-            window.alert("GUI: Idioma no trobat / Idioma no encontrado / Language not found!");
-        };
 
         // Recuperam de la base de dades les paraules del IdIdioma
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
@@ -526,9 +521,24 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                   ON TblParaules.IdPista = TblPistes.IdPista \n\
                 WHERE TblParaules.IdIdioma = "' + IdIdioma + '";',
         //    [], function(taula) {Print_Data(Taula = taula.pop());}
-            [], function(taula) {Taula = taula.pop();}
+            [], function(taula) {SQL_TblParaulesPistes(IdIdioma, taula.pop());}
         );
-        // window.alert(Taula[0].Pista);
+    }
+    
+    function SQL_TblTextosGUI(IdIdioma, TblTextosGUI) {
+        // window.alert("SQL_TextosGUI IdIdioma = '" + IdIdioma + "'");
+        Idiomes = TblTextosGUI;
+        if (Idiomes.length == 0) { Idiomes = Idiomes_dft; };
+        if (Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma) == undefined) {
+            window.alert("GUI: Idioma no trobat / Idioma no encontrado / Language not found!");
+            Idiomes = Idiomes_dft;
+        };        
+        // window.alert(Idiomes[0].Versio);
+    }
+    
+    function SQL_TblParaulesPistes(IdIdioma, TblParaulesPistes) {
+        // window.alert("SQL_TblParaulesPistes IdIdioma = '" + IdIdioma + "'");
+        Taula = TblParaulesPistes;
         if (Taula.length == 0) {
             window.alert("Idioma sense paraules / Idioma sin palabras / Language without words!");
             Taula = Taula_dft;
@@ -536,9 +546,10 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             IdIdioma_ant = "ca";
         } else {
             // window.alert("Paraules en idioma / Palabras en idioma / Language words = '" + IdIdioma + "'");
-        };
+        };        
+        // window.alert(Taula[0].Pista);
     }
-
+    
     // Print data   
     function Print_Data(res) {
         for (var i in res) 
