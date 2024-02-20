@@ -167,6 +167,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         {"Paraula": "penjat", "Pista": "A ca un penjat, no hi anomenis cordes"},
         {"Paraula": "quinta", "Pista": "A la quinta forca"},
         {"Paraula": "setze", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        
         {"Paraula": "ahorcado", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
         {"Paraula": "mentar", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
         {"Paraula": "soga", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
@@ -176,6 +177,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         {"Paraula": "ladrón", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
         {"Paraula": "altar", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
         {"Paraula": "santo", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        
         {"Paraula": "god", "Pista": "God tempers the wind to the shorn lamb"},
         {"Paraula": "wind", "Pista": "God tempers the wind to the shorn lamb"},
         {"Paraula": "lamb", "Pista": "God tempers the wind to the shorn lamb"},
