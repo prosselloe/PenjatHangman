@@ -126,7 +126,6 @@ CREATE TABLE TblTextosGUI (IdIdioma text, Titol text, Versio text, Input text, P
   URLpistes text, Dita text, Dita1 text, Dita2 text, Dita3 text, Credits text, YouTube text, Wikis text, 
   Idioma text, Diccionari text, Teclat text, Incorrecte text, Repetida text, Encertat text, Guanyat text, 
   Fallat text, Perdut text, Descansi text, Puntuacio text,
-  PRIMARY KEY (IdIdioma),
   FOREIGN KEY (IdIdioma) REFERENCES TblIdiomes (IdIdioma));
 
   INSERT INTO TblTextosGUI VALUES ("ca", "Versió amb Base de Dades Joc del Penjat", "Versió γ Joc del Penjat", 
