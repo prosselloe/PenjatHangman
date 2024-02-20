@@ -511,7 +511,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); USE penjat; \n\
                 SELECT * FROM TblTextosGUI;',
         //    [], function(idiomes) {Print_Data(Idiomes = idiomes.pop());}
-            [], function(idiomes) {SQL_TextosGUI(IdIdioma, idiomes.pop());}
+            [], function(idiomes) {SQL_TblTextosGUI(IdIdioma, idiomes.pop());}
         );
 
         // Recuperam de la base de dades les paraules del IdIdioma
