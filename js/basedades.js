@@ -131,14 +131,32 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     // Simulam una Taula de ParaulesPistes, similar a la consulta a la base de dades, amb un array d'objectes
     const Taula_dft = [
         {"Paraula": "cordes", "Pista": "A ca un penjat, no hi anomenis cordes"},
-        {"Paraula": "fetge",  "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"Paraula": "forca",  "Pista": "A la quinta forca"},
+        {"Paraula": "fetge", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "forca", "Pista": "A la quinta forca"},
         {"Paraula": "jutges", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
         {"Paraula": "jutjat", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
         {"Paraula": "mengen", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
         {"Paraula": "penjat", "Pista": "A ca un penjat, no hi anomenis cordes"},
         {"Paraula": "quinta", "Pista": "A la quinta forca"},
-        {"Paraula": "setze",  "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}    
+        {"Paraula": "setze", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "ahorcado", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
+        {"Paraula": "mentar", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
+        {"Paraula": "soga", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
+        {"Paraula": "miente", "Pista": "El que miente es adorado, el que dice la verdad, ahorcado"},
+        {"Paraula": "adorado", "Pista": "El que miente es adorado, el que dice la verdad, ahorcado"},
+        {"Paraula": "verdad", "Pista": "El que miente es adorado, el que dice la verdad, ahorcado"},
+        {"Paraula": "ladrón", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        {"Paraula": "altar", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        {"Paraula": "santo", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        {"Paraula": "god", "Pista": "God tempers the wind to the shorn lamb"},
+        {"Paraula": "wind", "Pista": "God tempers the wind to the shorn lamb"},
+        {"Paraula": "lamb", "Pista": "God tempers the wind to the shorn lamb"},
+        {"Paraula": "dog", "Pista": "Give a dog a bad name and hang it"},
+        {"Paraula": "name", "Pista": "Give a dog a bad name and hang it"},
+        {"Paraula": "hang", "Pista": "Give a dog a bad name and hang it"},
+        {"Paraula": "healthy", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"},
+        {"Paraula": "wealthy", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"},
+        {"Paraula": "wise", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"}   
     ];
     var Taula = Taula_dft;
     

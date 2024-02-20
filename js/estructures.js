@@ -158,15 +158,33 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
     
     // Simulam una taula de base de dades amb un array d'objectes
     var taula = [
-        {"paraula": "cordes", "pista": "A ca un penjat, no hi anomenis cordes"},
-        {"paraula": "fetge",  "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "forca",  "pista": "A la quinta forca"},
-        {"paraula": "jutges", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "jutjat", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "mengen", "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
-        {"paraula": "penjat", "pista": "A ca un penjat, no hi anomenis cordes"},
-        {"paraula": "quinta", "pista": "A la quinta forca"},
-        {"paraula": "setze",  "pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}    
+        {"Paraula": "cordes", "Pista": "A ca un penjat, no hi anomenis cordes"},
+        {"Paraula": "fetge", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "forca", "Pista": "A la quinta forca"},
+        {"Paraula": "jutges", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "jutjat", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "mengen", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "penjat", "Pista": "A ca un penjat, no hi anomenis cordes"},
+        {"Paraula": "quinta", "Pista": "A la quinta forca"},
+        {"Paraula": "setze", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "ahorcado", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
+        {"Paraula": "mentar", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
+        {"Paraula": "soga", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
+        {"Paraula": "miente", "Pista": "El que miente es adorado, el que dice la verdad, ahorcado"},
+        {"Paraula": "adorado", "Pista": "El que miente es adorado, el que dice la verdad, ahorcado"},
+        {"Paraula": "verdad", "Pista": "El que miente es adorado, el que dice la verdad, ahorcado"},
+        {"Paraula": "ladrón", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        {"Paraula": "altar", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        {"Paraula": "santo", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        {"Paraula": "god", "Pista": "God tempers the wind to the shorn lamb"},
+        {"Paraula": "wind", "Pista": "God tempers the wind to the shorn lamb"},
+        {"Paraula": "lamb", "Pista": "God tempers the wind to the shorn lamb"},
+        {"Paraula": "dog", "Pista": "Give a dog a bad name and hang it"},
+        {"Paraula": "name", "Pista": "Give a dog a bad name and hang it"},
+        {"Paraula": "hang", "Pista": "Give a dog a bad name and hang it"},
+        {"Paraula": "healthy", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"},
+        {"Paraula": "wealthy", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"},
+        {"Paraula": "wise", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"}   
     ];
     
     // Escull una paraula aleatòriament
