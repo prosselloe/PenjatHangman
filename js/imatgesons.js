@@ -160,8 +160,6 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         document.getElementById('Teclat').hidden = true;
         
         document.body.style.display = "block";
-        
-        CanviarIdioma("en");
     }
     
     // Canviam els diferents literals de la GUI segons l'idioma

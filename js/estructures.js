@@ -147,6 +147,7 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
     var Vides = 7;
     var Punts = 0;
+    var IdIdioma_ant = "";
 
     // Llista de paraules per al joc i les pistes associades
     var paraules = ["cordes", "fetge", "forca", "jutges", 
@@ -195,8 +196,16 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
     var pista = pistes[paraulespistes[aleatori]];
     
     // Alternativament, fent servir l'array d'objectes
-    var paraula = taula[aleatori].paraula;
-    var pista = taula[aleatori].pista;
+    // window.alert(taula.length);
+    aleatori = Math.floor(Math.random() * taula.length);
+    paraula = taula[aleatori].Paraula;
+    pista = taula[aleatori].Pista;
+    // window.alert("aleatori="  + aleatori + ", paraula=" + paraula + ", pista=" + pista);
+    
+    // Assignam la bandera de l'idioma de la paraula
+    if (aleatori <  9) { IdIdioma_ant = "ca"; } else 
+    if (aleatori < 18) { IdIdioma_ant = "es"; } else 
+                       { IdIdioma_ant = "gb"; }                               
     
     // Marcam cada lletra amb un "_"
     for (var i = 0; i < paraula.length; i++) {
@@ -407,6 +416,9 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
                 IdiomesSelect.add(opcion);
             }
         });
+        
+        // Mostram la bandera de l'idioma de la paraula
+        document.getElementById("bandera").src = "img/" + IdIdioma_ant + ".png";
     }
 
     // Canviam els diferents literals de la GUI segons IdIdioma

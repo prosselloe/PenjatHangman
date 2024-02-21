@@ -172,6 +172,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     aleatori = Math.floor(Math.random() * Taula.length);
     paraula = Taula[aleatori].Paraula;
     pista = Taula[aleatori].Pista;
+    // window.alert("aleatori="  + aleatori + ", paraula=" + paraula + ", pista=" + pista);
     
     // Marcam cada lletra amb un "_"
     for (var i = 0; i < paraula.length; i++) {
