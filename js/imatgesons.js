@@ -6,6 +6,13 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
     var Lletres = "";
     var Vides = 7;
 
+    // Funció per tractar la tecla de retrocés, BACKSPACE, del teclat en pantalla
+    function Retroces() {
+        var temporal = document.getElementById('lletra').value;
+        temporal = temporal.substring(0, temporal.length - 1); 
+        document.getElementById('lletra').value = temporal;
+    } 
+    
     // Comprovam si la lletra es troba a la Paraula.
     function Comprovar() {
         // Variables Locals.
@@ -160,6 +167,8 @@ Versió α: Versió amb Imatges i Sons Joc del Penjat: imatgesons.html i imatges
         document.getElementById('Teclat').hidden = true;
         
         document.body.style.display = "block";
+        
+        // CanviarIdioma("en");
     }
     
     // Canviam els diferents literals de la GUI segons l'idioma

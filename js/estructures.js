@@ -212,6 +212,13 @@ Versió β: Versió amb Estructures de Dades Joc del Penjat: estructures.html i 
         Paraula[i] = "_";
     }
 
+    // Funció per tractar la tecla de retrocés, BACKSPACE, del teclat en pantalla
+    function Retroces() {
+        var temporal = document.getElementById('lletra').value;
+        temporal = temporal.substring(0, temporal.length - 1); 
+        document.getElementById('lletra').value = temporal;
+    } 
+    
     // Comprovam si la lletra es troba a la Paraula.
     function Comprovar() {
         // Variables Locals.
