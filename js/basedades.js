@@ -108,17 +108,17 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         }
     ]
     var Idiomes = Idiomes_dft;
-    var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == "ca");
+    var IdIdioma = "ca";
+    var IdIdioma_ant = IdIdioma;
+    var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
 
     // Variables Globals.
     var Paraula = [];
     var Lletres = ["_", "_", "_", "_", "_", "_", "_"];
     
     const Vides_dft = 7;
-    var Vides = Vides_dft;
-    
+    var Vides = Vides_dft;    
     var Punts = 0;
-    var IdIdioma_ant = "ca";
 
     // Llista de paraules per al joc i les pistes associades
     var paraules = ["cordes", "fetge", "forca", "jutges", 
@@ -130,6 +130,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     
     // Simulam una Taula de ParaulesPistes, similar a la consulta a la base de dades, amb un array d'objectes
     const Taula_dft = [
+        // Deixam per defecte les paraules i pistes en Català
         {"Paraula": "cordes", "Pista": "A ca un penjat, no hi anomenis cordes"},
         {"Paraula": "fetge", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
         {"Paraula": "forca", "Pista": "A la quinta forca"},
@@ -138,8 +139,10 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         {"Paraula": "mengen", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
         {"Paraula": "penjat", "Pista": "A ca un penjat, no hi anomenis cordes"},
         {"Paraula": "quinta", "Pista": "A la quinta forca"},
-        {"Paraula": "setze", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "setze", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}
         
+        /* 
+        // Alternativament podriem deixar per defecte les paraules i pistes en Castellà
         {"Paraula": "ahorcado", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
         {"Paraula": "mentar", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
         {"Paraula": "soga", "Pista": "En casa del ahorcado, no hay que mentar la soga"},
@@ -148,8 +151,11 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         {"Paraula": "verdad", "Pista": "El que miente es adorado, el que dice la verdad, ahorcado"},
         {"Paraula": "ladrón", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
         {"Paraula": "altar", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
-        {"Paraula": "santo", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"},
+        {"Paraula": "santo", "Pista": "Tan bien parece el ladrón ahorcado, como en el altar el santo"}
+        */
         
+        /* 
+        // Alternativament podriem deixar per defecte les paraules i pistes en Anglès
         {"Paraula": "god", "Pista": "God tempers the wind to the shorn lamb"},
         {"Paraula": "wind", "Pista": "God tempers the wind to the shorn lamb"},
         {"Paraula": "lamb", "Pista": "God tempers the wind to the shorn lamb"},
@@ -159,6 +165,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         {"Paraula": "healthy", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"},
         {"Paraula": "wealthy", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"},
         {"Paraula": "wise", "Pista": "Early to bed, early to rise, makes the man healthy, wealthy and wise"}   
+        */
     ];
     var Taula = Taula_dft;
     
@@ -411,6 +418,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         if ((IdIdioma != "ca") && (IdIdioma != "es")) {
             document.getElementById("Idiomes").value = IdIdioma;
         }
+
         AlaWeb_SQLite(IdIdioma);
         Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
         
@@ -442,16 +450,11 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
 
         // Escull una nova paraula aleatòriament
         // window.alert(Taula.length);
+        window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word!");
         aleatori = Math.floor(Math.random() * Taula.length);
         paraula = Taula[aleatori].Paraula;
         pista = Taula[aleatori].Pista;
         // window.alert("[" + paraula + "]=[" + pista + "]");
-        
-        // window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word! \n\
-        //               IdIdioma = '" + IdIdioma_ant + "'");
-        window.alert("Nova paraula aleatòria / Nueva palabra aleatoria / New random word!");
-        if (IdIdioma_ant == "en") { IdIdioma_ant = "gb"; }                                 
-        document.getElementById("bandera").src = "img/" + IdIdioma_ant + ".png";      
         
         Paraula = [];
         // Marcam cada lletra amb un "_"
@@ -469,6 +472,9 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
         AmagaForca();
         document.getElementById("disfraz3").hidden = false;
+        
+        if (IdIdioma_ant == "en") { IdIdioma_ant = "gb"; }                                 
+        document.getElementById("bandera").src = "img/" + IdIdioma_ant + ".png";      
                 
         IdIdioma_ant = IdIdioma;
         // window.alert("IdIdioma_ant = '" + IdIdioma_ant + "'");
@@ -571,7 +577,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
             window.alert("Idioma sense paraules / Idioma sin palabras / Language without words!");
             Taula = Taula_dft;
             IdIdioma = "ca";
-            IdIdioma_ant = "ca";
+            IdIdioma_ant = IdIdioma;
         } else {
             // window.alert("Paraules en idioma / Palabras en idioma / Language words = '" + IdIdioma + "'");
         };        
