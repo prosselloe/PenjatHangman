@@ -108,9 +108,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         }
     ]
     var Idiomes = Idiomes_dft;
-    var IdIdioma = "ca";
-    var IdIdioma_ant = IdIdioma;
-    var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
+    var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == "ca");
 
     // Variables Globals.
     var Paraula = [];
@@ -119,6 +117,7 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     const Vides_dft = 7;
     var Vides = Vides_dft;    
     var Punts = 0;
+    var IdIdioma_ant = "ca";
 
     // Llista de paraules per al joc i les pistes associades
     var paraules = ["cordes", "fetge", "forca", "jutges", 
@@ -180,6 +179,13 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
     paraula = Taula[aleatori].Paraula;
     pista = Taula[aleatori].Pista;
     // window.alert("aleatori="  + aleatori + ", paraula=" + paraula + ", pista=" + pista);
+
+    /*
+    // Assignam la bandera de l'idioma de la paraula
+    if (aleatori <  9) { IdIdioma_ant = "ca"; } else 
+    if (aleatori < 18) { IdIdioma_ant = "es"; } else 
+                       { IdIdioma_ant = "gb"; }   
+    */
     
     // Marcam cada lletra amb un "_"
     for (var i = 0; i < paraula.length; i++) {
@@ -396,6 +402,11 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
                 IdiomesSelect.add(opcion);
             }
         });
+        
+        /*
+        // Mostram la bandera de l'idioma de la paraula
+        document.getElementById("bandera").src = "img/" + IdIdioma_ant + ".png";
+        */
     }
 
     // Amagam totes les imatges.
