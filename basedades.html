@@ -10,7 +10,38 @@ Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/penjat.css">
         <script src="js/basedades.js"></script>
-        
+
+        <!-- EASIEST ONLINE FORM BUILDER
+            Powerful forms get it done.
+            https://eu.jotform.com/ 
+        -->
+        <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+        <script>
+          window.addEventListener("DOMContentLoaded", function() {
+            window.AgentInitializer.init({
+              agentRenderURL: "https://eu.jotform.com/agent/0195324719c07c41a0b335c5361c4599b566",
+              rootId: "JotformAgent-0195324719c07c41a0b335c5361c4599b566",
+              formID: "0195324719c07c41a0b335c5361c4599b566",
+              queryParams: ["skipWelcome=1", "maximizable=1"],
+              domain: "https://eu.jotform.com",
+              isDraggable: false,
+              background: "linear-gradient(180deg, #C8CEED 0%, #C8CEED 100%)",
+              buttonBackgroundColor: "#0a1551",
+              buttonIconColor: "#fff",
+              variant: false,
+              customizations: {
+                "greeting": "Yes",
+                "greetingMessage": "Uep!, com et puc ajudar?",
+                "openByDefault": "No",
+                "pulse": "Yes",
+                "position": "right",
+                "autoOpenChatIn": "0"
+              },
+              isVoice: undefined
+            });
+          });
+        </script>
+
         <!--
         Llibreries per a la càrrega de la bases de dades
         -->
